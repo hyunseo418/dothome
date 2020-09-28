@@ -1,11 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>화면 구현 test02</title>
+    <style>
+        /* font */
+        @font-face {
+            font-family: 'S-CoreDream-8Heavy';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* reset */
+        * {margin: 0; padding: 0;}
+
+        /* layout */
+        #wrap {
+            width: 100%;
+            font-family: 'S-CoreDream-8Heavy';
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 72px;
+            color: #ffffff;
+        }
+        #haeder {width: 100%; height: 150px; background-color: #ffecb3;}
+        #banner {width: 100%; height: 450px; background-color: #ffe082 ;}
+        #contents {width: 100%; height: 850px; background-color: #ffd54f ;}
+        #footer {width: 100%; height: 150px; background-color: #ffca28 ;}
+
+        .header {width: 1200px; height: 150px; margin: 0 auto; background-color: #ffe0b2 ; line-height: 150px;}
+        .banner {width: 1200px; height: 450px; margin: 0 auto; background-color: #ffcc80 ; line-height: 450px;}
+        .contents {width: 1200px; height: 850px; margin: 0 auto; background-color: #ffb74d ; line-height: 850px;}
+        .footer {width: 1200px; height: 150px; margin: 0 auto; background-color: #ffa726 ; line-height: 150px;}
+    </style>
 </head>
 <body>
-    
+    <div id="wrap">
+        <div id="haeder">
+            <div class="header">header</div>
+        </div>
+        <!-- //header -->
+        <div id="banner">
+            <div class="banner">banner</div>
+        </div>
+        <!-- //banner -->
+        <div id="contents">
+            <div class="contents">contents</div>
+        </div>
+        <!-- contents -->
+        <div id="footer">
+            <div class="footer">footer</div>
+        </div>
+        <!-- //footer -->
+    </div> 
+    <!-- //wrap -->
 </body>
 </html>
