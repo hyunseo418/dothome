@@ -1,11 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>화면 구현 test04</title>
+    <style>
+        /* font */
+        @font-face {
+            font-family: 'S-CoreDream-8Heavy';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* reset */
+        *  {margin: 0; padding: 0;}
+
+        /* layout */
+        #wrap {
+            font-family: 'S-CoreDream-8Heavy';
+            text-transform: uppercase;
+            text-align: center;
+            color: #ffffff;
+            font-size: 72px;
+        }
+        #header {width: 100%; background-color: #ffebee; }
+        #banner {width: 100%; background-color: #ffcdd2;}
+        #contents {width: 100%; background-color: #ef9a9a;}
+        #footer {width: 100%; background-color: #e57373;}
+
+        /* container */
+        .header {width: 1200px; height: 150px; line-height: 150px; background-color: #ef5350; margin: 0 auto;}
+        .banner {width: 1200px; height: 400px; line-height: 400px; background-color: #f44336; margin: 0 auto;}
+        .content1 {width: 1200px; height: 300px; line-height: 300px; background-color: #e53935; margin: 0 auto;}
+        .content2 {width: 1200px; height: 300px; margin: 0 auto;}
+        .content2-1 {width: 600px; height: 300px; float: left; line-height: 300px; background-color: #d32f2f; margin: 0 auto;}
+        .content2-2 {width: 600px; height: 300px; float: left; line-height: 300px; background-color: #c62828; margin: 0 auto;}
+        .content3 {width: 1200px; height: 300px; line-height: 300px; clear: both; background-color: #b71c1c; margin: 0 auto;}
+        .footer {width: 1200px; height: 150px; line-height: 150px; background-color: #9a1111; margin: 0 auto;}
+    </style>
 </head>
 <body>
-    
+    <div id="wrap">
+        <div id="header">
+            <div class="header">header</div>
+        </div>
+        <!-- //header -->
+        <div id="banner">
+            <div class="banner">banner</div>
+        </div>
+        <!-- //banner -->
+        <div id="contents">
+            <div class="content1">content1</div>
+            <div class="content2">
+                <div class="content2-1">content2-1</div>
+                <div class="content2-2">content2-2</div>
+            </div>
+            <div class="content3">content3</div>
+        </div>
+        <!-- //contents -->
+        <div id="footer">
+            <div class="footer">footer</div>
+        </div>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
 </body>
 </html>
