@@ -114,7 +114,7 @@
 .ban ul li {float: left; width: 330px;} 
 .ban ul li img {border: 4px solid #dcdcdc;} 
 .ban ul li img:hover {border-color: #98bcbc;} 
-.ban ul li.ban_img1 {text-align-last: left;} 
+.ban ul li.ban_img1 {text-align: left;} 
 .ban ul li.ban_img2 {text-align: center;} 
 .ban ul li.ban_img3 {text-align: right;} 
 
