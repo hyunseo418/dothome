@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test06</title>
+    <style>
+        /* reset */
+        * {margin: 0; padding: 0;}
+
+        /* layout */
+        #wrap {font-size: 72px; text-align: center; color: #fff; text-transform: uppercase;}
+        #header {height: 140px; background-color: #f8bbd0; line-height: 140px;}
+        #banner {height: 580px; background-color: #f48fb1; line-height: 580px;}
+        #footer {height: 200px; background-color: #880e4f; line-height: 200px;}
+
+        /* contents layout */
+        #content1 {height: 680px; background-color: #f06292; line-height: 680px;}
+        #content2 {height: 600px; background-color: #ec407a; line-height: 600px;}
+        #content3 {height: 680px; background-color: #e91e63; line-height: 680px;}
+        #content4 {height: 560px; background-color: #d81b60; line-height: 560px;}
+        #content5 {height: 580px; background-color: #c2185b; line-height: 580px;}
+        #content6 {height: 240px; background-color: #ad1457;}
+
+        /* container */
+        .container {width: 1425px; height: inherit; background: rgba(255,255,255,0.3); margin: 0 auto;}
+        
+        .content6 {overflow: hidden; font-size: 20px; text-align: left; color: #000; padding-top: 50px;}
+        .content6 .left {width: 620px; float: left; position: relative; padding: 30px 30px 30px 60px; border-right: 1px solid #000;} 
+        .content6 .right {width: 620px; float: left; position: relative; padding: 30px 30px 30px 60px;} 
+        .content6 p {padding-top: 10px; padding-bottom: 10px;}
+        .content6 span {color: #444;}
+        .content6 a {position: absolute; right: 20px; top: 20px;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">
+                <div class="header">header</div>
+            </div>
+        </div>
+        <div id="banner">
+            <div class="container">
+                <div class="banner">banner</div>
+            </div>
+        </div>
+        <div id="contents">
+            <div id="content1">
+                <div class="container">
+                    <div class="content1">content1</div>
+                </div>
+            </div>
+            <div id="content2">
+                <div class="container">
+                    <div class="content2">content2</div>
+                </div>
+            </div>
+            <div id="content3">
+                <div class="container">
+                    <div class="content3">content3</div>
+                </div>
+            </div>
+            <div id="content4">
+                <div class="container">
+                    <div class="content4">content4</div>
+                </div>
+            </div>
+            <div id="content5">
+                <div class="container">
+                    <div class="content5">content5</div>
+                </div>
+            </div>
+            <div id="content6">
+                <div class="container">
+                    <div class="content6">
+                        <div class="left">
+                            <h3>공지사항</h3>
+                            <p>시스템 점검 안내</p>
+                            <span>2020.09.25</span>
+                            <a href="#">더보기</a>
+                        </div>
+                        <div class="right">
+                            <h3>당첨자 발표</h3>
+                            <p>9월 출석 체크하고 포인트 받자!</p>
+                            <span>2020.10.06</span>
+                            <a href="#">더보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container">
+                <div class="footer">footer</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
