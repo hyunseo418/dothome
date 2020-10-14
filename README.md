@@ -11,3 +11,4 @@
 
 #제이쿼리 예제<br>
 find(): <a href="https://hyunseo418.github.io/dothome/jquery/jquery04_find2.html">바로가기</a>
+addClass()/removeClass(): <a href="https://hyunseo418.github.io/dothome/jquery/jquery06_addClass2.html">바로가기</a>
