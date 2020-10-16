@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test07-1</title>
+    <style>
+        /* font */
+        @font-face {
+            font-family: 'S-CoreDream-8Heavy';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'S-CoreDream-4Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* reset */
+        * {margin: 0; padding: 0;}
+        ul, li {list-style: none;}
+        a {color: #000; text-decoration: none;}
+        a:hover {color: #00f;}
+
+        /* layout */
+        #wrap{font-family: 'S-CoreDream-8Heavy';}
+        #header {background-color: #e0f2f1 ; height: 115px;}
+        #banner {background-color: #b2dfdb ; height: 730px;}
+        #footer1 {background-color: #00796b ; height: 60px;}
+        #footer2 {background-color: #00695c; height: 195px;}
+        #footer3 {background-color: #004d40 ; height: 65px;}
+
+        /* contents */
+        #content1 {background-color: #80cbc4 ; height: 810px;}
+        #content2 {background-color: #4db6ac ; height: 530px;}
+        #content3 {background-color: #26a69a ; height: 960px;}
+        #content4 {background-color: #009688 ; height: 970px;}
+        #content5 {background-color: #00897b ; height: 490px;}
+        
+        /* container */
+        .container {width: 1400px; height: inherit; margin: 0 auto; background-color: rgba(255,255,255,0.4);}
+        .header {font-size: 72px; color: #fff; line-height: 115px; text-align: center; text-transform: uppercase;}
+        .banner {font-size: 72px; color: #fff; line-height: 730px; text-align: center; text-transform: uppercase;}
+        .content1 {font-size: 72px; color: #fff; line-height: 810px; text-align: center; text-transform: uppercase;}
+        .content2 {font-size: 72px; color: #fff; line-height: 530px; text-align: center; text-transform: uppercase;}
+        .content3 {font-size: 72px; color: #fff; line-height: 960px; text-align: center; text-transform: uppercase;}
+        .content4 {font-size: 72px; color: #fff; line-height: 970px; text-align: center; text-transform: uppercase;}
+        .content5 {overflow: hidden; font-family: 'S-CoreDream-4Regular';}
+        .content5 h3 {padding-bottom: 15px; font-size: 30px; padding-bottom: 15px; font-size: 30px;}
+        .content5 .left {float: left; width: 600px; position: relative;  margin: 50px; margin-top: 100px;}
+        .content5 .left li {overflow: hidden; border: 1px solid #00897b; padding: 10px; padding: 20px; margin-top: -1px;}
+        .content5 .left li a {width: 70%; float: left; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+        .content5 .left li span {width: 25%; float: right; text-align: right;}
+        .content5 .left a.more {position: absolute; right: 0; top: 15px;}
+        .content5 .right {float: left; width: 600px; position: relative; margin: 50px; margin-top: 100px;}
+        .content5 .right li {overflow: hidden; border: 1px solid #00897b; padding: 10px; padding: 20px; margin-top: -1px;}
+        .content5 .right li a {width: 70%; float: left; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+        .content5 .right li span {width: 25%; float: right; text-align: right;}
+        .content5 .right a.more {position: absolute; right: 0; top: 15px;}
+        .footer1 {font-size: 72px; color: #fff; line-height: 60px; text-align: center; text-transform: uppercase;}
+        .footer2 {font-size: 72px; color: #fff; line-height: 195px; text-align: center; text-transform: uppercase;}
+        .footer3 {font-size: 72px; color: #fff; line-height: 65px; text-align: center; text-transform: uppercase;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container">
+                <div class="header">header</div>
+            </div>
+        </div>
+        <!-- //header -->
+
+        <div id="banner">
+            <div class="container">
+                <div class="banner">banner</div>
+            </div>
+        </div>
+        <!-- //banner -->
+
+        <div id="contents">
+            <div id="content1">
+                <div class="container">
+                    <div class="content1">content1</div>
+                </div>
+            </div>
+            <div id="content2">
+                <div class="container">
+                    <div class="content2">content2</div>
+                </div>
+            </div>
+            <div id="content3">
+                <div class="container">
+                    <div class="content3">content3</div>
+                </div>
+            </div>
+            <div id="content4">
+                <div class="container">
+                    <div class="content4">content4</div>
+                </div>
+            </div>
+            <div id="content5">
+                <div class="container">
+                    <div class="content5">
+                        <div class="left">
+                            <h3>펀드 공시</h3>
+                            <ul>
+                                <li><a href="#">미레에셋코스피200인덱스증권투자신탁1호(주식-파생형) </a><span>2020.10.12</span></li>
+                                <li><a href="#">고유재산 투자펀드의 의무투자기간 종료 안내 </a><span>2020.10.12</span></li>
+                                <li><a href="#">소규모 펀트 공시의 건(2020년 9월) </a><span>2020.10.12</span></li>
+                            </ul>
+                            <a href="#" class="more">더보기</a>
+                        </div>
+                        <div class="right">
+                            <h3>펀드 뉴스</h3>
+                            <ul>
+                                <li><a href="#">펀드 기준가격 컷오프제도 시행 안내 </a><span>2020.09.28</span></li>
+                                <li><a href="#">주문관리 시스템 재구축 프로젝트 입찰 공고 </a><span>2020.09.28</span></li>
+                                <li><a href="#">미래에셋 전략배분 TDF는 특별합니다. </a><span>2020.09.28</span></li>
+                            </ul>
+                            <a href="#" class="more">더보기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <div id="footer">
+            <div id="footer1">
+                <div class="container">
+                    <div class="footer1">footer1</div>
+                </div>
+            </div>
+            <div id="footer2">
+                <div class="container">
+                    <div class="footer2">footer2</div>
+                </div>
+            </div>
+            <div id="footer3">
+                <div class="container">
+                    <div class="footer3">footer3</div>
+                </div>
+            </div>
+        </div>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+</body>
+</html>
