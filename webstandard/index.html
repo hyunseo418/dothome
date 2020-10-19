@@ -409,5 +409,23 @@
         <!-- //footer -->
     </div> 
     <!-- //wrap -->
+
+    <!-- script -->
+    <script src="js/jquery.min_1.12.4.js"></script>
+    <script>
+        $(".tit .btn").click(function(event){
+            event.preventDefault(); //#의 기본 기능을 차단
+            //전체메뉴 보이기
+            // $("#cont_nav").css("display", "block");
+            // $("#cont_nav").show();
+            // $("#cont_nav").fadeIn();
+            // $("#cont_nav").slideDown();
+            // $("#cont_nav").toggle();       //show() + hide()
+            // $("#cont_nav").fadeToggle();   //fadeIn() + fadeOut()
+            $("#cont_nav").slideToggle();     //slideUp() + slideDown()
+
+            $(this).toggleClass("on");
+        });
+    </script>
 </body>
 </html>
