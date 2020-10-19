@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+</head>
+<body>
+    <div class="img">
+        <img src="img/img03.png" alt="이미지1" width="300">
+        <p class="desc">d</p>
+    </div>
+
+    <!-- script -->
+    <script src="jquery.min_1.12.4.js"></script>
+    <script>
+        //이미지를 클릭하면 이미지를 사라지게
+        $("img").click(function(){
+            //$(this).css("display", "none");
+            alert($(this).attr("src"));
+        });
+
+        $(".desc").css({"backgroundColor":"red", "color":"white"});
+        //desc를 선택해서 패딩을 20px;
+        // $(".desc").css("padding", "20px");
+        // $("p").css("padding", "20px");
+        // $("p:first").css("padding", "20px");
+        // $("p:contains('d')").css("padding", "20px");
+        $("p:eq(0)").css("padding", "20px");
+    </script>
+</body>
+</html>
