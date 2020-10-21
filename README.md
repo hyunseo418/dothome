@@ -1,7 +1,7 @@
 # dothome
 
 #main<br>
-<a href="<a href="https://hyunseo418.github.io/dothome/index.html">test01</a>">test01</a>
+<a href="https://hyunseo418.github.io/dothome/index.html"></a>
 
 #test<br>
 <a href="https://hyunseo418.github.io/dothome/test/test01.html">test01</a>
