@@ -1,7 +1,7 @@
 # dothome
 
 #main<br>
-<a href="https://hyunseo418.github.io/dothome/index.html"></a>
+<a href="https://hyunseo418.github.io/dothome/index.html">바로가기</a>
 
 #test<br>
 <a href="https://hyunseo418.github.io/dothome/test/test01.html">test01</a>
