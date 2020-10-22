@@ -247,6 +247,7 @@ table em {border: 1px solid #000; font-style: normal; font-size: 80%; padding: 3
     margin-top: 0;
     color: #fff;
     font-family: '양진체';
+    font-size: 44px !important;
 }
 .bs-header p {
     margin-bottom: 0;
