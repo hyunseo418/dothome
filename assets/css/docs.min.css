@@ -247,7 +247,7 @@ table em {border: 1px solid #000; font-style: normal; font-size: 80%; padding: 3
     margin-top: 0;
     color: #fff;
     font-family: '양진체';
-    font-size: 44px !important;
+    
 }
 .bs-header p {
     margin-bottom: 0;
@@ -266,7 +266,8 @@ table em {border: 1px solid #000; font-style: normal; font-size: 80%; padding: 3
 	}
 	.bs-header h1 {
 	    font-size: 60px;
-	    line-height: 1;
+        line-height: 1;
+        font-size: 44px !important;
 	}
 }
 @media (min-width:992px) {
