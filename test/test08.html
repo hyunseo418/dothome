@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test08</title>
+    <style>
+        /* reset */
+        *{margin: 0; padding: 0;}
+        ul, li {list-style-type: none;}
+        a {text-decoration: none;}
+        img {vertical-align: top;}
+        address {font-style: normal;}
+         
+        /* layout */
+        #header {height: 72px; }
+        #banner {background: #222; background: url(img/top-visual-retailfinance.jpg); height: 500px;}
+        #footer {background: #222;}
+
+        /* contents layout */
+        #cont1 { background-color: #fff;}
+        #cont2 {background-color: #ddd;}
+        #cont3 {background-color: #fff;}
+
+        
+        .container {width: 1140px; margin: 0 auto;}
+
+        /* header */
+        .header {overflow: hidden;}
+        .header h1 {float: left; padding-top: 25px;}
+        .header ul {float: right; padding: 5px 0 0 0;}
+        .header li {text-align: right; display: inline-block; padding: 20px;}
+        .header li a {display: inline-block; height: 44px; color: #222; font-weight: bold;}
+        .header li.active a {border-bottom: 3px solid #222;}
+
+        /* banner */
+        .banner h2 {color: #fff; padding-top: 400px; font-size: 36px;}
+
+        /* cont1 */
+        .cont1 {padding: 80px 20px; position: relative;}
+        .cont1 h3 {padding-bottom: 40px; font-size: 36px; padding-left: 30px;}
+        .cont1 p {font-size: 16px; padding-left: 30px;}
+        .cont1 img {position: absolute; right: 100px; bottom: 80px;}
+
+        /* cont2 */
+        .cont2 {overflow: hidden;}
+        .cont2 .left {width: 50%; float: left;}
+        .cont2 .left img {width: 100%; height: 300px;}
+        .cont2 .right {width: 46%; float: right; padding-top: 60px; padding-left: 4%;}
+        .cont2 .right h3 {padding-bottom: 40px; font-size: 36px;}
+        .cont2 .right p {font-size: 16px;}
+
+        /* cont3 */
+        .cont3 {overflow: hidden;}
+        .cont3 .left {width: 50%; float: left; padding-top: 100px;}
+        .cont3 .left h3 {padding-bottom: 40px; font-size: 36px;}
+        .cont3 .left p {font-size: 16px;}
+        .cont3 .right {width: 46%; float: right; padding-top: 30px; padding-left: 4%;}
+        .cont3 .right img {width: 50%;}
+
+        /* footer */
+        .footer {color: #777;}
+        .footer .footer_nav ul {padding-top: 40px;}
+        .footer .footer_nav li {display: inline-block; padding-right: 31px; position: relative;}
+        .footer .footer_nav li::before {
+            content: '';
+            width: 1px; height: 15px; background: #777;
+            position: absolute; left: -15px; top: 5px;
+        }
+        .footer .footer_nav li:first-child::before{
+            width: 0; height: 0;
+        }
+        .footer .footer_nav li a {color: #777; font-size: 13px;}
+        .footer img {padding-top: 100px; padding-bottom: 20px;}
+        .footer address {overflow: hidden; padding-bottom: 30px;}
+        .footer address .addr {font-size: 13px;}
+        .footer address .addr span {float: left;}
+        .footer address .addr span:last-child {padding-left: 30px; position: relative;}
+        .footer address .addr span:last-child::before {
+            content: '';
+            width: 1px; height: 50px; background: #777;
+            position: absolute; left: 15px; top: 1px;
+        }
+        .footer address .copy {float: right; padding-top: 50px;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- header -->
+        <div id="header">
+            <div class="container">
+                <div class="header">
+                    <h1>
+                        <a href="#"><img src="img/bi.png" alt="kakaopay securities"></a>
+                    </h1>
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">비즈니스</a></li>
+                        <li><a href="#">경영정보</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">채용정보</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- //header -->
+
+        <!-- banner -->
+        <div id="banner">
+            <div class="container">
+                <div class="banner">
+                    <h2>개인금융 서비스</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- contents -->
+        <div id="contents">
+            <div id="cont1">
+                <div class="container">
+                    <div class="cont1">
+                        <h3>카카오 플랫폼을 활용한 생활금융 투자 서비스</h3>
+                        <p>
+                            오직 카카오 플랫폼을 통해서만 투자서비스를 제공합니다.<br>
+                            사용자의 생활에 필요한 모든 금융 영역을 하나로 연결하고 라이프스타일<br>
+                            특성을 반영해 가장 적합한 맞춤형 종합자산관리를 추구합니다.
+                        </p>
+                        <img src="img/kakao-bi-black.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="cont2">
+                <div class="container">
+                    <div class="cont2">
+                        <div class="left">
+                            <img src="img/pic-retailfinance1.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <h3>쉽고 재미있는 투자</h3>
+                            <p>
+                                소비 생활속에서도 다양한 투자 기회를 발굴합니다.<br>
+                                복잡한 가입과정이나 큰돈 없이도 투자할 수 있습니다.<br>
+                                상품선택의 수고로움을 덜기 위해 소수의 좋은 상품만을 제안합니다.<br>
+                                카카오톡만 있다면 투자실행부터 투자상품 관리까지 한번에 해결됩니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="cont3">
+                <div class="container">
+                    <div class="cont3">
+                        <div class="left">
+                            <h3>믿을 수 있는 상품</h3>
+                            <p>
+                                어떤 시장 환경에서도, 언제든지, 얼마의 금액을 투자하더라도<br>
+                                많은 곳에 나눠져 안정적이고 전문가에 의해 운용되어 오랫동안<br>
+                                믿고 맡길 수 있는 상품만을 엄선해 제공합니다.
+                            </p>
+                        </div>
+                        <div class="right">
+                            <img src="img/pic-retailfinance2.png" alt="">
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //contents -->
+
+        <!-- footer -->
+        <div id="footer">
+            <div class="container">
+                <div class="footer">
+                    <div class="footer_nav">
+                        <ul>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">보호금융상품등록부</a></li>
+                            <li><a href="#">개인정보취급처리방침</a></li>
+                            <li><a href="#">고객권리안내문</a></li>
+                            <li><a href="#">신용정보 활용체제 공시</a></li>
+                        </ul>
+                    </div>
+                    <img src="img/bi-footer.png" alt="">
+                    <address>
+                        <div class="addr">
+                            <span>
+                                경기도 성남시 분당구 판교역로 146번길 20 Office H 12층<br>
+                                강남오피스: 서울시 강남구 테헤란로 512 신안빌딩 3층<br>
+                                여의도오피스: 서울시 영등포구 의사당대로1길 34<br>
+                            </span>
+                            <span>고객센터: 1600-8515</span>
+                        </div>
+                        <div class="copy">
+                            <span>&copy;2020 Copyright kakaopay securities corp.</span>
+                        </div>
+                    </address>
+                </div>
+            </div>
+        </div>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+
+    <!-- script -->
+    <script src="jquery.min_1.12.4.js"></script>
+    <script>
+        $(".header > ul > li").mouseover(function(){
+            let target = $(this);
+            $(".header > ul > li").removeClass()
+            target.addClass("active");
+        })
+        $(".header > ul > li").mouseout(function(){
+            $(".header > ul > li").removeClass();
+        })
+    </script>
+</body>
+</html>
