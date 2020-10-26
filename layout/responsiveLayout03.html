@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsiveLayout03</title>
+    <style>
+        body { background-color: #b3e5fc ;}
+        *{margin: 0; padding: 0;}
+        .container {width: 1200px; margin: 0 auto;}
+        header {width: 100%; height: 100px; background-color: #81d4fa ;}
+        aside {width: 30%; height: 900px; float: left; background-color: #4fc3f7 ;}
+        .atc1 {width: 70%; height: 300px; float: left; background-color: #29b6f6 ;}
+        .atc2 {width: 70%; height: 300px; float: left; background-color: #03a9f4 ;}
+        .atc3 {width: 70%; height: 300px; float: left; background-color: #039be5 ;}
+        footer {width: 100%; height: 100px; clear: both; background-color: #0288d1 ;}
+
+        @media (max-width:1280px){
+            .container {width: 100%;}
+            .atc1, .atc2 {height: 450px;}
+            .atc3 {width: 100%;}
+        }
+        @media (max-width:900px){
+            aside {width: 100%; height: 300px;}
+            .atc1, .atc2 {width: 50%;}
+        }
+        @media (max-width:480px){
+            .atc1, .atc2 {width: 100%;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <header></header>
+            <aside></aside>
+            <article class="atc1"></article>
+            <article class="atc2"></article>
+            <article class="atc3"></article>
+            <footer></footer>
+        </div>
+    </div>
+</body>
+</html>
