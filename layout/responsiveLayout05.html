@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsiveLayout05</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #wrap {}
+        header {height: 100px; background-color: #B1DFFE;}
+        aside {height: 400px; background-color: #7CCCFE;}
+        #contents1 {overflow: hidden;}
+        #contents1 .c1_a1 {width: 33.3333%; height: 500px; float: left; background-color: #3DB7FC;}
+        #contents1 .c1_a2 {width: 66.6667%; height: 250px; float: left; background-color: #00A8FC;}
+        #contents1 .c1_a3 {width: 66.6667%; height: 250px; float: left; background-color: #0099FA;}
+        #contents2 {overflow: hidden;}
+        #contents2 .c2_a1 {float: left; background-color: #008BEC; width: 33.3333%; height: 300px;}
+        #contents2 .c2_a2 {float: left; background-color: #007AD9; width: 33.3333%; height: 300px;}
+        #contents2 .c2_a3 {float: left; background-color: #0068C7; width: 33.3333%; height: 300px;}
+        #contents3 {overflow: hidden; padding: 5%; background-color: #00A8FC;}
+        #contents3 > article {float: left; width: 21%; margin: 2%; height: 220px; border-radius: 10px; background-color: #007AD9;}
+        footer {height: 100px; background-color: #3DB7FC;}
+
+        .container {width: 1200px; margin: 0 auto;}
+
+        @media (max-width:1210px){
+            .container{width: 100%;}
+            #contents2 .c2_a1 {width: 50%;}
+            #contents2 .c2_a2 {width: 50%;}
+            #contents2 .c2_a3 {display: none;}
+            #contents3 >article {width: 29.3333%;}
+            #contents3 >article:last-child {display: none;}
+        }
+
+        @media (max-width:900px){
+            #contents2 .c2_a1 {width: 100%;}
+            #contents2 .c2_a2 {width: 100%;}
+        }
+
+        @media (max-width:480px){
+            #contents1 .c1_a1 {width: 100%; height: 200px;}
+            #contents1 .c1_a2 {width: 100%;}
+            #contents1 .c1_a3 {width: 100%;}
+            #contents3 {padding: 10%;}
+            #contents3 >article {width: 92%; margin: 4%;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container">
+            <header></header>
+            <aside></aside>
+            <section id="contents1">
+                <article class="c1_a1"></article>
+                <article class="c1_a2"></article>
+                <article class="c1_a3"></article>
+            </section>
+            <section id="contents2">
+                <article class="c2_a1"></article>
+                <article class="c2_a2"></article>
+                <article class="c2_a3"></article>
+            </section>
+            <section id="contents3">
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+            </section>
+            <footer></footer>
+        </div>
+    </div>
+</body>
+</html>
