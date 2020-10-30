@@ -29,23 +29,22 @@
         footer {height: 100px; background-color: #00bcd4;}
 
         /* container */
-        .container {
-            width: 1200px;
-            margin: 0 auto;
-        }
+        .container {width: 1200px;  margin: 0 auto;}
 
-        /* media query */
+        /* 화면너비 0 ~ 1200px */
         @media (max-width: 1200px) {
             .container {width: 100%;}
             section {width: 70%; padding: 7% 15%;}
             section > article {width: 19%; margin: 3%; height: 140px;}
             section > article:nth-child(5n) {display: none;}
         }
+        /* 화면너비 0 ~ 900px */
         @media (max-width: 900px) {
             section > article {width: 25.3333%; margin: 4%; height: 140px;}
             section > article:nth-child(5n) {display: block;}
             section > article:last-child {display: none;}
         }
+        /* 화면너비 0 ~ 480px */
         @media (max-width: 480px) {
             section > article {width: 40%; margin: 5%; height: 120px;}
             section > article:last-child {display: block;}

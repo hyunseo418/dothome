@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>반응형 레이아웃 test03</title>
     <style>
-        body { background-color: #fff ;}
+        /* reset */
         *{margin: 0; padding: 0;}
+
+        /* layout */
         .container {width: 1200px; margin: 0 auto;}
         header {width: 100%; height: 100px; background-color: #81d4fa ;}
         aside {width: 30%; height: 900px; float: left; background-color: #4fc3f7 ;}
@@ -16,15 +18,18 @@
         .atc3 {width: 70%; height: 300px; float: left; background-color: #039be5 ;}
         footer {width: 100%; height: 100px; clear: both; background-color: #0288d1 ;}
 
+        /* 화면너비 0 ~ 1280px */
         @media (max-width:1280px){
             .container {width: 100%;}
             .atc1, .atc2 {height: 450px;}
             .atc3 {width: 100%;}
         }
+        /* 화면너비 0 ~ 900px */
         @media (max-width:900px){
             aside {width: 100%; height: 300px;}
             .atc1, .atc2 {width: 50%;}
         }
+        /* 화면너비 0 ~ 480px */
         @media (max-width:480px){
             .atc1, .atc2 {width: 100%;}
         }
