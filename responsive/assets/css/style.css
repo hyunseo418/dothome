@@ -1,7 +1,7 @@
 /* 레이아웃 */
 #header {height: 327px; background: url(../img/header_bg.jpg) repeat-x center top;}
 #nav {background-color: #f6fdff;}
-#title {background-color: #ddd;}
+#title {background-color: #eaf7fd;}
 
 /* 컨테이너 */
 .container {width: 1200px; margin: 0 auto; /* background: rgba(0,0,0,0.3); */}
@@ -45,7 +45,7 @@
     background: #3192bf;
     width: 60px; height: 60px;
     display: inline-block;
-    line-height: 60px;
+    line-height: 55px;
     border-radius: 50%;
     transition: all 0.25s ease-in-out;
 }
@@ -106,10 +106,24 @@
 }
 
 /* title */
-.title {}
-.title h2 {}
-.title a {}
-.title a span {}
+.title {position: relative;}
+.title h2 {font-size: 40px; text-align: center; color: #2c94c4; padding: 5px 0;}
+.title .btn {
+    width: 60px; height: 60px; 
+    transition: all 0.25s ease-in-out;
+    position: absolute; right: 0; top: 5px; 
+    border-radius: 50%;
+    font-size: 60px; text-align: center; line-height: 55px; 
+    color: #fff; 
+    background: #3192bf;
+}
+.title .btn i {
+    font-weight: bold;
+}
+.title .btn:hover {
+    box-shadow: 0 0 0 3px rgba(75, 154, 191, 0.9) inset,
+                0 0 0 100px rgba(0, 0, 0, 0.1) inset;
+}
 
 
 /* 미디어쿼리*/

@@ -122,7 +122,7 @@
             3. position: absolute를 사용하지 않고 left, top을 통해서 위치를 설정할 경우
         */
 
-        .content-item:nth-child(1) .content-item-img{
+        /* .content-item:nth-child(1) .content-item-img{
             background: url(img/images01.jpg);
             background-size: cover;
         }
@@ -157,7 +157,7 @@
         .content-item:nth-child(9) .content-item-img{
             background: url(img/images09.jpg);
             background-size: cover;
-        }
+        } */
     </style>
 </head>
 <body>
@@ -241,5 +241,21 @@
         </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        // for(let i=1; i<=9; i++){
+        //     $(".content-item:nth-child("+i+")").find(".content-item-img").css({
+        //         background: "url(img/images0"+i+".jpg)",
+        //         "background-size": "cover"
+        //     })
+        // }
+
+        let item = document.querySelectorAll(".content-item");
+        let img = document.querySelectorAll(".content-item-img");
+        item.forEach((el, index) => {
+            let num=index+1
+            img[index].style.background = "url(img/images0"+num+".jpg)";
+            img[index].style.backgroundSize = "cover";
+        });
+    </script>
 </body>
 </html>
