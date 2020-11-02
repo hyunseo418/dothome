@@ -30,8 +30,18 @@
         .header h1 {float: left; padding-top: 25px;}
         .header ul {float: right; padding: 5px 0 0 0;}
         .header li {text-align: right; display: inline-block; padding: 20px;}
-        .header li a {display: inline-block; height: 44px; color: #222; font-weight: bold;}
-        .header li.active a {border-bottom: 3px solid #222;}
+        .header li a {position: relative; display: inline-block; height: 47px; color: #222; font-weight: bold;}
+        .header li a::after {
+            content: '';
+            width: 0; height: 5px;
+            background-color: #111;
+            position: absolute;
+            bottom: 0; left: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        .header li:hover a::after {
+            width: 100%;
+        }
 
         /* banner */
         .banner h2 {color: #fff; padding-top: 400px; font-size: 36px;}
@@ -200,18 +210,5 @@
         <!-- //footer -->
     </div>
     <!-- //wrap -->
-
-    <!-- script -->
-    <script src="jquery.min_1.12.4.js"></script>
-    <script>
-        $(".header > ul > li").mouseover(function(){
-            let target = $(this);
-            $(".header > ul > li").removeClass()
-            target.addClass("active");
-        })
-        $(".header > ul > li").mouseout(function(){
-            $(".header > ul > li").removeClass();
-        })
-    </script>
 </body>
 </html>

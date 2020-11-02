@@ -80,8 +80,8 @@
 /* nav */
 .nav {overflow: hidden; padding: 25px 0;}
 .nav > div {width: 40%; float: left;}
-.nav > div h3 {font-size: 18px; color: #25a2d0; font-weight: bold; margin-bottom: 4px;}
 .nav > div:last-child {width: 20%;}
+.nav > div h3 {font-size: 18px; color: #25a2d0; font-weight: bold; margin-bottom: 4px;}
 .nav > div ol {overflow: hidden;}
 .nav > div li {width: 50%; float: left; position: relative; padding-left: 8px; box-sizing: border-box;}
 .nav > div:last-child li {width: 100%;}
