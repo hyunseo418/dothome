@@ -370,35 +370,32 @@
             
             //출력용
             $(".scrollTop").text(parseInt(scrollTop));
-            $(".content-item").each(index => {
-                const num = index+1;
-                $(".s"+num+"OffsetTop").text(parseInt($("#section"+num).offset().top))
-
-                if(scrollTop > $("#section"+num).offset().top){
-                    $(".s"+num+"OffsetTop").css("color", "red");
-                    $("#section"+num).addClass("show");
-                }else {
-                    $(".s"+num+"OffsetTop").css("color", "white");
-                }
-            })
             // $(".content-item").each(index => {
             //     const num = index+1;
             //     $(".s"+num+"OffsetTop").text(parseInt($("#section"+num).offset().top))
-            // })
-            // $(".content-item").each(index => {
-            //     const num = index+1;
-            //     if(scrollTop > $("#section"+num).offset().top ) {
+
+            //     if(scrollTop > $("#section"+num).offset().top){
             //         $(".s"+num+"OffsetTop").css("color", "red");
+            //         $("#section"+num).addClass("show");
             //     }else {
             //         $(".s"+num+"OffsetTop").css("color", "white");
             //     }
-            // });
-            // $(".content-item").each(index => {
-            //     const num = index+1;
-            //     if(scrollTop > $("#section"+num).offset().top){
-            //         $("#section"+num).addClass("show");
-            //     }
             // })
+
+            $(".contents > section").each(index => {
+                const section = $(".contents > section");
+                const offsetTop = $("span[class*=Offset]");
+                const txt = parseInt(section.eq(index).offset().top);
+                
+                offsetTop.eq(index).text(txt);
+
+                if(scrollTop > section.eq(index).offset().top){
+                    offsetTop.eq(index).css("color", "red");
+                    section.eq(index).addClass("show");
+                }else {
+                    offsetTop.eq(index).css("color", "white");
+                }
+            })
 
             // for(let i=1; i<=9; i++){
             //     $(".s"+i+"OffsetTop").text(parseInt($("#section"+i).offset().top))
