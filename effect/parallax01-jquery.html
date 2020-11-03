@@ -129,7 +129,7 @@
             height: 100%; 
         }
         .content-item-desc {
-            font-size: 4vw;
+            font-size: 3.5vw;
             line-height: 1.4;
             text-align: right;
             word-break: keep-all;
@@ -283,7 +283,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">즐거움과 행동만으로도, 시간은 부족하다.</p>
+                    <p class="content-item-desc">인생은 오늘의 나 안에 있고 내일은 스스로 만드는 것이다.</p>
                 </section>
                 <section id="section3" class="content-item">
                     <span class="content-item-num">03</span>
@@ -291,7 +291,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">어려움은 모든 것을 극복하는 것이다.</p>
+                    <p class="content-item-desc">오랫동안 꿈을 그리는 사람은 마침내 그 꿈을 닮아 간다.</p>
                 </section>
                 <section id="section4" class="content-item">
                     <span class="content-item-num">04</span>
@@ -315,7 +315,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">인간은 성공을 누릴 필요가 있기 때문에, 그만한 어려움이 필요하다.</p>
+                    <p class="content-item-desc">당신이 할수 있다고 믿든 할수 없다고 믿든 믿는 대로 될것이다.</p>
                 </section>
                 <section id="section7" class="content-item">
                     <span class="content-item-num">07</span>
@@ -323,7 +323,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">실수하지 않는 사람은 열심히 노력하지 않는다.</p>
+                    <p class="content-item-desc">한번의 실패와 영원한 실패를 혼동하지 마라.</p>
                 </section>
                 <section id="section8" class="content-item">
                     <span class="content-item-num">08</span>
@@ -331,7 +331,7 @@
                     <figure class="content-item-imgWrap">
                         <div class="content-item-img"></div>
                     </figure>
-                    <p class="content-item-desc">최대한의 삶을 살고, 최대한 긍정적인 것에 집중하자.</p>
+                    <p class="content-item-desc">꿈을 계속 간직하고 있으면 반드시 실현할 때가 온다.</p>
                 </section>
                 <section id="section9" class="content-item">
                     <span class="content-item-num">09</span>
@@ -364,18 +364,45 @@
             img[index].style.backgroundSize = "cover";
         });
 
+
         $(window).scroll(function(){
             const scrollTop = $(window).scrollTop() + $(window).height()/2;
             
             //출력용
             $(".scrollTop").text(parseInt(scrollTop));
-            // for(let i=1; i<=9; i++){
-            //     $(".s"+i+"OffsetTop").text(parseInt($("#section"+i).offset().top))
-            // }
             $(".content-item").each(index => {
                 const num = index+1;
                 $(".s"+num+"OffsetTop").text(parseInt($("#section"+num).offset().top))
+
+                if(scrollTop > $("#section"+num).offset().top){
+                    $(".s"+num+"OffsetTop").css("color", "red");
+                    $("#section"+num).addClass("show");
+                }else {
+                    $(".s"+num+"OffsetTop").css("color", "white");
+                }
             })
+            // $(".content-item").each(index => {
+            //     const num = index+1;
+            //     $(".s"+num+"OffsetTop").text(parseInt($("#section"+num).offset().top))
+            // })
+            // $(".content-item").each(index => {
+            //     const num = index+1;
+            //     if(scrollTop > $("#section"+num).offset().top ) {
+            //         $(".s"+num+"OffsetTop").css("color", "red");
+            //     }else {
+            //         $(".s"+num+"OffsetTop").css("color", "white");
+            //     }
+            // });
+            // $(".content-item").each(index => {
+            //     const num = index+1;
+            //     if(scrollTop > $("#section"+num).offset().top){
+            //         $("#section"+num).addClass("show");
+            //     }
+            // })
+
+            // for(let i=1; i<=9; i++){
+            //     $(".s"+i+"OffsetTop").text(parseInt($("#section"+i).offset().top))
+            // }
             // $(".s1OffsetTop").text(parseInt($("#section1").offset().top));
             // $(".s2OffsetTop").text(parseInt($("#section2").offset().top));
             // $(".s3OffsetTop").text(parseInt($("#section3").offset().top));
@@ -388,19 +415,11 @@
 
             // for(let i=1; i<=9; i++){
             //     if(scrollTop > $("#section"+i).offset().top ) {
-            //     $(".s"+i+"OffsetTop").css("color", "red");
+            //         $(".s"+i+"OffsetTop").css("color", "red");
             //     }else {
             //         $(".s"+i+"OffsetTop").css("color", "white");
             //     }
             // }
-            $(".content-item").each(index => {
-                const num = index+1;
-                if(scrollTop > $("#section"+num).offset().top ) {
-                    $(".s"+num+"OffsetTop").css("color", "red");
-                }else {
-                    $(".s"+num+"OffsetTop").css("color", "white");
-                }
-            });
             // if(scrollTop > $("#section1").offset().top ) {
             //     $(".s1OffsetTop").css("color", "red");
             // }else {
@@ -453,12 +472,6 @@
             //         $("#section"+i).addClass("show");
             //     }
             // }
-            $(".content-item").each(index => {
-                const num = index+1;
-                if(scrollTop > $("#section"+num).offset().top){
-                    $("#section"+num).addClass("show");
-                }
-            })
             // if(scrollTop > $("#section1").offset().top){
             //     $("#section1").addClass("show");
             // }
