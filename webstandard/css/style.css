@@ -98,7 +98,7 @@
 }
 
 /* 배너 */
-.ban {position: relative; padding: 24px 0;}
+/* .ban {position: relative; padding: 24px 0;}
 .ban > a {
     position: absolute; top: 60px;
     background-image: url(../img/icon.png);
@@ -114,7 +114,53 @@
 .ban ul li img:hover {border-color: #98bcbc;} 
 .ban ul li.ban_img1 {text-align: left;} 
 .ban ul li.ban_img2 {text-align: center;} 
-.ban ul li.ban_img3 {text-align: right;} 
+.ban ul li.ban_img3 {text-align: right;}  */
+.ban {padding: 24px 0;}
+.ban .ban_slick {}
+.ban .ban_slick > div {}
+.ban .ban_slick > div img {border: 4px solid #dcdcdc;}
+.ban .ban_slick > div img:hover {border-color: #98bcbc;}
+.ban .ban_slick .slick-list {margin-left: 30px;}
+
+.ban .ban_slick .slick-prev {
+    position: absolute; top: 40px;
+    background-image: url(../img/icon.png);
+    width: 43px; height: 43px; 
+    left: -80px; background-position: -150px 0;
+    text-indent: -9999px;
+    border-width: 0;
+    background-color: #fff;
+    background-color: #dceff7;
+}
+.ban .ban_slick .slick-next {
+    position: absolute; top: 40px;
+    background-image: url(../img/icon.png);
+    width: 43px; height: 43px; 
+    right: -80px; background-position: -150px -43px;
+    text-indent: -9999px;
+    border-width: 0;
+    background-color: #fff;
+    background-color: #dceff7;
+}
+.ban .ban_slick .slick-dots {
+    margin-top: 15px;
+    width: 100%; 
+    text-align: center;
+}
+.ban .ban_slick .slick-dots li {
+    display: inline-block;
+    width: 15px; height: 15px; margin: 5px;
+}
+.ban .ban_slick .slick-dots li button {
+    width: 13px; height: 13px;
+    background: #5bdfeb;
+    border-radius: 50%;
+    text-indent: -9999px;
+    border-width: 0;
+}
+.ban .ban_slick .slick-dots li.slick-active button {
+    background: #2b91c8;
+}
 
 /* 콘텐츠 */
 .cont {overflow: hidden; padding-top: 30px;}
@@ -321,9 +367,9 @@
 /* 팝업 */
 .popup {}
 .popup h4 {font-size: 14px; color: #0093dd; font-weight: bold; margin-bottom: 3px;}
-.popup ul {overflow: hidden;} 
-.popup li {float: left; width: 93px; margin-right: 5px;} 
-.popup li:last-child {margin-right: 0;} 
-.popup li img {width: 100%;} 
+.popup .lightgallery {overflow: hidden;} 
+.popup a {float: left; width: 93px; margin-right: 5px;} 
+.popup a:last-child {margin-right: 0;} 
+.popup a img {width: 100%;} 
 
 
