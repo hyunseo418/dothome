@@ -225,6 +225,8 @@ body {background: url(../img/header_bg.jpg) repeat-x center top;}
     color: #878787;
 }
 
+
+
 /* 미디어쿼리*/
 @media (max-width: 1220px){
     .container {width: 100%;}
