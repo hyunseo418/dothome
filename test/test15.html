@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naver Clova</title>
+    <!-- web fonts -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+    <style>
+        /* reset */
+        * {margin: 0; padding: 0;}
+        a {text-decoration: none; color: #fff;}
+        li {list-style: none;}
+
+        /* layout */
+        #wrap {font-family: 'NanumSquare'}
+        #header {height: 85px; background-color: #262423;}
+        #banner {height: 600px; background: url(https://static-clova.pstatic.net/static/c9c16b3/img/main/main_lamp.jpg); background-position: 50% 100%; background-size: cover; overflow: hidden;}
+        #cont1 {height: 730px;}
+        #cont2 {height: 760px; background-color: #f8fafc;}
+        #cont3 {height: 285px; background-image: linear-gradient(to right, #0accba, #62b3e5);}
+        #cont4 {height: 940px; background-color: #fff;}
+        #cont5 {height: 290px; background: url(https://static-clova.pstatic.net/static/c9c16b3/img/main/bg_cloud.png); background-size: cover;}
+        #cont6 {height: 310px; background: url(https://static-clova.pstatic.net/static/c9c16b3/img/main/bg_business.png);}
+        #footer {height: 200px; background-color: #191919;}
+
+        /* container */
+        .container {position: relative; width: 1200px; height: inherit; margin: 0 auto;}
+
+        /* header */
+        .header .logo {width: 150px; height: 27px; background-image: url(https://static-clova.pstatic.net/static/c9c16b3/img/sprite/sp_svg_icon.svg); position: absolute; left: 0; top: 27px;}
+        .header .menu {text-align: center;}
+        .header .menu li {display: inline-block; padding: 0 30px; margin-top: 30px;}
+        .header .menu li a {color: #a8a8a8;}
+        .header .menu li:hover a {border-bottom: 1px solid #fff; color: #fff;}
+        .header .quick {position: absolute; right: 0; top: 30px;}
+        .header .quick li {display: inline;margin-left: 10px; font-size: 14px;}
+        .header .quick li a {display: inline-block; border: 1px solid #a8a8a8; padding: 6px 10px; border-radius: 3px; color: #a8a8a8; font-weight: 700;}
+        .header .quick li:hover a {border: 1px solid #fff; background-color: #fff; color: #000;}
+
+        /* banner */
+        .banner {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;}
+        .banner h2 {color: #fff; font-size: 40px; line-height: 1.4;}
+        .banner a {font-size: 16px; display: inline-block; padding: 15px 30px; margin-top: 40px; border: 1px solid #fff; border-radius: 30px;}
+        .banner .pagination {position: absolute; left: 70px; top: 350px;}
+        .banner .pagination > div {width: 38px; height: 3px; background-color: rgba(255,255,255,0.3); display: inline-block; margin: 0 3px;}
+        .banner .pagination > div:last-child {margin-right: 0;}
+        .banner .pagination > div.active {background-color: #fff;}
+
+        /* cont1 */
+        .cont1 {text-align: center; overflow: hidden;}
+        .cont1 h3 {font-size: 36px; margin-top: 130px; font-weight: 800;}
+        .cont1 > p {font-size: 20px; margin-top: 27px; line-height: 1.8;}
+        .cont1 .sec {float: left; width: 280px; margin-right: 20px; margin-top: 90px;}
+        .cont1 .sec:last-child {margin-right: 0;}
+        .cont1 .sec .icon {display: inline-block; text-align: center; width: 95px; height: 95px; background: url(https://static-clova.pstatic.net/static/c9c16b3/img/sprite/sp_svg_icon.svg);}
+        .cont1 .sec .icon.icon1 {background-position: 0 -120px;}
+        .cont1 .sec .icon.icon2 {background-position: -103px -120px;}
+        .cont1 .sec .icon.icon3 {background-position: -240px 0;}
+        .cont1 .sec .icon.icon4 {background-position: -240px -95px;}
+        .cont1 .sec h4 {font-size: 25px; margin-top: 40px;}
+        .cont1 .sec > p {font-size: 16px; margin-top: 24px; line-height: 1.5;}
+
+        /* cont2 */
+        .cont2 {overflow: hidden; padding-top: 150px;}
+        .cont2 .title {float: left; margin-top: 100px;}
+        .cont2 .right {float: right;}
+        .cont2 .title h3 {font-size: 36px; font-weight: 800; line-height: 1.4;}
+        .cont2 .title > p {font-size: 20px; line-height: 1.8; margin-top: 20px;}
+        .cont2 .box {width: 380px; height: 450px; background-color: #fff; border: 1px solid #d7d7d7; border-radius: 10px; float: left; margin-right: 20px;}
+        .cont2 .box:last-child {margin-right: 0;}
+        .cont2 .box .icon {width: 87px; height: 95px; background: url(https://static-clova.pstatic.net/static/c9c16b3/img/sprite/sp_svg_icon.svg); margin-left: 50px; margin-top: 60px;}
+        .cont2 .box .icon.icon1 {background-position: -150px 0;}
+        .cont2 .box .icon.icon2 {background-position: 0 -215px;}
+        .cont2 .box .textbox {padding: 50px;}
+        .cont2 .box .textbox h4 {font-size: 25px;}
+        .cont2 .box .textbox > p {font-size: 17px; line-height: 1.8; margin-top: 20px;}
+
+        /* cont3 */
+        .cont3 {text-align: center; padding-top: 60px; color: #fff;}
+        .cont3 h3 {font-size: 40px; font-weight: 800;}
+        .cont3 p {font-size: 20px; padding-top: 10px;}
+        .cont3 > a {display: inline-block; padding: 15px 30px; border: 1px solid #fff; border-radius: 30px; margin-top: 43px;}
+
+        /* cont4 */
+        .cont4 {overflow: hidden; padding-top: 150px;}
+        .cont4 .title {text-align: center;}
+        .cont4 .title h3 {font-size: 34px; font-weight: 800;}
+        .cont4 .title p {font-size: 20px; margin-top: 30px;}
+        .cont4 .card {width: 384px; height: 445px; float: left; border: 1px solid #ebebeb; border-radius: 5px; margin-right: 20px; margin-top: 90px;}
+        .cont4 .card:last-child {margin-right: 0;}
+        .cont4 .card .img1 {height: 215px; background: url(https://ssl.pstatic.net/static/clova/service/clova_ai/image/main/news/20200925_napp_smarthome_pc.png); background-size: cover; border-radius: 5px 5px 0 0;}
+        .cont4 .card .img2 {height: 215px; background: url(https://ssl.pstatic.net/static/clova/service/clova_ai/image/main/news/20201015_clova_pc.png); background-size: cover; border-radius: 5px 5px 0 0;}
+        .cont4 .card .img3 {height: 215px; background: url(https://ssl.pstatic.net/static/clova/service/clova_ai/image/main/news/20200925_navermusic_pc.png); background-size: cover; border-radius: 5px 5px 0 0;}
+        .cont4 .card .textbox {padding: 35px 45px;}
+        .cont4 .card .textbox h4 {font-size: 19px; margin-bottom: 15px;}
+        .cont4 .card .textbox p {font-size: 17px; line-height: 1.8;}
+
+        /* cont5 */
+        .cont5 {text-align: center; padding-top: 70px;}
+        .cont5 h3 {font-size: 39px;}
+        .cont5 p {font-size: 17px; color: #9d9d9d; margin-top: 23px;}
+        .cont5 > a {color: #000; display: inline-block; padding: 15px 30px; border: 1px solid #e1e1e1; border-radius: 30px; margin-top: 30px;}
+
+        /* cont6 */
+        .cont6 {text-align: center; padding-top: 70px; color: #fff;}
+        .cont6 h3 {font-size: 39px;}
+        .cont6 p {font-size: 17px; padding-top: 30px;}
+        .cont6 > a {display: inline-block; padding: 15px 30px; border: 1px solid #fff; border-radius: 30px; margin-top: 43px;}
+
+        /* footer */
+        .footer {color: #565656; overflow: hidden;}
+        .footer .logo {width: 150px; height: 27px; background-image: url(https://static-clova.pstatic.net/static/c9c16b3/img/sprite/sp_svg_icon.svg); background-position: 0 -30px; position: absolute; left: 0; top: 40px;}
+        .footer .icon_box {position: absolute; right: 0; top: 35px; overflow: hidden;}
+        .footer .icon {width: 21px; height: 21px; background: url(https://static-clova.pstatic.net/static/c9c16b3/img/sprite/sp_svg_icon.svg); margin-left: 20px;}
+        .footer .icon.icon1 {background-position: -200px -120px; float: left;}
+        .footer .icon.icon2 {background-position: -215px -217px; float: left;}
+        .footer .icon.icon3 {background-position: -190px -217px; float: left;}
+        .footer .icon.icon4 {background-position: -200px -145px; float: left;}
+        .footer .address {padding-top: 80px; display: inline-block;}
+        .footer .address li {display: inline; position: relative; margin-right: 10px;}
+        .footer .address li::before {
+            content: '';
+            width: 1px; height: 15px;
+            position: absolute;
+            left: -6px; top: 1px; 
+            background: #565656;
+        }
+        .footer .address li:first-child::before{
+            width: 0; height: 0;
+        }
+        .footer .address li a {color: #565656;}
+        .footer span {position: absolute; left: 530px; top: 80px;}
+        .footer .menu {display: inline-block; float: right; padding-top: 80px;}
+        .footer .menu li {display: inline;position: relative; margin-left: 10px;}
+        .footer .menu li::before {
+            content: '';
+            width: 1px; height: 15px;
+            position: absolute;
+            left: -6px; top: 1px; 
+            background: #565656;
+        }
+        .footer .menu li:first-child::before {
+            width: 0; height: 0;
+        }
+        .footer .menu li a {color: #565656;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <div class="header">
+                    <h1 class="logo"></h1>
+                    <ul class="menu">
+                        <li><a href="#">기술 &middot; 솔루션</a></li>
+                        <li><a href="#">제품</a></li>
+                        <li><a href="#">플랫폼</a></li>
+                        <li><a href="#">파트너</a></li>
+                        <li><a href="#">리서치</a></li>
+                    </ul>
+                    <ul class="quick">
+                        <li><a href="#">Biz Strat</a></li>
+                        <li><a href="#">비즈니스 문의</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+        <section id="banner">
+            <div class="container">
+                <div class="banner">
+                    <h2>클로바 램프로 시작하는<br>책상 앞이 좋은 아이 프로젝트</h2>
+                    <a href="#">자세히 보기</a>
+                    <div class="pagination">
+                        <div class="active"></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //banner -->
+        <section id="contents">
+            <div id="cont1">
+                <div class="container">
+                    <div class="cont1">
+                        <h3>CLOVA AI</h3>
+                        <p>네이버 클로바는 독자적으로 개발한 AI 기술을 통해<br>
+                            세상에 없던 새로운 기술, 서비스, 제품을 만들어가고 있습니다.</p>
+                        <div class="sec">
+                            <div class="icon icon1"></div>
+                            <h4>Device & Service</h4>
+                            <p>스마트 디바이스, 서비스로<br>
+                                더욱 편리한 일상을 만나보세요.</p>
+                        </div>
+                        <div class="sec">
+                            <div class="icon icon2"></div>
+                            <h4>Solution</h4>
+                            <p>비즈니스 맞춤형 AI 솔루션으로<br>
+                                혁신을 경험하세요.</p>
+                        </div>
+                        <div class="sec">
+                            <div class="icon icon3"></div>
+                            <h4>Product</h4>
+                            <p>세계 최고 수준의 AI가 적용된<br>
+                                놀라운 서비스, 제품을 제공해보세요.</p>
+                        </div>
+                        <div class="sec">
+                            <div class="icon icon4"></div>
+                            <h4>Research</h4>
+                            <p>CLOVA AI의 독자적인 기술과<br>
+                                세계적인 연구 성과를 확인하세요.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="cont2">
+                <div class="container">
+                    <div class="cont2">
+                        <div class="title">
+                            <h3>CLOVA AI<br>
+                                Special Feature
+                            </h3>
+                            <p>네이버, 라인의 풍부한 데이터와<br>
+                                세계 최고 수준의 AI 기술이 만나<br>
+                                전에 없던 시너지를 창출합니다.
+                            </p>
+                        </div>
+                        <div class="right">
+                            <div class="box">
+                                <div class="icon icon1"></div>
+                                <div class="textbox">
+                                    <h4>Customized Solution</h4>
+                                    <p>네이버, 라인의 서비스를 통해 축적된<br>
+                                        데이터와 클로바의 자체 기술로 제작한<br> AI엔진을 활용하여, 개별 비즈니스의<br>
+                                        니즈에 부합하는 Customized Solution<br>을 제공합니다.</p>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="icon icon2"></div>
+                                <div class="textbox">
+                                    <h4>Integrated AI Engine</h4>
+                                    <p>네이버 클로바에서 자체적으로 보유한 AI<br>
+                                        기술을 복합적으로 활용한 솔루션을 개발<br>
+                                        할 수 있습니다. 이를 통해 단일 기술을<br>
+                                        활용한 경우보다 월등한 시너지를 만들어<br>냅니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="cont3">
+                <div class="container">
+                    <div class="cont3">
+                        <h3>CLOVA Official Blog</h3>
+                        <p>클로바 공식 블로그에서 다양한 소식을 확인해보세요.</p>
+                        <a href="#">자세히 보기</a>
+                    </div>
+                </div>
+            </div>
+            <div id="cont4">
+                <div class="container">
+                    <div class="cont4">
+                        <div class="title">
+                            <h3>Latest News</h3>
+                            <p>좀더 편리하고 스마트한 삶을 위한 클로바의 다양한 AI 적용사례 및 소식들을 확인해보세요.</p>
+                        </div>
+                        <div class="card">
+                            <div class="img img1"></div>
+                            <div class="textbox">
+                                <h4>클로바 스마트홈, 네이버앱에 적용</h4>
+                                <p>클로바 스마트홈을 네이버앱에서도 이용할<br>
+                                    수 있습니다. 네이버앱의 그린닷 음성 검색<br>
+                                    으로 집안의 IoT 가전을 제어하고 편리한<br>
+                                    리모컨 기능도 활용해보세요.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="img img2"></div>
+                            <div class="textbox">
+                                <h4>네이버 B2B, '네이버 클라우드'로 강화</h4>
+                                <p>대한민국 대표 클라우드 기업으로 성장한<br>
+                                    NBP가 그동안의 기술과 경험을 바탕으로<br>
+                                    ‘네이버클라우드’라는 새로운 이름 아래<br>
+                                    더 큰 도전을 시작합니다.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="img img3"></div>
+                            <div class="textbox">
+                                <h4>네이버 뮤직 연동 서비스 종료</h4>
+                                <p>2020년 11월, 네이버 뮤직 서비스 종료에<br>
+                                    따라, 네이버 클로바에서의 네이버 뮤직<br>
+                                    연동 기능이 종료됩니다. 12월1일부터<br>
+                                    네이버 뮤직 서비스는 VIBE로 전환됩니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="cont5">
+                <div class="container">
+                    <div class="cont5">
+                        <h3>With NAVER Cloud</h3>
+                        <p>네이버 클라우드 플랫폼에서 네이버 클로바의 기술 제품을 이용하세요.</p>
+                        <a href="#">Biz Start</a>
+                    </div>
+                </div>
+            </div>
+            <div id="cont6">
+                <div class="container">
+                    <div class="cont6">
+                        <h3>With NAVER CLOVA</h3>
+                        <p>네이버 클로바가 제안하는 AI 솔루션을 통해 비즈니스의 새로운 성장과 발전을 경험하세요.</p>
+                        <a href="#">비즈니스 문의</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //contents -->
+        <footer id="footer">
+            <div class="container">
+                <div class="footer">
+                    <div class="logo"></div>
+                    <div class="icon_box">
+                        <a href="#"><div class="icon icon1"></div></a>
+                        <a href="#"><div class="icon icon2"></div></a>
+                        <a href="#"><div class="icon icon3"></div></a>
+                        <a href="#"><div class="icon icon4"></div></a>
+                    </div>
+                    <ul class="address">
+                        <li><a href="#">고객센터 1833-5387</a></li>
+                        <li>09:00 - 18:00 (주말, 공휴일휴무)</li>
+                    </ul>
+                    <span>Powered by NAVER · LINE</span>
+                    <ul class="menu">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">CLOVA 채용안내</a></li>
+                        <li><a href="#">CLOVA JP</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+</body>
+</html>
