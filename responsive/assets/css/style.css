@@ -347,6 +347,96 @@ body {background: url(../img/header_bg.jpg) repeat-x center top;}
 }
 .footer address {padding-top: 15px; font-style: normal;}
 
+/* 마우스 오버 효과1 */
+.col7 .side1 {position: relative;}
+.col7 .side1:hover {background: rgba(0,0,0,0.4);}
+.col7 .side1::before {
+    content: '';
+	width: 60px; height: 1px;
+	background: #fff;
+    position: absolute; left: -100px; top: 50%;
+    transform: translate(50%, 50%);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    z-index: 10;
+	
+}
+.col7 .side1::after {
+    content: '';
+	width: 1px; height: 60px;
+	background: #fff;
+	position: absolute; left: 50%; top: -100PX;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+}
+.col7 .side1:hover::before{
+    left: 23%; top: 50%;
+    opacity: 1;
+}
+.col7 .side1:hover::after{
+    left: 50%; top: 50%;
+    opacity: 1;
+}
+.col7 .side1:hover > img {opacity: 0.4;}
+
+/* 마우스 오버 효과2 */
+.col8 .side2 {overflow: hidden;}
+.col8 .side2 figure {position: relative;}
+.col8 .side2 figure figcaption {
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 130px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(150px);
+    transition: transform 0.5s ease;
+    overflow: hidden;
+}
+.col8 .side2 figure figcaption p {margin-top: 40px;}
+.col8 .side2 figure:hover figcaption {transform: translateY(0);}
+
+/* 마우스 오버 효과3 */
+.col9 .side3 {perspective: 1000px; position: relative;}
+.col9 .side3 .front {
+    transition: transform 1s;
+	backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+}
+.col9 .side3 .back {
+    transition: transform 1s;
+	transform-style: preserve-3d;
+	position: absolute;
+	left: 0; top: 0;
+    z-index: -1;
+    transform: rotateY(-180deg);
+}
+.col9 .side3 figure figcaption {
+    position: absolute;
+	left: 50%; top: 50%;
+    transform: translate(-50%, -50%) translatez(100px);
+    background: rgba(0,0,0,0.7);
+    backface-visibility: hidden;
+    color: #fff;
+    width: 70%; height: 150px;
+    line-height: 150px;
+    text-align: center;
+    font-size: 18px; font-weight: bold;
+    border-radius: 10px;
+}
+
+.col9 .side3:hover .front {
+    transform: rotateY(180deg);
+}
+.col9 .side3:hover .back {
+    transform: rotateY(0deg);
+}
 
 /* 미디어쿼리*/
 @media (max-width: 1220px){
