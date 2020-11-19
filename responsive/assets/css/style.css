@@ -412,7 +412,7 @@ body {background: url(../img/header_bg.jpg) repeat-x center top;}
 .col9 .side3 .back {
     transition: transform 1s;
 	transform-style: preserve-3d;
-	position: absolute;
+    position: absolute;
 	left: 0; top: 0;
     z-index: -1;
     transform: rotateY(-180deg);
