@@ -6,7 +6,7 @@
     <meta name="author" content="hyunseo">
     <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
     <meta name="keywords" content="웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, publisher, css3, html, markup, design">
-    <title>hyunseo | Game Effect</title>
+    <title>hyunseo | Quiz Effect</title>
     <!-- Bootstrap core CSS -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../assets/css/docs.min.css" rel="stylesheet">
@@ -44,6 +44,11 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.../assets2/js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+        .iframe {position: relative; width: 100%; padding-bottom: 56%;}
+        .iframe iframe {position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+    </style>
 </head>
 <body>
     <a class="sr-only" href="#content">Skip to main content</a>
@@ -69,21 +74,21 @@
     </header>
     <div class="bs-header bgs5" id="content">
         <div class="container">
-            <h1>Game Effect Reference v1.0 &lt;/doc&gt;</h1>
+            <h1>Quiz Effect Reference v1.0 &lt;/doc&gt;</h1>
             <p><a href="http://paneoy.dothome.co.kr/" target="_blank">paneoy.dothome.co.kr</a></p>
         </div>
     </div>
     <div class="container bs-docs-container">
         <div class="row">
-            <div class="col-md-9" role="main">
-                <!-- 배너 광고 -->
+            <div class="col-md-12" role="main">
+                <!-- 배너 광고 1140 -->
                 <div class="ad">
                     <script src="https://ads-partners.coupang.com/g.js"></script>
                     <script>
-                        new PartnersCoupang.G({ id:347701 });
+                        new PartnersCoupang.G({ id:348404 });
                     </script>
                 </div>
-                <!-- //배너 광고 -->
+                <!-- //배너 광고 1140-->
 
                 <!-- Intro1 -->
                 <div class="bs-docs-section">
@@ -290,19 +295,19 @@ questionBtn.forEach( elem => {
                 </div>
                 <!-- //Intro2 -->
 
-            </div>
-            <!-- //col-md-9 -->
-
-            <!-- col-md-3 -->
-            <div class="col-md-3">
-                <div class="bs-sidebar hidden-print" role="complementary">
-                    <ul class="nav bs-sidenav">
-                        <li><a href="#intro1">Quiz1</a></li>
-                        <li><a href="#intro2">Quiz2</a></li>
-                    </ul>
+                <!-- figma -->
+                <div class="bs-docs-section">
+                    <h2 id="figma" class="page-header">figma</h2>
+                    <p><a class="btn btn-primary btn-md" href="https://www.figma.com/proto/LxVhvXOL8xpqTKwQkLTMSf/Quiz-Effect?node-id=7%3A0&viewport=156%2C-245%2C0.7650151252746582&scaling=min-zoom" role="button">확인하기</a></p>
+                    <div class="iframe">
+                        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FLxVhvXOL8xpqTKwQkLTMSf%2FQuiz-Effect%3Fnode-id%3D7%253A0%26viewport%3D156%252C-245%252C0.7650151252746582%26scaling%3Dmin-zoom" allowfullscreen></iframe>                   
+                    </div>
                 </div>
+                <!-- //figma -->
+
             </div>
-            <!--//col-md-3 -->
+            <!-- //col-md-12 -->
+
         </div>
         <!-- //row -->
     </div>
