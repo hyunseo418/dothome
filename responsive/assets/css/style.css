@@ -348,20 +348,19 @@ body {background: url(../img/header_bg.jpg) repeat-x center top;}
 .footer address {padding-top: 15px; font-style: normal;}
 
 /* 마우스 오버 효과1 */
-.col7 .side1 {position: relative;}
-.col7 .side1:hover {background: rgba(0,0,0,0.4);}
-.col7 .side1::before {
+.col7 .side1 figure {position: relative;}
+.col7 .side1 figure:hover {background: rgba(0,0,0,0.4);}
+.col7 .side1 figure::before {
     content: '';
 	width: 60px; height: 1px;
 	background: #fff;
     position: absolute; left: -100px; top: 50%;
-    transform: translate(50%, 50%);
+    transform: translate(-50%, -50%);
     opacity: 0;
     transition: all 0.2s ease-in-out;
     z-index: 10;
-	
 }
-.col7 .side1::after {
+.col7 .side1 figure::after {
     content: '';
 	width: 1px; height: 60px;
 	background: #fff;
@@ -371,15 +370,18 @@ body {background: url(../img/header_bg.jpg) repeat-x center top;}
     transition: all 0.3s ease-in-out;
     z-index: 10;
 }
-.col7 .side1:hover::before{
-    left: 23%; top: 50%;
-    opacity: 1;
-}
-.col7 .side1:hover::after{
+.col7 .side1 figure:hover::before{
     left: 50%; top: 50%;
     opacity: 1;
+    transition: all 0.3s ease-in-out;
 }
-.col7 .side1:hover > img {opacity: 0.4;}
+.col7 .side1 figure:hover::after{
+    left: 50%; top: 50%;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+.col7 .side1 figure img {opacity: 1; transition: all 0.3s;}
+.col7 .side1 figure:hover > img {opacity: 0.4;}
 
 /* 마우스 오버 효과2 */
 .col8 .side2 {overflow: hidden;}
@@ -420,7 +422,7 @@ body {background: url(../img/header_bg.jpg) repeat-x center top;}
 .col9 .side3 figure figcaption {
     position: absolute;
 	left: 50%; top: 50%;
-    transform: translate(-50%, -50%) translatez(100px);
+    transform: translate(-50%, -50%) translatez(40px);
     background: rgba(0,0,0,0.7);
     backface-visibility: hidden;
     color: #fff;
