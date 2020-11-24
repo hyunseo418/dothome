@@ -115,6 +115,33 @@
     });
 });
 </code></pre> 
+<h3>Javascript</h3>
+<pre class="line-numbers language-js"><code>window.addEventListener("scroll", function(){
+    let pageYOffset = window.pageYOffset + screen.height/2;
+
+    //출력용
+    document.querySelector(".pageYOffset").innerText = parseInt(pageYOffset);
+ 
+    for(let i=1; i&lt;=9; i++){
+        document.querySelector(".s"+i+"OffsetTop").textContent = document.getElementById("section"+i).offsetTop;
+
+        if(pageYOffset > document.getElementById("section"+i).offsetTop){
+            document.querySelector(".s"+i+"OffsetTop").style.color = "red";
+        }else{
+            document.querySelector(".s"+i+"OffsetTop").style.color = "white";
+        }
+    }
+
+    //나타나기
+    document.querySelectorAll(".content-item").forEach(elem => {
+        if(pageYOffset > elem.offsetTop){
+            elem.classList.add("show");
+        }else {
+            elem.classList.remove("show");
+        }
+    });
+}); 
+</code></pre> 
    
                 </div>
                 <!-- //Intro1 -->
