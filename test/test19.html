@@ -49,11 +49,13 @@
         .banner .text p {font-size: 18px; margin-top: 15px; line-height: 32px; letter-spacing: -0.3px; font-weight: 300; color: #fdfdfd;}
 
         /* main */
-        .main .btn_lang {position: absolute; top: 40px; right: 0; text-align: center;}
-        .main .btn_lang .en {display: inline-block; width: 76px; height: 32px; border: 1px solid #dbdbdb; background: #ededed; font-size: 13px; border-radius: 2px; line-height: 34px; color: #888;}
-        .main .btn_lang .ko {display: inline-block; width: 76px; padding: 7px 4px; border: 1px solid #dbdbdb; border-radius: 2px; color: #2ebc76; background: #fff; margin: 0 0 0 -5px;}
+        .main .btn_box {text-align: right; padding-top: 40px;}
+        .main .btn_box .btn_lang {display: inline; text-align: center;}
+        .main .btn_box .btn_lang > a {width: 76px; padding: 7px 10px; border: 1px solid #dbdbdb; font-size: 13px; border-radius: 2px;  line-height: 34px;}
+        .main .btn_box .btn_lang .en {background: #ededed; font-size: 13px; color: #888; padding-right: 10px;}
+        .main .btn_box .btn_lang .ko {background: #fff; border-radius: 2px; color: #2ebc76; margin-left: -7px;}
 
-        .main .career {padding: 74px 0;}
+        .main .career {padding: 40px 0;}
         .main .career .career1 button {position: relative; width: 100%; text-align-last: left; font-size: 19px; height: 94px; line-height: 27px; letter-spacing: 0.7px; border-bottom: 1px solid #e8e8e8;}
         .main .career .career1 button::after {
             content: '';
@@ -118,7 +120,7 @@
             width: 0; height: 0;
         }
         .footer .address li a {color: #565656;}
-        .footer span {position: absolute; left: 460px; top: 80px;}
+        .footer span {display: inline-block; margin-left: 120px;}
         .footer .menu {display: inline; float: right; padding-top: 80px;}
         .footer .menu li {display: inline;position: relative; margin-left: 10px;}
         .footer .menu li::before {
@@ -170,9 +172,11 @@
         <main id="main">
             <div class="container">
                 <div class="main">
-                    <div class="btn_lang">
-                        <a href="#" class="en">English</a>
-                        <a href="#" class="ko">Korean</a>
+                    <div class="btn_box">
+                        <div class="btn_lang">
+                            <a href="#" class="en">English</a>
+                            <a href="#" class="ko">Korean</a>
+                        </div>
                     </div>
                     <div class="career">
                         <div class="career1">
@@ -426,6 +430,7 @@
 
         button.forEach( el => {
             el.addEventListener("click", function(){
+                this.classList.toggle("active");
                 this.nextElementSibling.classList.toggle("active")
             })
         })
