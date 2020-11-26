@@ -312,28 +312,88 @@ $(window).scroll(function(){
 })
 </code></pre>                 
 <h3>Javascript</h3> 
-<pre class="line-numbers language-js"><code>let pageYOffset = window.pageYOffset;
+<pre class="line-numbers language-js"><code>//글씨 쪼개가 (한번에)
+let text = document.querySelectorAll(".content-item-desc");
 
-const scroll = () => {
-    const newPageYOffset = window.pageYOffset;
-    const different = newPageYOffset - pageYOffset;
+text.forEach(el => {
+    let splitText = el.innerText;
+    let splitWrap = splitText.split("").join("</span><span aria-hidden='true'>");
+        splitWrap = "<span aria-hidden='true'>"+splitWrap+"</span>";
 
-    console.log("pageYOffset :"+pageYOffset);
-    console.log("newPageYOffset :"+newPageYOffset);
-    console.log("different :"+different);
+    el.innerHTML = splitWrap;
+    el.setAttribute("aria-label", splitText);
+});
 
-    // let target = document.querySelectorAll(".content-item-imgWrap");
+window.addEventListener("scroll", ()=>{
+    let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop);
 
-    // target.forEach( elem => {
-    //     // elem.style.transform = "rotate("+different+"deg)";
-    //     gsap.to(elem, {duration: .3, rotate: different})
-    // })
-    gsap.to(".content-item-imgWrap", {duration: .3, rotate: different})
-    
-    pageYOffset = newPageYOffset;
-    requestAnimationFrame(scroll);
-}
-scroll();
+    document.querySelectorAll(".content-item").forEach(()=>{
+
+    })
+    if(pageYOffset > document.getElementById("section1").offsetTop){
+        document.querySelectorAll("#section1 .content-item-desc span").forEach((elem,index) => {
+            setTimeout(() => {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset > document.getElementById("section2").offsetTop){
+        document.querySelectorAll("#section2 .content-item-desc span").forEach((elem,index) => {
+            setTimeout(() => {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset > document.getElementById("section3").offsetTop){
+        document.querySelectorAll("#section3 .content-item-desc span").forEach((elem,index) => {
+            setTimeout(() => {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset > document.getElementById("section4").offsetTop){
+        document.querySelectorAll("#section4 .content-item-desc span").forEach((elem,index) => {
+            setTimeout(() => {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset > document.getElementById("section5").offsetTop){
+        document.querySelectorAll("#section5 .content-item-desc span").forEach((elem,index) => {
+            setTimeout(() => {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset > document.getElementById("section6").offsetTop){
+        document.querySelectorAll("#section6 .content-item-desc span").forEach((elem,index) => {
+            setTimeout(() => {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset > document.getElementById("section7").offsetTop){
+        document.querySelectorAll("#section7 .content-item-desc span").forEach((elem,index) => {
+            setTimeout(() => {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset > document.getElementById("section8").offsetTop){
+        document.querySelectorAll("#section8 .content-item-desc span").forEach((elem,index) => {
+            setTimeout(() => {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset > document.getElementById("section9").offsetTop){
+        document.querySelectorAll("#section9 .content-item-desc span").forEach((elem,index) => {
+            setTimeout(() => {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+})
 </code></pre>                 
                 </div>
                 <!-- //Intro4 -->
