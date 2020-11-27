@@ -10,6 +10,9 @@
         * {margin: 0; padding: 0;}
         ul, li {list-style: none;}
         a {text-decoration: none;}
+        .ir_pm {display: block; overflow: hidden; font-size: 0; line-height: 0px; text-indent: 9999px;}
+        .ir_wa {display: block; overflow: hidden; position: relative; z-index: -1; width: 100%; height: 100%;}
+        .ir_so {overflow: hidden; position: absolute; width: 0; height: 0; line-height: 0; text-indent: 9999px;}
 
         /* layout */
         #wrap {font-family: 'NanumSquare'}
@@ -52,7 +55,7 @@
         <header id="header">
             <div class="container">
                 <div class="header">
-                    <h1 class="logo"></h1>
+                    <h1 class="logo ir_pm">로고</h1>
                     <ul class="menu"> 
                         <li><a href="#">기술 &middot; 솔루션</a></li>
                         <li><a href="#">제품</a></li>
