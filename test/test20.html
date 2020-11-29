@@ -42,7 +42,7 @@
         .header ul {text-align: center;}
         .header li {display: inline-block; padding: 25px;}
         .header li a {color: #fff;}
-        .header .download {color: #fff; position: absolute; right: 0; top: 20px; display: inline-block; padding: 13px 16px; line-height: 17px; border: 1px solid #fff; background-color: transparent; border-radius: 2px; font-size: 19px;}
+        .header .download {color: #fff; position: absolute; right: 0; top: 17px; display: inline-block; padding: 13px 16px; line-height: 17px; border: 1px solid #fff; background-color: transparent; border-radius: 2px; font-size: 19px;}
 
         /* banner */
         .banner {overflow: hidden;}
@@ -127,10 +127,10 @@
                         <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon--whale-only-logo"><path fill="currentColor" d="M63.73 11.861c.278-1.528 1.136-2.45 2.635-2.45h.038c1.499 0 2.357.922 2.635 2.45H63.73zm8.722 1.28c0-3.935-2.477-6.64-6.068-6.644-3.59.004-6.068 2.709-6.068 6.644 0 3.936 2.566 6.565 6.235 6.565 2.032 0 3.742-.595 5.118-1.904l-1.896-2.175c-.88.777-1.996 1.204-3.037 1.204-1.524 0-2.764-.79-3.086-2.602h8.733c.046-.352.069-.712.069-1.088zM15.58 15.618l-2.87-8.755H9.12l-2.831 8.716-2.702-8.716H-.04l4.28 12.476h3.863l2.78-8.434 2.805 8.434h3.889l4.28-12.476h-3.563zm15.02-9.12h-.387c-1.1 0-2.058.385-2.834 1.039V.625h-3.397v18.714h3.397v-6.665c0-1.592.997-2.872 2.567-2.872h.001c1.57 0 2.567 1.28 2.567 2.872v6.665h3.422v-6.764c0-3.468-2.287-6.077-5.335-6.077m13.777 10.06c-1.891 0-3.09-1.541-3.09-3.457s1.199-3.457 3.09-3.457c1.89 0 3.09 1.54 3.09 3.457 0 1.916-1.2 3.457-3.09 3.457zm3.733-8.494a5.41 5.41 0 0 0-3.832-1.566h-.42c-3.313 0-5.797 2.835-5.797 6.603s2.484 6.603 5.796 6.603h.42a5.41 5.41 0 0 0 3.833-1.566v1.2h3.226V6.864h-3.226v1.2zm10.033 7.84V.624h-3.405V15.89c0 2.158 1.4 3.803 3.405 3.815a12.872 12.872 0 0 0 1.408-.086c-.93-.965-1.408-2.18-1.408-3.714"></path></svg>
                     </h1>
                     <ul>
-                        <li><a href="#">새로운 기능</a></li>
-                        <li><a href="#">스토어</a></li>
-                        <li><a href="#">연구소</a></li>
-                        <li><a href="#">다양한 지원</a></li>
+                        <li><a href="#" class="menu">새로운 기능</a></li>
+                        <li><a href="#" class="menu">스토어</a></li>
+                        <li><a href="#" class="menu">연구소</a></li>
+                        <li><a href="#" class="menu">다양한 지원</a></li>
                     </ul>
                     <a href="#" class="download">다운로드</a>
                 </div>
@@ -303,6 +303,24 @@
     </div>
 
     <script>
+        let header = document.getElementById("header");
+        let naver = document.getElementById("naver-only-logo")
+        let whale = document.querySelector(".svg-icon.svg-icon--whale-only-logo")
+        let button = document.querySelector(".download")
+        let menu = document.querySelectorAll(".menu");
+        let headerScroll = () => {
+            header.style.background = "#fff";
+            header.style.boxShadow = "0 1px 10px rgba(0,0,0,0.1)"
+            button.style.background = "#05c3a7";
+            button.style.borderRadius = "4px";
+            naver.style.color = "#03c75a";
+            whale.style.color = "#424242";
+            menu.forEach(el => {
+                el.style.color = "#222";
+            })
+        }
+        window.addEventListener("scroll",headerScroll)
+
         let bannerImg = document.querySelectorAll(".bannerImg");
         let currentIndex = 0;
         let sliderCount = bannerImg.length;
