@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>whale</title>
-    <!-- webfonts -->
-    <link rel="stylesheet" type="text/css" href="/css/home.66b74f89.css">
-
     <style>
+        /* font */
+        @font-face{font-family:NanumSquare;src:url(https://static-whale.pstatic.net/font/NanumSquare_seR.eot);}
         /* reset */
         * {margin: 0; padding: 0;}
         * {margin: 0; padding: 0;}
@@ -43,6 +42,12 @@
         .header li {display: inline-block; padding: 25px;}
         .header li a {color: #fff; font-weight: 700; font-size: 17px;}
         .header .download {color: #fff; position: absolute; right: 0; top: 17px; display: inline-block; padding: 8px 16px; line-height: 17px; border: 1px solid #fff; background-color: transparent; border-radius: 2px; font-size: 14px;}
+
+        #header.on {background: #fff; box-shadow: 0 1px 10px rgba(0,0,0,0.1);}
+        #header.on .header #naver-only-logo {color: #03c75a;}
+        #header.on .header .svg-icon.svg-icon--whale-only-logo {color: #424242;}
+        #header.on .header li a {color: #222;}
+        #header.on .header .download {background: #05c3a7;}
 
         /* banner */
         .banner {overflow: hidden;}
@@ -303,23 +308,13 @@
     </div>
 
     <script>
-        let header = document.getElementById("header");
-        let naver = document.getElementById("naver-only-logo")
-        let whale = document.querySelector(".svg-icon.svg-icon--whale-only-logo")
-        let button = document.querySelector(".download")
-        let menu = document.querySelectorAll(".header ul li a");
-        let headerScroll = () => {
-            header.style.background = "#fff";
-            header.style.boxShadow = "0 1px 10px rgba(0,0,0,0.1)"
-            button.style.background = "#05c3a7";
-            button.style.borderRadius = "4px";
-            naver.style.color = "#03c75a";
-            whale.style.color = "#424242";
-            menu.forEach(el => {
-                el.style.color = "#222";
-            })
-        }
-        window.addEventListener("scroll",headerScroll);
+        window.addEventListener("scroll", function(){
+            if(window.pageYOffset > 100){
+                header.classList.add("on");
+            }else{
+                header.classList.remove("on");
+            }
+        })
 
         let bannerImg = document.querySelectorAll(".bannerImg");
         let currentIndex = 0;
