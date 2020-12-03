@@ -137,9 +137,9 @@ setInterval(() => {
                 </div>
                 <!-- //Intro1 -->
 
-                <!-- Intro1 -->
+                <!-- Intro2 -->
                 <div class="bs-docs-section">
-                    <h2 id="intro1" class="page-header">Slider Effect01</h2>
+                    <h2 id="intro2" class="page-header">Slider Effect02</h2>
                     <p class="bs-callout bs-callout-info">이미지 슬라이드 가로로 이동하기 효과입니다.</p>
                     <iframe width="100%" height="800px" src="sliderEffect02-jquery.html" frameborder="0"></iframe>
 <h3>jQuery</h3>
@@ -189,7 +189,148 @@ setInterval(function(){
 },3000);
 </code></pre> 
                 </div>
-                <!-- //Intro1 -->
+                <!-- //Intro2 -->
+
+                <!-- Intro3 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">Slider Effect03</h2>
+                    <p class="bs-callout bs-callout-info">이미지 슬라이드 연속적으로 가로로 이동하기 효과입니다.</p>
+                    <iframe width="100%" height="800px" src="sliderEffect03-jquery.html" frameborder="0"></iframe>
+<h3>jQuery</h3>
+<pre class="line-numbers language-js"><code>const sliderWrap = $(".slider-wrap");
+const sliderImg = $(".slider-img");
+const slider = $(".slider");
+
+setInterval(() => {
+    sliderImg.animate({left:"-800px"},400, function(){
+        $(".slider:first-child").appendTo(sliderImg);
+        sliderImg.css("left", "");
+    })
+}, 3000);
+</code></pre> 
+                </div>
+                <!-- //Intro3 -->
+
+                <!-- Intro4 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">Slider Effect04</h2>
+                    <p class="bs-callout bs-callout-info">이미지 슬라이드 위로 넘기기 효과입니다.</p>
+                    <iframe width="100%" height="800px" src="sliderEffect04-jquery.html" frameborder="0"></iframe>
+<h3>jQuery</h3>
+<pre class="line-numbers language-js"><code>const sliderWrap = $(".slider-wrap");
+const sliderImg = $(".slider-img");
+const slider = $(".slider");
+
+let currentIndex = 0;
+let sliderCount = slider.length -1;
+let sliderHeight = slider.height();
+let sliderSpeed = 400;
+
+//한바퀴
+// setInterval(() => {
+//     currentIndex < sliderCount ? currentIndex++ : currentIndex = 0;
+
+//     let sliderPosition = currentIndex * -sliderHeight;
+//     sliderImg.animate({top: sliderPosition},sliderSpeed);
+// }, 3000);
+
+//연속적
+setInterval(() => {
+    sliderImg.animate({top: -sliderHeight},sliderSpeed,function(){
+        $(".slider:eq(0)").appendTo(sliderImg);
+        sliderImg.css("top", "");
+    });
+}, 3000);
+</code></pre> 
+                </div>
+                <!-- //Intro4 -->
+
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">Slider Effect05</h2>
+                    <p class="bs-callout bs-callout-info">이미지 슬라이드 버튼으로 이동하기 효과입니다.</p>
+                    <iframe width="100%" height="800px" src="sliderEffect05-jquery.html" frameborder="0"></iframe>
+<h3>jQuery</h3>
+<pre class="line-numbers language-js"><code>const sliderWrap = $(".slider-wrap");
+const sliderImg = $(".slider-img");
+const slider = $(".slider");
+const sliderBtn = $(".slider-btn");
+
+let currentIndex = 0;
+let sliderCount = slider.length;
+let sliderWidth = slider.width();
+let sliderHeight = slider.height();
+let sliderTotalWidth = sliderWidth * sliderCount;
+
+sliderImg.css({width:sliderTotalWidth, height:sliderHeight, marginLeft:-sliderWidth});
+$(".slider:last-child").prependTo(sliderImg);
+
+function moveLeft(){
+    sliderImg.animate({left:+sliderWidth},400,function(){
+        $(".slider:last-child").prependTo(sliderImg);
+        sliderImg.css("left", "");
+    })
+}
+function moveRight(){
+    sliderImg.animate({left:-sliderWidth},400,function(){
+        $(".slider:first-child").appendTo(sliderImg);
+        sliderImg.css("left", "");
+    })
+}
+sliderBtn.find(".prev").on("click",moveLeft)
+sliderBtn.find(".next").on("click",moveRight)
+</code></pre> 
+                </div>
+                <!-- //Intro5 -->
+
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">Slider Effect06</h2>
+                    <p class="bs-callout bs-callout-info">3단으로 구성된 이미지 슬라이드 입니다.</p>
+                    <iframe width="100%" height="800px" src="sliderEffect06-jquery.html" frameborder="0"></iframe>
+<h3>jQuery</h3>
+<pre class="line-numbers language-js"><code>const sliderWrap = $(".slider-wrap");
+const sliderImg = $(".slider-img");
+const slider = $(".slider");
+const sliderBtn = $(".slider-btn");
+
+let sliderCount = slider.length;
+let sliderWidth = slider.outerWidth();
+let sliderShowNumber = 3;
+let currentIndex = 0;
+
+let sliderCopy = $(".slider:lt("+sliderShowNumber+")").clone();
+sliderImg.append(sliderCopy);
+
+function moveLeft(){
+    if(currentIndex == 0){  //처음이미지
+        currentIndex = sliderCount;
+        sliderImg.stop().css("margin-left",-sliderWidth * currentIndex)
+    }
+    currentIndex--;
+    sliderImg.animate({"marginLeft":-sliderWidth * currentIndex},400)
+}
+function moveRight(){
+    if(currentIndex == sliderCount){    //마지막 이미지
+        currentIndex = 0;
+        sliderImg.stop().css("margin-left",currentIndex)
+    }
+    currentIndex++;
+    sliderImg.animate({"marginLeft":-sliderWidth * currentIndex},400)
+    console.log(currentIndex)
+}
+
+//버튼 클릭하기
+sliderBtn.on("click","a",function(){
+    if($(this).hasClass("prev")){
+        moveLeft();
+    }else{
+        moveRight();
+    }
+})
+</code></pre> 
+                </div>
+                <!-- //Intro6 -->
 
                 <!-- figma -->
                 <div class="bs-docs-section">
