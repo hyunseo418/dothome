@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slider02-Javascript</title>
+    <title>Slider03-Javascript</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <style>
         /* reset */
@@ -109,14 +109,14 @@
 
     <!-- info -->
     <div class="info left">
-        <h1>Slider Effect02 - Javascript</h1>
-        <p>이미지 슬라이드 - 가로로 이동하기</p>
+        <h1>Slider Effect03 - Javascript</h1>
+        <p>이미지 슬라이드 - 가로로 이동하기(연속적)</p>
     </div>
     <div class="info right">
         <ul>
             <li><a href="sliderEffect01-jquery.html">1</a><a href="sliderEffect01-javascript.html">1</a></li>
-            <li><a href="sliderEffect02-jquery.html">2</a><a href="sliderEffect02-javascript.html" class="active">2</a></li>
-            <li><a href="sliderEffect03-jquery.html">3</a><a href="sliderEffect03-javascript.html">3</a></li>
+            <li><a href="sliderEffect02-jquery.html">2</a><a href="sliderEffect02-javascript.html">2</a></li>
+            <li><a href="sliderEffect03-jquery.html">3</a><a href="sliderEffect03-javascript.html" class="active">3</a></li>
             <li><a href="sliderEffect04-jquery.html">4</a><a href="sliderEffect04-javascript.html">4</a></li>
             <li><a href="sliderEffect05-jquery.html">5</a><a href="sliderEffect05-javascript.html">5</a></li>
             <li><a href="sliderEffect06-jquery.html">6</a><a href="sliderEffect06-javascript.html">6</a></li>
@@ -131,11 +131,11 @@
     <main>
         <div class="slider-wrap">
             <div class="slider-img">
-                <div class="slider"><img src="img/images09.jpg" alt="이미지1"><span>이미지1</span></div>
-                <div class="slider"><img src="img/images08.jpg" alt="이미지2"><span>이미지2</span></div>
-                <div class="slider"><img src="img/images07.jpg" alt="이미지3"><span>이미지3</span></div>
-                <div class="slider"><img src="img/images06.jpg" alt="이미지4"><span>이미지4</span></div>
-                <div class="slider"><img src="img/images05.jpg" alt="이미지5"><span>이미지5</span></div>
+                <div class="slider s1"><img src="img/images09.jpg" alt="이미지1"><span>이미지1</span></div>
+                <div class="slider s2"><img src="img/images08.jpg" alt="이미지2"><span>이미지2</span></div>
+                <div class="slider s3"><img src="img/images07.jpg" alt="이미지3"><span>이미지3</span></div>
+                <div class="slider s4"><img src="img/images06.jpg" alt="이미지4"><span>이미지4</span></div>
+                <div class="slider s5"><img src="img/images05.jpg" alt="이미지5"><span>이미지5</span></div>
             </div>
         </div>
     </main>
@@ -147,8 +147,19 @@
         const sliderWrap = document.querySelector(".slider-wrap");
         const sliderImg = document.querySelector(".slider-img");
         const slider = document.querySelectorAll(".slider");
-        const sliderWidth = slider.clientWidth;
-        
+        const sliderCount = slider.length;
+        const sliderWidth = sliderImg.clientWidth / 5;
+
+        let currentIndex = 0;
+        function sliderEffect(){
+            gsap.from(sliderImg, {duration:0.4, left:0});
+            
+            let firstChild = sliderImg.firstElementChild;
+            let clone = firstChild.cloneNode(true);
+            sliderImg.appendChild(firstChild);
+
+        }
+        setInterval(sliderEffect, 3000);
     </script>
 </body>
 </html>
