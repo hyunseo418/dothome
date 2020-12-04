@@ -88,23 +88,10 @@
             margin-bottom: 20px;
             cursor: pointer;
         }
-        .confirm-answer {
-            border: 3px solid #000;
-            padding: 10px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .confirm-ex {
-            color: red;
-            position: relative;
-            padding-left: 17px;
-        }
-        .confirm-ex::before {
-            content: '';
-            width: 10px; height: 10px;
-            background: red;
-            border-radius: 50%;
-            position: absolute; left: 0; top: 6px;
+        .ex {
+            color: #777;
+            margin: 20px 10px;
+            font-size: 18px;
         }
 
         .selects label {
@@ -237,7 +224,7 @@
                     4: "c++",
                 },
                 quizAnswer : 4,
-                quizEx : "vm 단위는 없습니다."
+                quizEx : "c++은 서버 언어입니다."
             },
         ];
 
@@ -247,25 +234,27 @@
 
             quizInfo.forEach((currentQuestion, questionNumber)=>{
                 output.push(`
-                    <h2>&lt; 문제<span class="num">${currentQuestion.quizNum}</span> &gt;</h2>
-                    <p class="question">${currentQuestion.quizAsk}</p>
-                    <div class="selects">
-                        <label>
-                            <input class="select" type="radio" name="select${questionNumber}" value="1">
-                            <span class="choice">${currentQuestion.quizChoice[1]}</span>
-                        </label>
-                        <label>
-                            <input class="select" type="radio" name="select${questionNumber}" value="2">
-                            <span class="choice">${currentQuestion.quizChoice[2]}</span>
-                        </label>
-                        <label>
-                            <input class="select" type="radio" name="select${questionNumber}" value="3">
-                            <span class="choice">${currentQuestion.quizChoice[3]}</span>
-                        </label>
-                        <label>
-                            <input class="select" type="radio" name="select${questionNumber}" value="4">
-                            <span class="choice">${currentQuestion.quizChoice[4]}</span>
-                        </label>
+                    <div class="quizBox">
+                        <h2>&lt; 문제<span class="num">${currentQuestion.quizNum}</span> &gt;</h2>
+                        <p class="question">${currentQuestion.quizAsk}</p>
+                        <div class="selects">
+                            <label>
+                                <input class="select" type="radio" name="select${questionNumber}" value="1">
+                                <span class="choice">${currentQuestion.quizChoice[1]}</span>
+                            </label>
+                            <label>
+                                <input class="select" type="radio" name="select${questionNumber}" value="2">
+                                <span class="choice">${currentQuestion.quizChoice[2]}</span>
+                            </label>
+                            <label>
+                                <input class="select" type="radio" name="select${questionNumber}" value="3">
+                                <span class="choice">${currentQuestion.quizChoice[3]}</span>
+                            </label>
+                            <label>
+                                <input class="select" type="radio" name="select${questionNumber}" value="4">
+                                <span class="choice">${currentQuestion.quizChoice[4]}</span>
+                            </label>
+                        </div>
                     </div>
                 `);
             })
@@ -276,6 +265,7 @@
         //결과 확인하기
         function showResult(){
             const selectContainers = questionQuiz.querySelectorAll(".selects");
+            const quizBox = document.querySelectorAll(".quizBox")
             let numCorrect = 0;
             //사용자가 정답을 체크 == 문제의 정답
 
@@ -289,6 +279,11 @@
                     selectContainers[questionNumber].style.color = "blue";
                 }else{
                     selectContainers[questionNumber].style.color = "red";
+                    
+                    let correctAnswer = document.createElement("p");
+                    correctAnswer.classList.add("ex")
+                    correctAnswer.innerHTML = currentQuestion.quizEx;
+                    quizBox[questionNumber].appendChild(correctAnswer);
                 }
             });
             questionResult.innerHTML = `${quizInfo.length}문제 중에 ${numCorrect}문제를 맞추었습니다.`
