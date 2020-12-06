@@ -141,6 +141,8 @@
             left: 50%;
             bottom: 30px;
             transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
         }
         .slider-dot a {
             width: 20px; 
@@ -150,10 +152,23 @@
             text-indent: -9999px;
             border-radius: 50%;
             margin: 5px;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
+            /* 닷이미지 */
+            width: 150px; height: 70px; line-height: 70px;
+            text-align: center;
+            background-size: cover;
+            border-radius: 3px;
+            white-space: nowrap;
+            text-indent: initial;
+            color: #fff;
         }
         .slider-dot a.active {
-            background: rgba(255,255,255,0.9);
+            background-color: rgba(255,255,255,0.9);
+            /* 닷이미지 */
+            background-size: cover;
+            background-color: rgba(46, 19, 19, 0.9);
+            background-blend-mode: difference;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -193,11 +208,11 @@
             <a href="#" class="next">next</a>
         </div>
         <div class="slider-dot">
-            <a href="#" class="dot active">1</a>
-            <a href="#" class="dot">2</a>
-            <a href="#" class="dot">3</a>
-            <a href="#" class="dot">4</a>
-            <a href="#" class="dot">5</a>
+            <!-- <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a> -->
         </div>
     </main>
     <!-- //main -->
@@ -213,16 +228,32 @@
         let sliderWidth = slider.outerWidth();
         let sliderHeight = slider.outerHeight();
         let sliderTotalWidth = sliderWidth * sliderCount;
-        let sliderShowNumber = 1;
         let currentIndex = 0;
         let dotIndex = "";
-        // let sliderCopy = $(".slider:lt("+sliderShowNumber+")").clone();
-        // sliderImg.append(sliderCopy);
         sliderImg.css({ width: sliderTotalWidth, height: sliderHeight });
+        //이미지 움직이기
         function gotoSlider(index){
             sliderImg.animate({ left: -sliderWidth * index }, 400);
             currentIndex = index;
+            sliderDot.find("a").removeClass("active").eq(currentIndex).addClass("active");
         }
+        //이미지 갯수만큼 닷 버튼 만들기
+        slider.each(function(index){
+            //dotIndex += "<a href='#'></a>";
+            //dotIndex += "<a href='#'>"+ (index+1) +"</a>";
+            //let name = $(this).find("img").attr("alt");
+            //dotIndex += "<a href='#'>"+ name +"</a>";
+            let sliderName = $(this).find("img").attr("alt");
+            let sliderSrc = $(this).find("img").attr("src");
+            dotIndex += "<a href='#' style='background-image:url("+sliderSrc+")'>"+sliderName+"</a>";
+        });
+        sliderDot.html(dotIndex);
+        sliderDot.find("a").eq(0).addClass("active");
+        //닷 버튼 클릭하기
+        sliderDot.on("click","a",function(e){
+            e.preventDefault();
+            gotoSlider($(this).index());
+        });
         //버큰 클릭하기
         sliderBtn.on("click","a",function(e){
             e.preventDefault();
