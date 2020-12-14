@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax01-jQuery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* reset */
+        @font-face {
+            font-family: 'Wemakeprice-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Wemakeprice-Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0; padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        img {
+            width: 100%; 
+            vertical-align: top;
+        }
+
+
+        /* main */
+        body {
+            --color-h1 : #dc6e25;
+            --color-title : #fff;
+            --color-sub : #999;
+            --color-link : #000;
+            --color-bg : #111;
+            --font-cafe : 'Wemakeprice-Bold';
+            --font-lato : 'Lato', sans-serif;
+
+            background-color: var(--color-bg);
+            color: var(--color-title);
+            font-family: var(--font-cafe);
+        }
+        #parallax-wrap h1 {
+            color: var(--color-h1);
+            font-family: var(--font-lato);
+            font-size: 8vw;
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 10vw 8vw 0 8vw;
+        }
+        #parallax-wrap h1 em {
+            display: block;
+            font-weight: 100;
+            padding-left: 18vw;
+        }
+        .contents {
+            margin: 0 auto 35vh;
+            width: 100%;
+        }
+        .content-item {
+            position: relative;
+            width: 1200px;
+            max-width: 90vw;
+            margin: 60vh 0 60vh;
+        }
+        .content-item:nth-child(even){
+            margin-left: auto;
+        }
+        .content-item-num {
+            font-size: 25vw;
+            font-weight: 100;
+            font-family: var(--font-lato);
+            position: absolute;
+            right: -5vw; top: -20vw;
+            opacity: 0.08;
+        }
+        .content-item:nth-child(even) .content-item-num {
+            right: auto;
+            left: -5vw;
+        }
+        .content-item-title {
+            text-align: right;
+            padding-bottom: 5px;
+        }
+        .content-item:nth-child(even) .content-item-title {
+            text-align-last: left;
+            padding-bottom: 5px;
+        }
+
+        .content-item-imgWrap {
+            position: relative;
+            width: 100%;
+            padding-bottom: 50%;
+        }
+        .content-item-img {
+            width: 100%;
+            position: absolute; 
+            left: 0; top: 0;
+            height: 100%; 
+        }
+        .content-item-desc {
+            font-size: 3.5vw;
+            line-height: 1.4;
+            text-align: right;
+            word-break: keep-all;
+            margin-right: -4vw;
+            margin-top: -6vw;
+            padding-left: 10vw;
+            z-index: 100;
+            position: relative;
+        }
+        .content-item:nth-child(even) .content-item-desc {
+            text-align: left;
+            margin-right: auto;
+            padding-left: 0;
+            margin-left: -4vw;
+            padding-right: 10vw;
+        }
+        /* position: relative;
+            1. position: absolute 기준점 역할
+            2. position: absolute를 사용하지 않고 z-index를 사용할 경우
+            3. position: absolute를 사용하지 않고 left, top을 통해서 위치를 설정할 경우
+        */
+
+        .content-item:nth-child(1) .content-item-img{
+            background: url(../img/images01.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(2) .content-item-img{
+            background: url(../img/images02.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(3) .content-item-img{
+            background: url(../img/images03.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(4) .content-item-img{
+            background: url(../img/images04.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(5) .content-item-img{
+            background: url(../img/images05.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(6) .content-item-img{
+            background: url(../img/images06.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(7) .content-item-img{
+            background: url(../img/images07.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(8) .content-item-img{
+            background: url(../img/images08.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(9) .content-item-img{
+            background: url(../img/images09.jpg);
+            background-size: cover;
+        }
+
+        /* 한번에 나타나기 */
+        /* .contents > section {
+            opacity: 0;
+            transform: translateY(200px);
+            transition: all 1s;
+        }
+        .contents > section.show {
+            opacity: 1;
+            transform: translateY(0);
+        } */
+
+        /* 개별적으로 나타나기 */
+        .contents > section .content-item-num {
+            opacity: 0; 
+            transform: translateY(200px); 
+            transition: all 1s 0.1s cubic-bezier(0.01, 0.57, 0.43, 1.04);
+        }
+        .contents > section .content-item-title {
+            opacity: 0; 
+            transform: translateX(-200px); 
+            transition: all 1s 0.3s cubic-bezier(0.01, 0.57, 0.43, 1.04);
+        }
+        .contents > section .content-item-imgWrap {
+            opacity: 0; 
+            transform: translateY(200px); 
+            transition: all 1s 0.6s cubic-bezier(0.01, 0.57, 0.43, 1.04);
+        }
+        .contents > section .content-item-desc {
+            opacity: 0; 
+            transform: translateX(-200px);
+            transition: all 1s 0.9s cubic-bezier(0.01, 0.57, 0.43, 1.04);
+        }
+
+        .contents > section.show .content-item-num {opacity: 0.08; transform: translateY(0);}
+        .contents > section.show .content-item-title {opacity: 1; transform: translateX(0);}
+        .contents > section.show .content-item-imgWrap {opacity: 1; transform: translateY(0);}
+        .contents > section.show .content-item-desc {opacity: 1; transform: translateX(0);}
+    </style>
+</head>
+<body>
+
+    <main>
+        <section id="parallax-wrap">
+            <h1>Parallax <em>Scrolling</em></h1>
+            <div class="contents">
+                <section id="section1" class="content-item">
+                    <span class="content-item-num">01</span>
+                    <h2 class="content-item-title">Section1</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                </section>
+                <section id="section2" class="content-item">
+                    <span class="content-item-num">02</span>
+                    <h2 class="content-item-title">Section2</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">인생은 오늘의 나 안에 있고 내일은 스스로 만드는 것이다.</p>
+                </section>
+                <section id="section3" class="content-item">
+                    <span class="content-item-num">03</span>
+                    <h2 class="content-item-title">Section3</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">오랫동안 꿈을 그리는 사람은 마침내 그 꿈을 닮아 간다.</p>
+                </section>
+                <section id="section4" class="content-item">
+                    <span class="content-item-num">04</span>
+                    <h2 class="content-item-title">Section4</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">자기 신뢰는 성공의 첫 번째 비결이다.</p>
+                </section>
+                <section id="section5" class="content-item">
+                    <span class="content-item-num">05</span>
+                    <h2 class="content-item-title">Section5</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">우리가 실패에서 배우면, 실패는 성공이 된다.</p>
+                </section>
+                <section id="section6" class="content-item">
+                    <span class="content-item-num">06</span>
+                    <h2 class="content-item-title">Section6</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">당신이 할수 있다고 믿든 할수 없다고 믿든 믿는 대로 될것이다.</p>
+                </section>
+                <section id="section7" class="content-item">
+                    <span class="content-item-num">07</span>
+                    <h2 class="content-item-title">Section7</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">한번의 실패와 영원한 실패를 혼동하지 마라.</p>
+                </section>
+                <section id="section8" class="content-item">
+                    <span class="content-item-num">08</span>
+                    <h2 class="content-item-title">Section8</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">꿈을 계속 간직하고 있으면 반드시 실현할 때가 온다.</p>
+                </section>
+                <section id="section9" class="content-item">
+                    <span class="content-item-num">09</span>
+                    <h2 class="content-item-title">Section9</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">긍정적인 생각과 결합된 긍정적인 행동은 성공을 불러온다.</p>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        //each()
+        $(window).scroll(function(){
+            const scrollTop = $(window).scrollTop() + $(window).height()/2;
+            $(".scrollTop").text(parseInt(scrollTop));
+            
+            $(".content-item").each(function(i){
+                const offsetTop = $("[class*=OffsetTop]").eq(i);
+
+                offsetTop.text(parseInt($(this).offset().top));
+
+                if(scrollTop > $(this).offset().top){
+                    offsetTop.css("color", "red");
+                    $(this).addClass("show");
+                }else{
+                    offsetTop.css("color", "white");
+                    $(this).removeClass("show");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
