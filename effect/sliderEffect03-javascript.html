@@ -92,7 +92,7 @@
         }
         .slider-img {
             overflow: hidden;
-            width: 4000px; height: 480px;
+            width: 4800px; height: 480px;
             position: relative;
         }
         .slider-img .slider {
@@ -148,18 +148,40 @@
         const sliderImg = document.querySelector(".slider-img");
         const slider = document.querySelectorAll(".slider");
         const sliderCount = slider.length;
-        const sliderWidth = sliderImg.clientWidth / 5;
+        const sliderWidth = sliderImg.clientWidth / 6;
+
+        // function sliderEffect(){
+        //     gsap.from(sliderImg, {duration:0.4, left:0});
+            
+        //     let firstChild = sliderImg.firstElementChild;
+        //     let clone = firstChild.cloneNode(true);
+        //     sliderImg.appendChild(firstChild);
+
+        // }
+        // setInterval(sliderEffect, 3000);
+
 
         let currentIndex = 0;
+        let clone = sliderImg.firstElementChild.cloneNode(true);
+        sliderImg.appendChild(clone);
+        
         function sliderEffect(){
-            gsap.from(sliderImg, {duration:0.4, left:0});
-            
-            let firstChild = sliderImg.firstElementChild;
-            let clone = firstChild.cloneNode(true);
-            sliderImg.appendChild(firstChild);
+            currentIndex++;
+            sliderImg.style.transition = "0.3s";
+            sliderImg.style.transform = `translateX(${-sliderWidth * currentIndex}px)`
 
+            console.log(-sliderWidth * currentIndex)
+
+            if(currentIndex == 5){
+                setTimeout(() => {
+                    sliderImg.style.transition = "0s";
+                    sliderImg.style.transform = "translateX(0)"
+                }, 301);
+                currentIndex = 0;
+            }
         }
-        setInterval(sliderEffect, 3000);
+        setInterval(sliderEffect, 2100)
+
     </script>
 </body>
 </html>
