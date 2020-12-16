@@ -88,6 +88,18 @@
             float: left;
             border-right: 1px solid #fff;
         }
+        .main-title {
+            position: relative;
+        }
+        .main-title span {
+            position: absolute;
+            top: 50%; left: 100%;
+            transform: translate(-50%, -50%);
+            text-transform: uppercase;
+            line-height: var(--height);
+            font-size: 8vw;
+            letter-spacing: 2.5vw;
+        }
         .column_menu {
             position: absolute;
             left: 0; top: var(--height);
@@ -158,6 +170,7 @@
             position: relative; 
         }
         #about .aboutMe {
+            width: 100vw;
             height: var(--height);
             margin: 0 auto;
             padding: 5% 17%;
@@ -329,6 +342,7 @@
         </section>
         <!-- //menu -->
 
+        <section class="main-title"><span>about</span></section>
         <section id="about">
             <div class="column_menu">about</div>
             <div class="aboutMe">
@@ -364,6 +378,7 @@
         </section>
         <!-- //about -->
 
+        <!-- <section class="main-title">SKILL</section> -->
         <section id="skill">
             <div class="column_menu">skill</div>
             <ul>
