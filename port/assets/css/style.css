@@ -7,7 +7,6 @@ body {
     background: #000;
     color: #fff;
     font-family: var(--font-en);
-    user-select: none;
 }
 
 #header {
@@ -31,7 +30,7 @@ body {
     position: relative;
     display: block;
 }
-.header-right .whiteCircle {
+.header-right .btn .whiteCircle {
     position: absolute;
     top: 5px; right: -25px;
     width: 14px; height: 14px;
@@ -40,7 +39,7 @@ body {
     background: #fff;
     transition: all 0.3s;
 }
-.header-right .blackCircle {
+.header-right .btn .blackCircle {
     position: absolute;
     top: 5px; right: -35px;
     width: 14px; height: 14px;
@@ -51,16 +50,16 @@ body {
 
 
 #contents {
-    width: 1000vw;
+    width: 2000vw;
     overflow: hidden;
     position: fixed;
     left: 0; top: 0;
 }
 #contents > section {
+    height: var(--height);
     float: left;
     width: 100vw;
-    height: 100vh;
-    margin-top: 51px;
+    padding-top: 51px;
     border-right: 1px solid #fff;
 }
 .main-title {
@@ -68,7 +67,7 @@ body {
 }
 .main-title span {
     position: absolute;
-    top: 50%; left: 100%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     font-size: 8vw;
@@ -82,9 +81,32 @@ body {
     transform-origin: left top;
     font-size: 50px;
     line-height: 1.4;
-    padding-left: 8%;
+    padding-left: 2.7vmax;
     text-transform: uppercase;
     border-bottom: 1px solid #fff;
+}
+.btn {
+    position: relative;
+    display: inline-block;
+    font-size: 1vmax;
+    font-family: var(--font-ko-light);
+}
+.btn .whiteCircle {
+    position: absolute;
+    top: 0.3vmin; left: -4vmin;
+    width: 1.7vmin; height: 1.7vmin;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background: #fff;
+    transition: all 0.3s;
+}
+.btn .blackCircle {
+    position: absolute;
+    top: 0.3vmin; left: -3vmin;
+    width: 1.7vmin; height: 1.7vmin;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    transition: all 0.3s;
 }
 
 
@@ -104,16 +126,16 @@ body {
 #first .circle.right {right: -20%}
 #first .comment {
     position: absolute;
-    left: 50%; bottom: 13%;
+    left: 50%; bottom: 10vh;
     transform: translateX(-50%);
-    font-size: 2.5vw;
-    text-indent: 7vw;
+    font-size: 34px;
+    text-indent: 90px;
 }
 #first .comment::before {
     content: '';
     position: absolute;
-    top: 25%; left: 0;
-    height: 0.2vh; width: 5vw;
+    top: 20px; left: 0;
+    height: 3px; width: 60px;
     background: #fff;
 }
 
@@ -127,13 +149,13 @@ body {
 }
 #menu li a {
     display: block;
-    font-size: 2vw;
+    font-size: 36px;
     padding-left: 20px;
     box-sizing: border-box;
 }
 #menu h2 {
     position: absolute;
-    bottom: 7%; left: 50%;
+    bottom: 8vh; left: 50%;
     transform: translateX(-50%);
     font-size: 17vw;
     font-weight: 400;
@@ -145,9 +167,8 @@ body {
 }
 #about .aboutMe {
     width: 100vw;
-    height: var(--height);
     margin: 0 auto;
-    padding: 5% 17%;
+    padding: 5% 16% 5% calc(16% + 70px);
     box-sizing: border-box;
 }
 #about .aboutMe .top {display: flex;}
@@ -158,26 +179,30 @@ body {
     font-family: var(--font-ko-light);
     font-size: 1.57vw;
     line-height: 1.5;
-    margin-top: 15px;
+    margin-top: 1.2%;
 }
-#about .aboutMe .bottom {display: flex; justify-content: space-between; margin-top: 8%;}
+#about .aboutMe .bottom {display: flex; justify-content: space-between; margin-top: 10vh;}
 #about .aboutMe .bottom .bottom-box {flex: 1 1 25%; margin-right: 10%;}
 #about .aboutMe .bottom .bottom-box:last-child {margin-right: 0;}
-#about .aboutMe .bottom .bottom-box .title {font-size: 1.4vw; margin-bottom: 40px;}
-#about .aboutMe .bottom .bottom-box .desc {font-size: 1.1vw; margin-bottom: 50px; line-height: 1.3; font-weight: 100;}
+#about .aboutMe .bottom .bottom-box .title {font-size: 20px; margin-bottom: 5vh;}
+#about .aboutMe .bottom .bottom-box .desc {font-size: 16px; margin-bottom: 4.3vh; line-height: 1.3; font-weight: 100;}
 #about .aboutMe .bottom .bottom-box .num {font-size: 4vw;}
 
 /* skill */
-#contents > #skill {position: relative; width: auto;}
+#contents > #skill {position: relative; width: auto; box-sizing: content-box;}
 #skill ul {
-    width: 57vw;
+    width: 57vmax;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     margin-left: 70px;
 }
 #skill li {
+    position: relative;
     flex: 1 1 50%;
-    padding: 60px 20px 0 140px;
+    height: 33%;
+    padding: 4% 2% 0 14%;
+    /* padding: 6vh 2vw 1vh 10vw; */
     box-sizing: border-box;
     border: 1px solid #fff;
     border-top: 0;
@@ -194,87 +219,158 @@ body {
 }
 #skill li .name {
     position: relative;
-    font-size: 2.3vw;
+    font-size: 2.3vmax;
     font-weight: 100;
 }
 #skill li:nth-child(1) .name::before {
     content: '';
     border: 1px solid #fff;
     position: absolute;
-    left: -80px; top: 5px;
+    left: -5.5vmax; top: 0;
     border-radius: 50%;
-    width: 40px; height: 40px;
+    width: 2.5vmax; height: 2.5vmax;
 }
 #skill li:nth-child(1) .name::after {
     content: '';
     border: 1px solid #fff;
     position: absolute;
-    left: -60px; top: 5px;
+    left: -4vmax; top: 0;
     border-radius: 50%;
-    width: 40px; height: 40px;
+    width: 2.5vmax; height: 2.5vmax;
 }
 #skill li:nth-child(2) .name::before {
     content: '';
     border: 1px solid #fff;
     position: absolute;
-    left: -70px; top: 5px;
-    width: 40px; height: 40px;
+    left: -4.7vmax; top: 0;
+    width: 2.5vmax; height: 2.5vmax;
 }
 #skill li:nth-child(3) .name::before {
     content: '';
     border-bottom: 1px solid #fff;
     border-top: 1px solid #fff;
     position: absolute;
-    left: -70px; top: 10px;
-    width: 40px; height: 30px;
+    left: -4.7vmax; top: 0.3vmax;
+    width: 2.5vmax; height: 2vmax ;
 }
 #skill li:nth-child(3) .name::after {
     content: '';
     background: #fff;
     position: absolute;
-    left: -70px; top: 25px;
-    width: 40px; height: 1px;
+    left: -4.7vmax; top: 50%;
+    width: 2.5vmax; height: 0.05vmax;
 }
 #skill li:nth-child(4) .name::before {
     content: '';
     border: 1px solid #fff;
     border-radius: 50%;
     position: absolute;
-    left: -75px; top: 5px;
-    width: 44px; height: 44px;
+    left: -5vmax; top: 0;
+    width: 3vmax; height: 3vmax;
 }
 #skill li:nth-child(5) .name::before {
     content: '';
     border: 1px solid #fff;
     position: absolute;
-    left: -70px; top: 5px;
-    width: 38px; height: 38px;
+    left: -4.7vmax; top: 0;
+    width: 2.4vmax; height: 2.4vmax;
     transform: rotate(45deg);
 }
 #skill li:nth-child(6) .name::before {
     content: '';
     background: #fff;
     position: absolute;
-    left: -77px; top: 22px;
-    width: 50px; height: 1px;
+    left: -5vmax; top: 1.2vmax;
+    width: 3.8vmax; height: 0.05vmax;
     transform: rotate(45deg);
 }
 #skill li:nth-child(6) .name::after {
     content: '';
     background: #fff;
     position: absolute;
-    left: -77px; top: 22px;
-    width: 50px; height: 1px;
+    left: -5vmax; top: 1.2vmax;
+    width: 3.8vmax; height: 0.05vmax;
     transform: rotate(135deg);
 }
 
 #skill li .score {
-    font-size: 9vw;
+    position: absolute;
+    right: 4%; bottom: -1%;
+    font-size: 9vmax;
     font-weight: 300;
     text-align: right;
-    /* margin-top: 17px; */
+    margin-top: 7%;
+    /* margin-top: 5vh; */
+
 }
 
 #website {
     position: relative;
 }
+#website .website-list {
+    /* position: fixed;
+    left: 70px; top: 51px; */
+    width: calc(100vw - 70px);
+    margin-left: 70px;
+}
+#website .website-contents {}
+#website .website-contents.website1 .website-menu {display: none;}
+#website .website-contents .website-menu {
+    position: relative;
+    display: block; 
+    height: 7vmin; 
+    border-bottom: 1px solid #fff; 
+    padding-left: 2vmax;
+    box-sizing: border-box;
+    font-size: 2vmax;
+    line-height: 7vmin;
+    font-weight: 100;
+    text-transform: capitalize;
+}
+#website .website-contents .website-menu .view {
+    position: absolute;
+    right: 2%; top: 38%;
+    width: 17px; height: 17px;
+    border-radius: 50%;
+    background: #fff;
+}
+#website .website-contents.website2 .website-detail {display: none;}
+#website .website-contents.website3 .website-detail {display: none;}
+#website .website-contents.website4 .website-detail {display: none;}
+#website .website-contents .website-detail {
+    display: flex;
+    border-bottom: 1px solid #fff;
+}
+#website .website-contents .website-detail .left {
+    position: relative;
+    flex: 1 1 50%;
+    padding: 10vmin 0 0 8vmin;
+    height: 73vh;
+    box-sizing: border-box;
+}
+#website .website-contents .website-detail .left .title {
+    font-size: 5vmax;
+    text-transform: capitalize;
+    margin-bottom: 5vmin;
+}
+#website .website-contents .website-detail .left .desc {
+    color: #999;
+    font-family: var(--font-ko-light);
+    font-size: 1.2vmax;
+    width: 87%;
+    padding-left: 8%;
+    box-sizing: border-box;
+}
+#website .website-contents .website-detail .left .btn-wrap {
+    position: absolute;
+    right: 10%; bottom: 5%;
+}
+#website .website-contents .website-detail .left .btn-wrap .btn {
+    margin-left: 6vmin;
+}
+#website .website-contents .website-detail .right {
+    flex: 1 1 50%;
+    width: 100%; height:73vh;
+    background: #ccc;
+}
+
