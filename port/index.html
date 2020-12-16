@@ -5,310 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
 
-    <style>
-        @font-face{font-family:"Neue Montreal";src:local("Neue Montreal Regular"),local("NeueMontreal-Regular"),url(/_nuxt/fonts/NeueMontreal-Regular.781fe6d.woff2) format("woff2"),url(/_nuxt/fonts/NeueMontreal-Regular.4471cc3.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
-        @font-face {
-            font-family: 'S-CoreDream-3Light';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'S-CoreDream-4Regular';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        /* reset */
-        a {color: #fff; text-decoration: none;}
-        img {vertical-align: top; border: 0;}
-        li {list-style: none;}
-        body, ul, p, h2, figure {margin: 0; padding: 0;}
-
-        body {
-            --font-en: "Neue Montreal";
-            --font-ko-light: 'S-CoreDream-3Light';
-            --font-ko-regular: 'S-CoreDream-4Regular';
-            --height: calc(100vh - 69px);
-            background: #000;
-            color: #fff;
-            font-family: var(--font-en);
-            user-select: none;
-        }
-
-        #header {
-            position: fixed; left: 0; top: 0; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 0 70px 0 30px; 
-            width: 100vw; height: 51px; 
-            border-bottom: 1px solid #fff; 
-            text-transform: uppercase; 
-            font-family: var(--font-en); 
-            font-size: 1rem;
-            box-sizing: border-box;
-            z-index: 100;
-            background: #000;
-        }
-
-        /* header */
-        .header-right {
-            position: relative;
-            display: block;
-        }
-        .header-right .whiteCircle {
-            position: absolute;
-            top: 5px; right: -25px;
-            width: 14px; height: 14px;
-            border-radius: 50%;
-            border: 1px solid #fff;
-            background: #fff;
-            transition: all 0.3s;
-        }
-        .header-right .blackCircle {
-            position: absolute;
-            top: 5px; right: -35px;
-            width: 14px; height: 14px;
-            border-radius: 50%;
-            border: 1px solid #fff;
-            transition: all 0.3s;
-        }
-
-
-        #contents {
-            width: 500vw;
-            overflow: hidden;
-        }
-        #contents > section {
-            width: 100vw;
-            height: var(--height);
-            margin-top: 52px;
-            float: left;
-            border-right: 1px solid #fff;
-        }
-        .main-title {
-            position: relative;
-        }
-        .main-title span {
-            position: absolute;
-            top: 50%; left: 100%;
-            transform: translate(-50%, -50%);
-            text-transform: uppercase;
-            line-height: var(--height);
-            font-size: 8vw;
-            letter-spacing: 2.5vw;
-        }
-        .column_menu {
-            position: absolute;
-            left: 0; top: var(--height);
-            width: var(--height); height: 70px;
-            transform: rotate(270deg);
-            transform-origin: left top;
-            font-size: 50px;
-            line-height: 1.4;
-            padding-left: 50px;
-            text-transform: uppercase;
-            border-bottom: 1px solid #fff;
-        }
-
-
-        /* first */
-        #first {
-            position: relative;
-            overflow: hidden;
-        }
-        #first .circle {
-            position: absolute;
-            top: 14%;
-            width: 26vw; height: 26vw;
-            background: #fff;
-            border-radius: 50%;
-        }
-        #first .circle.left {left: -20%;}
-        #first .circle.right {right: -20%}
-        #first .comment {
-            position: absolute;
-            left: 50%; bottom: 5%;
-            transform: translateX(-50%);
-            font-size: 2.5vw;
-            text-indent: 90px;
-        }
-        #first .comment::before {
-            content: '';
-            position: absolute;
-            top: 27px; left: 0;
-            height: 3px; width: 60px;
-            background: #fff;
-        }
-
-        /* menu */
-        #menu {
-            position: relative;
-            text-transform: uppercase;
-        }
-        #menu li {
-            border-bottom: 1px solid #fff;
-        }
-        #menu li a {
-            display: block;
-            font-size: 2vw;
-            padding-left: 20px;
-            box-sizing: border-box;
-        }
-        #menu h2 {
-            position: absolute;
-            bottom: 0; left: 50%;
-            transform: translateX(-50%);
-            font-size: 17vw;
-            font-weight: 400;
-        }
-
-        /* about */
-        #about {
-            position: relative; 
-        }
-        #about .aboutMe {
-            width: 100vw;
-            height: var(--height);
-            margin: 0 auto;
-            padding: 5% 17%;
-            box-sizing: border-box;
-        }
-        #about .aboutMe .top {display: flex;}
-        #about .aboutMe .top figure {flex: 1 1 40%; margin-right: 5%;}
-        #about .aboutMe .top figure img {width: 100%;}
-        #about .aboutMe .top .desc {
-            flex: 1 1 47%;
-            font-family: var(--font-ko-light);
-            font-size: 1.57vw;
-            line-height: 1.5;
-            margin-top: 15px;
-        }
-        #about .aboutMe .bottom {display: flex; justify-content: space-between; margin-top: 8%;}
-        #about .aboutMe .bottom .bottom-box {flex: 1 1 25%; margin-right: 10%;}
-        #about .aboutMe .bottom .bottom-box:last-child {margin-right: 0;}
-        #about .aboutMe .bottom .bottom-box .title {font-size: 1.4vw; margin-bottom: 40px;}
-        #about .aboutMe .bottom .bottom-box .desc {font-size: 1.1vw; margin-bottom: 50px; line-height: 1.3; font-weight: 100;}
-        #about .aboutMe .bottom .bottom-box .num {font-size: 4vw;}
-
-        /* skill */
-        #contents > #skill {position: relative; width: auto;}
-        #skill ul {
-            width: 57vw;
-            display: flex;
-            flex-wrap: wrap;
-            margin-left: 70px;
-        }
-        #skill li {
-            flex: 1 1 50%;
-            padding: 60px 20px 0 140px;
-            box-sizing: border-box;
-            border: 1px solid #fff;
-            border-top: 0;
-        }
-        #skill li:nth-child(even){
-            border-right: 0;
-            border-left: 0;
-        }
-        #skill li:nth-child(5){
-            border-bottom: 0;
-        }
-        #skill li:nth-child(6){
-            border-bottom: 0;
-        }
-        #skill li .name {
-            position: relative;
-            font-size: 2.3vw;
-            font-weight: 100;
-        }
-        #skill li:nth-child(1) .name::before {
-            content: '';
-            border: 1px solid #fff;
-            position: absolute;
-            left: -80px; top: 5px;
-            border-radius: 50%;
-            width: 40px; height: 40px;
-        }
-        #skill li:nth-child(1) .name::after {
-            content: '';
-            border: 1px solid #fff;
-            position: absolute;
-            left: -60px; top: 5px;
-            border-radius: 50%;
-            width: 40px; height: 40px;
-        }
-        #skill li:nth-child(2) .name::before {
-            content: '';
-            border: 1px solid #fff;
-            position: absolute;
-            left: -70px; top: 5px;
-            width: 40px; height: 40px;
-        }
-        #skill li:nth-child(3) .name::before {
-            content: '';
-            border-bottom: 1px solid #fff;
-            border-top: 1px solid #fff;
-            position: absolute;
-            left: -70px; top: 10px;
-            width: 40px; height: 30px;
-        }
-        #skill li:nth-child(3) .name::after {
-            content: '';
-            background: #fff;
-            position: absolute;
-            left: -70px; top: 25px;
-            width: 40px; height: 1px;
-        }
-        #skill li:nth-child(4) .name::before {
-            content: '';
-            border: 1px solid #fff;
-            border-radius: 50%;
-            position: absolute;
-            left: -75px; top: 5px;
-            width: 44px; height: 44px;
-        }
-        #skill li:nth-child(5) .name::before {
-            content: '';
-            border: 1px solid #fff;
-            position: absolute;
-            left: -70px; top: 5px;
-            width: 38px; height: 38px;
-            transform: rotate(45deg);
-        }
-        #skill li:nth-child(6) .name::before {
-            content: '';
-            background: #fff;
-            position: absolute;
-            left: -77px; top: 22px;
-            width: 50px; height: 1px;
-            transform: rotate(45deg);
-        }
-        #skill li:nth-child(6) .name::after {
-            content: '';
-            background: #fff;
-            position: absolute;
-            left: -77px; top: 22px;
-            width: 50px; height: 1px;
-            transform: rotate(135deg);
-        }
-
-        #skill li .score {
-            font-size: 9vw;
-            font-weight: 300;
-            text-align: right;
-            /* margin-top: 17px; */
-        }
-
-    </style>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header id="header">
         <div class="header-left">portfolio</div>
-        <div class="header-center"><a href="#first">hyunseo</a></div>
+        <div class="header-center"><a href="#">hyunseo</a></div>
         <div class="header-right">
-            <a href="#menu">
+            <a href="#">
                 <p>menu</p>
                 <div class="whiteCircle"></div>
                 <div class="blackCircle"></div>
@@ -348,7 +54,7 @@
             <div class="aboutMe">
                 <div class="top">
                     <figure>
-                        <img src="img/aboutMe.jpg" srcset="img/aboutMe@2.jpg 2x, img/aboutMe@3 3x" alt="about me">
+                        <img src="assets/img/aboutMe.jpg" srcset="assets/img/aboutMe@2.jpg 2x, assets/img/aboutMe@3 3x" alt="about me">
                     </figure>
                     <div class="desc">
                         안녕하세요.<br />
@@ -378,7 +84,7 @@
         </section>
         <!-- //about -->
 
-        <!-- <section class="main-title">SKILL</section> -->
+        <section class="main-title"><span>skill</span></section>
         <section id="skill">
             <div class="column_menu">skill</div>
             <ul>
@@ -408,13 +114,36 @@
                 </li>
             </ul>
         </section>
+        <!-- //skill -->
+
+        <section class="main-title"><span>website</span></section>
+        <section id="website">
+            <div class="column_menu">website</div>
+
+
+        </section>
+        <!-- //website -->
+
+
     </section>
 
     <script>
+        // variables
+        const contents = document.getElementById("contents");
         const menu = document.querySelector(".header-right")
         const whiteCircle = document.querySelector(".whiteCircle");
         const blackCircle = document.querySelector(".blackCircle");
 
+        // scroll
+        const totalWidth = contents.clientWidth;
+        document.querySelector("body").style.height = totalWidth + "px";
+
+        window.addEventListener("scroll", ()=>{
+            const scroll = document.documentElement.scrollTop;
+            contents.style.left = -scroll + "px";
+        })
+
+        // circle effect
         menu.addEventListener("mouseenter", ()=>{
             whiteCircle.style.right = "-30px";
             blackCircle.style.right = "-30px";
