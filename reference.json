@@ -28,14 +28,13 @@
             "id": 2,
             "link": "https://webzz.tistory.com/229",
             "image": "https://i1.daumcdn.net/thumb/T650x650/?fname=https://t1.daumcdn.net/cfile/tistory/99BECF3C5BB02F501B",
-            "title": "<abbr>",
-            "desc": "<abbr> 태그는 생략된 글자나 머리글자를 표시하는데 사용합니다.",
-            "category": "플로우 콘텐츠(Flow Content), 프레이징 콘텐츠(Phrasing content), 인터렉티브 콘텐츠 (Interactive content)",
+            "title": "<address>",
+            "desc": "<address> 태그는 사람이나 조직의 연락처 정보를 나타냅니다.",
+            "category": "플로우 콘텐츠(Flow Content), palpable content",
             "property": "글로벌 속성 적용(Global Attributes), 이벤트 속성 적용(Event Attributes)",
-            "element": "인라인 구조(Inline Element)",
-            "tag": "닫는 태그 사용(<abbr> ~ </abbr>)",
-            "version" : "HTML4",
-            "view" : "점선(브라우저마다 틀림) 및 툴팁"
+            "element": "블록 구조(Block Element)",
+            "tag": "닫는 태그 사용(<address> ~ </address>)",
+            "view" : "이탤릭체"
         },
         {
             "type": "html",

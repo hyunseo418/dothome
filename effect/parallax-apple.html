@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+
+    <style>
+        @font-face {
+            font-family: 'Cafe24Ohsquare';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Cafe24Ohsquare.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'NEXON Lv2 Gothic';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {height: 20000px; font-family: 'Cafe24Ohsquare';}
+        em {font-style: normal;}
+        .scroll {
+            position: fixed; right: 10px; top: 10px;
+            width: 50px; height: 50px; line-height: 50px;
+            text-align: center; color: #fff;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000000;
+        }
+        #section1 {}
+        #section2 {}
+        #section3 {}
+        #section4 {}
+        #section5 {}
+        #section6 {}
+
+        /* common */
+        .fixed {
+            position: fixed;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+            object-fit: cover;
+        }
+
+        /* section1 */
+        .s1Txt01 {
+            font-size: 8vw;
+        }
+        .s1Txt02 {
+            font-size: 8vw;
+            white-space: nowrap;
+        }
+        .s1Txt03 {
+            width: 0%;
+            height: 0%;
+            z-index: 900;
+        }
+        .s1Txt04 {
+            width: 30vw; height: 30vw;
+            background: #000;
+            border-radius: 50%; 
+        }
+        .s1Txt05 {
+            font-size: 4vw;
+            color: #fff;
+        }
+
+        /* section2 */
+        .s2Txt01 {
+            width: 100vw; height: 100vh;
+            background: #000;
+        }
+        .s2Txt02 h2 {
+            font-size: 4vw;
+            text-align: center;
+            line-height: 1.2;
+            background: url(img/apple-txt-bg.jpg) no-repeat;
+            background-clip: text;
+            background-size: cover;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-transform: capitalize;
+            white-space: nowrap;
+        }
+        .s2Txt03{
+            font-family: 'NEXON Lv2 Gothic';
+            color: #fff;
+            font-size: 3vw;
+        }
+        .s2Txt03 .text1 {
+            top: 30%;
+            left: 30%;
+        }
+        .s2Txt03 .text1-desc {
+            width: 36vw;
+            font-size: 1.3vw;
+            line-height: 1.7;
+            top: 30%;
+            left: 60%;
+            color: #aaa;
+        }
+        .s2Txt03 .text2 {
+            top: 30%;
+            left: 30%;
+        }
+        .s2Txt03 .text2-desc {
+            width: 36vw;
+            font-size: 1.3vw;
+            line-height: 1.7;
+            top: 30%;
+            left: 60%;
+            color: #aaa;
+        }
+        .s2Txt03 .text3 {
+            top: 30%;
+            left: 30%;
+        }
+        .s2Txt03 .text3-desc {
+            width: 36vw;
+            font-size: 1.3vw;
+            line-height: 1.7;
+            top: 30%;
+            left: 60%;
+            color: #aaa;
+        }
+        .s2Txt03 .text4 {
+            top: 30%;
+            left: 30%;
+        }
+        .s2Txt03 .text4-desc {
+            width: 36vw;
+            font-size: 1.3vw;
+            line-height: 1.7;
+            top: 30%;
+            left: 60%;
+            color: #aaa;
+        }
+        .s2Txt04 {
+            height: 60vh;
+            background: url(img/apple-pad-mockup.png) no-repeat;
+            background-size: cover;
+            background-position: center top;
+            /* background-color: #fff; */
+            top: 150%;
+        }
+        .img-wrap {
+            width: 60vw;
+            height: 60vh;
+            margin: 30px;
+            border-radius: 2% 2% 0 0;
+            overflow: hidden;
+        }
+        .slider {
+            width: 240vw;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .s2Txt04 .img1,
+        .s2Txt04 .img2,
+        .s2Txt04 .img3,
+        .s2Txt04 .img4 {
+            width: 60vw;
+        }  
+        .s2Txt04 .img-wrap .slider > div {
+            position: relative;
+        }
+        .s2Txt04 .img-wrap .slider > div .view {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 13%;
+            width: 100px; height: 100px;
+            background: rgba(0,0,0,0.5);
+            text-align: center;
+            color: #fff;
+            border-radius: 50%;
+            text-decoration: none;
+            line-height: 100px;
+            transition: box-shadow 400ms ease, background 400ms ease ;
+        }
+        .s2Txt04 .img-wrap .slider > div .view.white {
+            background: rgba(255,255,255,0.5);
+            color: #000;
+            transition: box-shadow 400ms ease, background 400ms ease ;
+        }
+        .s2Txt04 .img-wrap .slider > div .view.white:hover {
+            box-shadow: 0 0 6px inset rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.6);
+        }
+        .s2Txt04 .img-wrap .slider > div .view:hover {
+            box-shadow: 0 0 6px inset rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.6);
+        }
+
+        /* section3 */
+        .s3Txt01 {
+            width: 100vw; height: 100vh;
+            background: #000;
+            overflow: hidden;
+        }
+        .s3Txt02 h2 {
+            font-size: 4vw;
+            text-align: center;
+            line-height: 1.2;
+            background: url(img/apple-txt-bg.jpg) no-repeat;
+            background-clip: text;
+            background-size: cover;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-transform: capitalize;
+            white-space: nowrap;
+        }
+        .txtBox {}
+        .txtBox1 {left: 150%;}
+        .txtBox2 {left: 150%;}
+        .txtBox3 {left: 150%;}
+        .txtBox4 {left: 150%;}
+        .txtBox5 {left: 150%;}
+        .txtBox6 {left: 150%;}
+
+        .s3Txt03 > div:nth-child(odd) {
+            left: 81%;
+            width: 30vw; height: 30vw;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .s3Txt03 > div:nth-child(even) {
+            left: 19%;
+            width: 30vw; height: 30vw;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .s3Txt03 > div iframe {
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            width: 30vw; height: 40vw;
+            border: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="scroll">0</div>
+    <div id="contents">
+         <div id="section1"
+            data-0="display: block;"
+            data-7999="display: none;"
+        >
+            <div class="s1Txt01 fixed"
+                data-0="top: 50%; opacity: 1;"
+                data-500="top: 30%; opacity: 0">
+            안녕하세요!</div>
+            <div class="s1Txt02 fixed"
+                data-300="top: 70%; opacity: 0"
+                data-800="top: 50%; opacity: 1; font-size: 8vw;"
+                data-1700="top: 50%; opacity: 1; font-size: 0vw;">
+            프론트엔드 개발자입니다.</div>
+            <div class="s1Txt03 fixed"
+                data-1600="width: 0%; height: 0%;"
+                data-3000="width: 100%; height: 100%;">
+                <img class="fixed" src="img/apple-01.jpg" alt="이미지"
+                    data-1600="border-radius: 500px;"
+                    data-3000="border-radius: 0%;">
+            </div>
+            <div class="s1Txt04 fixed" data-title="검은색 원"
+                data-2300="width: 0vw; height: 0vw;"
+                data-3300="width: 30vw; height: 30vw;"
+                data-5000="width: 30vw; height: 30vw;"
+                data-7600="width: 230vw; height: 230vw;"
+                >
+                <span class="s1Txt05 fixed"
+                    data-2800="transform: translate(-50%, -50%) scale(0) rotate(-360deg)"
+                    data-4300="transform: translate(-50%, -50%) scale(1) rotate(0deg)"
+                    data-5000="transform: translate(-50%, -50%) scale(1) rotate(0deg)"
+                    data-7000="transform: translate(-50%, -50%) scale(0) rotate(0deg)"
+                    >
+                Hello!</span>
+            </div>
+        </div>
+        <!-- //section1 -->
+        <div id="section2"
+            data-7899="display: none;"
+            data-7900="display: block;"
+            data-17000="display: block;"
+            data-30000="display: none;">
+            <div class="s2Txt01 fixed" data-title="검은색 배경"></div>
+            <div class="s2Txt02">
+                <h2 class="fixed"
+                    data-7900="opacity:0;"
+                    data-8200="opacity:1; top: 50%;"
+                    data-8800="opacity:1; top: 14%;"
+                    data-27000="opacity:1; top: 14%;"
+                    data-28000="top: 50%">
+                The Sites I've been working on</h2>
+                <div class="s2Txt03">
+                    <p class="fixed text1"
+                        data-9000="top: 50%; display: none;"
+                        data-10000="top: 50%; display: block;"
+                        data-11000="top: 30%"
+                        data-12000="top: 30%"
+                        data-13000="top: 50%"
+                        data-26000="display: none">
+                    웹표준 사이트</p>
+                    <p class="fixed text1-desc"
+                        data-9000="top: 50%; display: none;"
+                        data-10000="top: 50%; display: block;"
+                        data-11000="top: 30%"
+                        data-12000="top: 30%"
+                        data-13000="top: 50%"
+                        data-26000="display: none">
+                    웹 접근성 지침서2.0을 바탕으로 사이트를 제작하였습니다.
+                    웹 표준을 준수한 사이트를 직접 제작하면서 장애인, 노약자를 포함한 모든 사용자가 동일한 조건에서 웹 사이트를 이용할 수 있도록 했습니다.
+                    </p>
+                    <p class="fixed text2"
+                        data-13000="top:50%; display: none;"
+                        data-14000="top: 50%; display:block;"
+                        data-15000="top: 30%;"
+                        data-16000="top: 30%;"
+                        data-17000="top: 50%"
+                        data-26000="display: none">
+                    반응형 사이트</p>
+                    <p class="fixed text2-desc"
+                        data-13000="top:50%; display: none;"
+                        data-14000="top: 50%; display: block;"
+                        data-15000="top: 30%;"
+                        data-16000="top: 30%;"
+                        data-17000="top: 50%"
+                        data-26000="display: none">
+                        어떤 종류의 디스플레이로 접속해도 불편함이 없도록 미디어쿼리를 이용해서 반응형 웹 사이트를 제작했습니다. 
+                        시맨틱 태그를 사용하여 문서의 구조를 체계적으로 표현했습니다.
+                    </p>
+                    <p class="fixed text3"
+                        data-17000="top:50%; display: none;"
+                        data-18000="top: 50%; display: block;"
+                        data-19000="top: 30%;"
+                        data-20000="top: 30%;"
+                        data-21000="top: 50%"
+                        data-26000="display: none">
+                    기업 사이트</p>
+                    <p class="fixed text3-desc"
+                        data-17000="top:50%; display: none;"
+                        data-18000="top: 50%; display: block;"
+                        data-19000="top: 30%;"
+                        data-20000="top: 30%;"
+                        data-21000="top: 50%"
+                        data-26000="display: none">
+                    기업에서 가장 많이 사용하는 스타일의 사이트를 제작하였습니다.
+                    미디어쿼리를 활용해서 반응형 사이트로 제작했고, 시맨틱 태그를 사용하여 코딩했습니다. 구글의 웹 API를 사용하여 새로운 영화를 클릭했을 때 유튜브의 영상이 레이어 팝업으로 나타나도록 작업했습니다.
+                    </p>
+                    <p class="fixed text4"
+                        data-21000="top:50%; display: none;"
+                        data-22000="top: 50%; display: block;"
+                        data-23000="top: 30%;"
+                        data-24000="top: 30%;"
+                        data-25000="top: 50%"
+                        data-26000="display: none">
+                    react</p>
+                    <p class="fixed text4-desc"
+                        data-21000="top:50%; display: none;"
+                        data-22000="top: 50%; display: block;"
+                        data-23000="top: 30%;"
+                        data-24000="top: 30%;"
+                        data-25000="top: 50%"
+                        data-26000="display: none">
+                    React를 이용하여 포트폴리오 사이트를 제작하였습니다.
+                    컴포넌트를 활용하여 사이트를 완성하였고, SCSS를 사용하여 스타일을 지정했습니다.
+                </p>
+                </div>
+                <div class="s2Txt04 fixed"
+                    data-8800="top: 150%;"
+                    data-10000="top: 70%"
+                    data-26000="top: 70%"
+                    data-27000="top: 150%">
+                    <div class="img-wrap">
+                        <div class="slider"
+                            data-13000="transform: translateX(0vw)"
+                            data-14000="transform: translateX(-60vw)"
+                            data-17000="transform: translateX(-60vw)"
+                            data-18000="transform: translateX(-120vw)"
+                            data-21000="transform: translateX(-120vw)"
+                            data-22000="transform: translateX(-180vw)">
+                            <div class="img1">
+                                <img src="img/apple-site01.png" alt="웹표준">
+                                <a href="#" class="view">VIEW</a>
+                            </div>
+                            <div class="img2">
+                                <img src="img/apple-site02.png" alt="반응형">
+                                <a href="#" class="view">VIEW</a>
+                            </div>
+                            <div class="img3">
+                                <img src="img/apple-site03.png" alt="megabox">
+                                <a href="#" class="view">VIEW</a>
+                            </div>
+                            <div class="img4">
+                                <img src="img/apple-site04.png" alt="react">
+                                <a href="#" class="view white">VIEW</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //section2 -->
+        <div id="section3"
+            data-28999="display: none;"
+            data-29000="display: block;"
+            data-52000="display: block;"
+            data-52001="display: none;">
+            <div class="s3Txt01 fixed" data-title="검은색 배경"
+                data-29000="width: 230vw; height: 230vw"
+                data-31000="width: 30vw; height: 30vw"
+                data-51000="width: 30vw; height: 30vw"
+                data-52000="width: 100vw; height: 100vh">
+                <div class="s3Txt02">
+                    <h2 class="txtBox fixed"
+                        data-31000="left: 50%;"
+                        data-33000="left: -120%;">
+                    <span>The Sites I've been working on</span>
+                    </h2>
+                    <h2 class="txtBox1 fixed"
+                        data-33000="left: 150%"
+                        data-34000="left: 50%"
+                        data-35000="left: 50%"
+                        data-36000="left: -50%">
+                        <span>Animation1</span>
+                    </h2>
+                    <h2 class="txtBox2 fixed"
+                        data-36000="left: 150%"
+                        data-37000="left: 50%"
+                        data-38000="left: 50%"
+                        data-39000="left: -50%">
+                        <span>Animation2</span>
+                    </h2>
+                    <h2 class="txtBox3 fixed"
+                        data-39000="left: 150%" 
+                        data-40000="left: 50%"
+                        data-41000="left: 50%"
+                        data-42000="left: -50%">
+                        <span>Animation3</span>
+                    </h2>
+                    <h2 class="txtBox4 fixed"
+                        data-42000="left: 150%" 
+                        data-43000="left: 50%"
+                        data-44000="left: 50%"
+                        data-45000="left: -50%">
+                        <span>Animation4</span>
+                    </h2>
+                    <h2 class="txtBox5 fixed"
+                        data-45000="left: 150%" 
+                        data-46000="left: 50%"
+                        data-47000="left: 50%"
+                        data-48000="left: -50%">
+                        <span>Animation5</span>
+                    </h2>
+                    <h2 class="txtBox6 fixed"
+                        data-48000="left: 150%" 
+                        data-49000="left: 50%"
+                        data-50000="left: 50%"
+                        data-51000="left: -50%">
+                        <span>Animation6</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="s3Txt03">
+                <div class="anibox1 fixed"
+                    data-33000="opacity: 0; transform: translate(-50%, -30%)"
+                    data-34000="opacity: 1; transform: translate(-50%, -50%)"
+                    data-35000="opacity: 1; transform: translate(-50%, -50%)"
+                    data-36000="opacity: 0; transform: translate(-50%, -30%)">
+                    <iframe src="https://codepen.io/hyunseo418/embed/YzWvJPM?height=265&theme-id=light&default-tab=result" frameborder="0"></iframe>
+                </div>
+                <div class="anibox2 fixed"
+                    data-36000="opacity: 0; transform: translate(-50%, -30%)"
+                    data-37000="opacity: 1; transform: translate(-50%, -50%)"
+                    data-38000="opacity: 1; transform: translate(-50%, -50%)"
+                    data-39000="opacity: 0; transform: translate(-50%, -30%)">
+                    <iframe src="https://codepen.io/hyunseo418/embed/WNGeEZY?height=265&theme-id=light&default-tab=result" frameborder="0"></iframe>
+                </div>
+                <div class="anibox3 fixed"
+                    data-39000="opacity: 0; transform: translate(-50%, -30%)"
+                    data-40000="opacity: 1; transform: translate(-50%, -50%)"
+                    data-41000="opacity: 1; transform: translate(-50%, -50%)"
+                    data-42000="opacity: 0; transform: translate(-50%, -30%)">
+                    <iframe src="https://codepen.io/hyunseo418/embed/rNMBzZV?height=265&theme-id=light&default-tab=result" frameborder="0"></iframe>
+                </div>
+                <div class="anibox4 fixed"
+                    data-42000="opacity: 0; transform: translate(-50%, -30%)"
+                    data-43000="opacity: 1; transform: translate(-50%, -50%)"
+                    data-44000="opacity: 1; transform: translate(-50%, -50%)"
+                    data-45000="opacity: 0; transform: translate(-50%, -30%)">
+                    <iframe src="https://codepen.io/hyunseo418/embed/qBaEvoy?height=265&theme-id=light&default-tab=result" frameborder="0"></iframe>
+                </div>
+                <div class="anibox5 fixed"
+                    data-45000="opacity: 0; transform: translate(-50%, -30%)"
+                    data-46000="opacity: 1; transform: translate(-50%, -50%)"
+                    data-47000="opacity: 1; transform: translate(-50%, -50%)"
+                    data-48000="opacity: 0; transform: translate(-50%, -30%)">
+                    <iframe src="https://codepen.io/hyunseo418/embed/wvWRMdq?height=265&theme-id=light&default-tab=result" frameborder="0"></iframe>
+                </div>
+                <div class="anibox6 fixed"
+                    data-48000="opacity: 0; transform: translate(-50%, -30%)"
+                    data-49000="opacity: 1; transform: translate(-50%, -50%)"
+                    data-50000="opacity: 1; transform: translate(-50%, -50%)"
+                    data-51000="opacity: 0; transform: translate(-50%, -30%)">
+                    <iframe src="https://codepen.io/hyunseo418/embed/OJRVjPy?height=265&theme-id=light&default-tab=result" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- //section3 -->
+        <div id="section4"></div>
+        <!-- //section4 -->
+        <div id="section5"></div>
+        <!-- //section5 -->
+        <div id="section6"></div>
+        <!-- //section6 -->
+
+
+        <!-- script -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+        <script>
+            var s = skrollr.init();
+
+            $(window).scroll(function(){
+                let scrollTop = $(window).scrollTop();
+                $(".scroll").text(scrollTop);
+            })
+        </script>
+    </div>
+</body>
+</html>

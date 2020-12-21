@@ -95,7 +95,14 @@
                     <h2 id="intro1" class="page-header">Parallax01</h2>
                     <p class="bs-callout bs-callout-info">scrollTop과 offsetTop을 이용하여 패럴랙스 스크롤링 효과를 완성햐였습니다.</p>
                     <iframe width="100%" height="600px" src="parallax01-jquery.html" frameborder="0"></iframe>
-<h3>jQuery</h3>
+
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home1" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile1" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home1">
 <pre class="line-numbers language-js"><code>$(window).scroll(function(){
     const scrollTop = $(window).scrollTop() + $(window).height()/2;
     $(".scrollTop").text(parseInt(scrollTop));
@@ -115,7 +122,8 @@
     });
 });
 </code></pre> 
-<h3>Javascript</h3>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile1">
 <pre class="line-numbers language-js"><code>window.addEventListener("scroll", function(){
     let pageYOffset = window.pageYOffset + screen.height/2;
 
@@ -142,7 +150,9 @@
     });
 }); 
 </code></pre> 
-   
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- //Intro1 -->
 
@@ -151,7 +161,14 @@
                     <h2 id="intro2" class="page-header">Parallax02</h2>
                     <p class="bs-callout bs-callout-info">transform의 translateX 값을 이용해서 스크롤 했을 때 이질감이 느껴지도록 했습니다.</p>
                     <iframe width="100%" height="600px" src="parallax02-jquery.html" frameborder="0"></iframe>
-<h3>jQeury</h3> 
+
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home2" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile2" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home2">
 <pre class="line-numbers language-js"><code>$(window).scroll(function(){
     let scrollTop = $(window).scrollTop();
 
@@ -194,8 +211,9 @@
     //출력용
     $(".scrollTop").text(scrollTop);
 });
-</code></pre>                 
-<h3>Javascript</h3> 
+</code></pre> 
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile2">
 <pre class="line-numbers language-js"><code>window.addEventListener("scroll", () => {
     let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop);
 
@@ -232,7 +250,10 @@
         target.style.transform = "translateY("+ -offset+"px)";
     });
 });
-</code></pre>                 
+</code></pre> 
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- //Intro2 -->
 
@@ -241,7 +262,14 @@
                     <h2 id="intro3" class="page-header">Parallax03</h2>
                     <p class="bs-callout bs-callout-info">scrollTop값과 newScrollTop값의 차이를 이용해서 애니메이션 효과를 나타냈습니다.</p>
                     <iframe width="100%" height="600px" src="parallax03-jquery.html" frameborder="0"></iframe>
-<h3>jQeury</h3> 
+
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home3" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile3" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home3">
 <pre class="line-numbers language-js"><code>let scrollTop = $(window).scrollTop();
 
 function scroll(){
@@ -260,8 +288,9 @@ function scroll(){
     requestAnimationFrame(scroll);
 }
 scroll();
-</code></pre>                 
-<h3>Javascript</h3> 
+</code></pre> 
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile3">
 <pre class="line-numbers language-js"><code>let pageYOffset = window.pageYOffset;
 
 const scroll = () => {
@@ -284,7 +313,10 @@ const scroll = () => {
     requestAnimationFrame(scroll);
 }
 scroll();
-</code></pre>                 
+</code></pre> 
+                            </div>
+                        </div>
+                    </div>              
                 </div>
                 <!-- //Intro3 -->
 
@@ -293,7 +325,14 @@ scroll();
                     <h2 id="intro4" class="page-header">Parallax04</h2>
                     <p class="bs-callout bs-callout-info">split과 join 메서드를 이용해서 한글짜씩 나타나도록 했습니다.</p>
                     <iframe width="100%" height="600px" src="parallax04-jquery.html" frameborder="0"></iframe>
-<h3>jQeury</h3> 
+
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home4" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile4" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home4">
 <pre class="line-numbers language-js"><code>//글씨 쪼개기
 $(".content-item-desc").each(function(){
     let text = $(this).text();
@@ -310,15 +349,16 @@ $(window).scroll(function(){
         }
     })
 })
-</code></pre>                 
-<h3>Javascript</h3> 
-<pre class="line-numbers language-js"><code>//글씨 쪼개가 (한번에)
+</code></pre> 
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile4">
+<pre class="line-numbers language-js"><code>//글씨 쪼개기 (한번에)
 let text = document.querySelectorAll(".content-item-desc");
 
 text.forEach(el => {
     let splitText = el.innerText;
-    let splitWrap = splitText.split("").join("</span><span aria-hidden='true'>");
-        splitWrap = "<span aria-hidden='true'>"+splitWrap+"</span>";
+    let splitWrap = splitText.split("").join("&lt;/span&gt;&lt;span aria-hidden='true'&gt;");
+        splitWrap = "&lt;span aria-hidden='true'&gt;"+splitWrap+"&lt;/span&gt;";
 
     el.innerHTML = splitWrap;
     el.setAttribute("aria-label", splitText);
@@ -394,9 +434,95 @@ window.addEventListener("scroll", ()=>{
         })
     }
 })
-</code></pre>                 
+</code></pre> 
+                            </div>
+                        </div>
+                    </div>               
                 </div>
                 <!-- //Intro4 -->
+
+                <!-- Intro5 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">Parallax05</h2>
+                    <p class="bs-callout bs-callout-info">버튼을 클릭했을 때 해당 섹션으로 이동하도록 했습니다.</p>
+                    <iframe width="100%" height="600px" src="parallax05-jquery.html" frameborder="0"></iframe>
+
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home5" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile5" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home5">
+<pre class="line-numbers language-js"><code>$("a[href^='#']").click(function(e){
+    e.preventDefault();
+    let target = $($(this).attr("href"));
+    
+    $("html, body").animate({scrollTop : target.offset().top}, 700, "easeInQuad")
+})
+</code></pre> 
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile5">
+<pre class="line-numbers language-js"><code>document.querySelectorAll("a[href^='#']").forEach(elem => {
+    elem.addEventListener("click", e => {
+        e.preventDefault();
+        document.querySelector(elem.getAttribute('href')).scrollIntoView({
+            behavior : 'smooth'
+        })
+    });
+});
+</code></pre> 
+                            </div>
+                        </div>
+                    </div>               
+                </div>
+                <!-- //Intro5 -->
+
+                <!-- Intro6 -->
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">Parallax06</h2>
+                    <p class="bs-callout bs-callout-info">버튼을 클릭했을 때 해당 섹션으로 이동하도록 했습니다.</p>
+                    <iframe width="100%" height="600px" src="parallax06-jquery.html" frameborder="0"></iframe>
+
+                    <div>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#home6" aria-controls="home" role="tab" data-toggle="tab">jQuery</a></li>
+                            <li role="presentation"><a href="#profile6" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home6">
+<pre class="line-numbers language-js"><code>$(window).scroll(function(){
+    let scrollTop = $(window).scrollTop();
+
+    $(".reveal").each(function(){
+        if(scrollTop + $(window).height()/2 > $(this).offset().top){
+            $(this).addClass("show")
+        }
+    })
+})
+</code></pre> 
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="profile6">
+<pre class="line-numbers language-js"><code>function scrollReveal(){
+    const reveal = document.querySelectorAll(".reveal")
+    reveal.forEach(el => {
+        let scrollTop = document.documentElement.scrollTop + window.innerHeight/2;
+        let offsetTop = el.offsetTop + el.parentElement.offsetTop;
+
+        if(scrollTop > offsetTop){
+            console.log()
+            el.classList.add("show")
+        }
+    })
+}
+
+window.addEventListener("scroll", scrollReveal);
+</code></pre> 
+                            </div>
+                        </div>
+                    </div>               
+                </div>
+                <!-- //Intro6 -->
 
                 <!-- figma -->
                 <div class="bs-docs-section">
