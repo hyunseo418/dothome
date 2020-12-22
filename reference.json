@@ -386,6 +386,48 @@
             "tag": "닫는 태그 사용(<span> ~ </span>)",
             "version" : "-",
             "view" : "-"
+        },
+        {
+            "type": "html",
+            "id": 27,
+            "link": "https://webzz.tistory.com/231",
+            "image": "https://i1.daumcdn.net/thumb/T650x650/?fname=https://t1.daumcdn.net/cfile/tistory/99BECF3C5BB02F501B",
+            "title": "<strong>",
+            "desc": "<strong> 태그는 컨텐츠의 중요성을 나타낼 때 사용합니다.",
+            "category": "Flow content, phrasing content",
+            "property": "글로벌 속성 적용(Global Attributes), 이벤트 속성 적용(Event Attributes)",
+            "element": "인라인 구조(Inline Element)",
+            "tag": "닫는 태그 사용(<span> ~ </span>)",
+            "version" : "-",
+            "view" : "-"
+        },
+        {
+            "type": "html",
+            "id": 28,
+            "link": "https://webzz.tistory.com/231",
+            "image": "https://i1.daumcdn.net/thumb/T650x650/?fname=https://t1.daumcdn.net/cfile/tistory/99BECF3C5BB02F501B",
+            "title": "<table>",
+            "desc": "<table> 태그는 표를 만드는 태그이며 크게는 홈페이지의 전체 레이아웃을 만드는 데도 사용할 수 있습니다. ",
+            "category": "Flow content, phrasing content, palpable content",
+            "property": "글로벌 속성 적용(Global Attributes), 이벤트 속성 적용(Event Attributes)",
+            "element": "블록 구조(Block Element)",
+            "tag": "닫는 태그 사용(<table> ~ </table>)",
+            "version" : "-",
+            "view" : "-"
+        },
+        {
+            "type": "html",
+            "id": 29,
+            "link": "https://webzz.tistory.com/231",
+            "image": "https://i1.daumcdn.net/thumb/T650x650/?fname=https://t1.daumcdn.net/cfile/tistory/99BECF3C5BB02F501B",
+            "title": "<ul>",
+            "desc": "<ul> 태그는 순서가 없는 목록 요소를 만듭니다.",
+            "category": "플로우 콘텐츠(Flow Content), 프레이징 콘텐츠(Phrasing content), 인터렉티브 콘텐츠 (Interactive content)",
+            "property": "글로벌 속성 적용(Global Attributes), 이벤트 속성 적용(Event Attributes)",
+            "element": "블록 구조(Block Element)",
+            "tag": "닫는 태그 사용(<ul> ~ </ul>)",
+            "version" : "-",
+            "view" : "-"
         }
       ]
     }
