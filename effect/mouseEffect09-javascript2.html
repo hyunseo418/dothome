@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무한 로딩 텍스트 애니메이션</title>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            user-select: none;
+            overflow: hidden;
+        }
+        .menu-item {
+            white-space: nowrap;
+            display: flex;
+            flex-wrap: nowrap;
+            cursor: pointer;
+            text-shadow: 5px 5px #fff,
+                         5px 5px rgba(0,0,0,.1),
+                         10px 10px rgba(0,0,0,.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="menu-item">
+            <div class="menu-word">hyunseo -&nbsp;</div>
+        </div>
+    </div>
+
+    <!-- script -->
+    <script>
+        class TextAnimation{
+            constructor(obj){
+                this.wordWidth = 0;
+                this.width = 0;
+                this.cloned = [];
+                this.hover = false;
+                this.speed = 0;
+                this.acc = 0;
+                this.item = document.querySelector(".menu-item");
+                this.word = document.querySelector(".menu-word");
+                this.init();
+            }
+            init(){
+                this.bind();
+                this.event();
+                this.calculate();
+                this.animate();
+            }
+            bind(){
+                this.calculate = this.calculate.bind(this);
+                this.handleMouse = this.handleMouse.bind(this);
+                this.animate = this.animate.bind(this);
+            }
+            event(){
+                this.item.addEventListener("mouseenter", () => {this.handleMouse(true)});
+                this.item.addEventListener("touchstart", () => {this.handleMouse(true)});
+                this.item.addEventListener("mouseleave", () => {this.handleMouse(false)});
+                this.item.addEventListener("touchend", () => {this.handleMouse(false)});
+
+                window.addEventListener("resize", this.calculate)
+                window.addEventListener("load", this.calculate)
+            }
+            handleMouse(bool){this.hover = bool};
+            calculate(){
+                this.cloned.forEach(i => {
+                    i.parentNode.removeChild(i);
+                });
+                this.cloned = [];
+
+                this.wordWidth= Math.ceil(this.word.clientWidth);
+                this.width = Math.ceil(window.innerWidth / this.wordWidth);
+
+                for(let i=0; i<this.width+1; i++){
+                    const clone = this.word.cloneNode(true);
+                    this.word.parentNode.appendChild(clone);
+                    this.cloned.push(clone);
+                }
+            }
+            animate(){
+                // 가속
+                this.acc += 0.1;
+                if(this.hover) this.acc -= 0.35;
+                // 최댓값 제한하기
+                this.acc = Math.min(13, Math.max(0, this.acc))
+                // 가속도
+                this.speed += this.acc;
+
+                if(this.speed >= this.wordWidth) this.speed = 0;
+                // 텍스트 효과
+                this.item.style.transform = `translateX(${-this.speed}px) skewX(${-2*this.acc}deg)`
+                // RaF
+                requestAnimationFrame(this.animate)
+            }
+        }
+        new TextAnimation();
+    </script>
+</body>
+</html>

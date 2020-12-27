@@ -51,7 +51,7 @@ body {
 
 
 #contents {
-    width: 2500vw;
+    width: 2400vw;
     overflow: hidden;
     position: fixed;
     left: 0; top: 0;
@@ -86,6 +86,7 @@ body {
     text-transform: uppercase;
     border-bottom: 1px solid #fff;
     background: #000;
+    box-sizing: border-box;
 }
 
 .btn-wrap {
@@ -339,8 +340,6 @@ body {
     left: 71px; top: 87vh;
 }
 #website .website-contents.website4 {
-    width: calc(100vw - 70px);
-    box-sizing: border-box;
     left: 71px; top: 94vh;
 }
 /* #website .website-contents.website1 .website-menu {display: none;} */
@@ -356,6 +355,7 @@ body {
     font-weight: 100;
     text-transform: capitalize;
     background: #000;
+    width: calc(100vw - 70px);
 }
 #website .website-contents .website-menu .view {
     position: absolute;
@@ -560,12 +560,15 @@ body {
 /* animation */
 #animation {
     position: relative;
-    /* width: 600vh !important; */
+    width: 600vw !important;
 }
 #animation .animation-wrap {
-
+    width: 600vw;
+    display: flex;
+    flex-wrap: nowrap;
 }
 #animation .animation-wrap .animation {
+    position: relative;
     height: var(--height);
     width: var(--width);
     margin-left: 70px;
@@ -625,10 +628,85 @@ body {
     left: 11vw; top: 5vh;
     width: 42vw; height: 52vh;
     z-index: -1;
+    overflow: hidden;
 }
 .animation .animation-contents .animation-area .back-line-group .back-line {
     height: 100%; width: 0.1vw;
     background: #fff;
     display: inline-block;
     margin-left: calc(42vw / 120);
+}
+
+.main-title.last {
+    position: relative;
+}
+.main-title.last .quote {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    font-weight: 100;
+    font-size: 8vw;
+}
+
+#contact {
+    position: relative;
+    width: var(--width);
+}
+#contact .contact-wrap {
+    display: flex;
+}
+#contact .contact-info {
+    position: relative;
+    flex: 1 1 40%;
+    margin-left: 70px;
+    height: var(--height);
+    background: #000;
+}
+#contact .contact-info .contact-title {
+    font-size: 5vw;
+    position: absolute;
+    left: 40%; top: 10%;
+    transform: translateX(-50%);
+}
+#contact .contact-info ul {
+    position: absolute;
+    left: 50%; bottom: 15%;
+    transform: translateX(-50%);
+}
+#contact .contact-info li {}
+#contact .contact-info li a {
+    font-weight: 100;
+    white-space: nowrap;
+    display: inline-block;
+    width: 23vw;
+    display: flex;
+}
+#contact .contact-info li a .contact {
+    flex: 1 1 20%;
+}
+#contact .contact-info li a .address {
+    flex: 1 1 80%;
+}
+#contact .contact-info .btn-wrap {
+    left: 41%; bottom: 5%;
+    transform: translateX(-50%);
+}
+#contact .contact-info .btn-wrap .btn {}
+#contact .contact-animation {
+    position: relative;
+    flex: 1 1 60%;
+    overflow: hidden;
+}
+#contact .contact-animation .contact-circle {
+    position: absolute;
+    width: 50vmax; height: 50vmax;
+    background: #fff;
+    border-radius: 50%;
+}
+#contact .contact-animation .contact-circle.left {
+    left: -10vw; top: 10%;
+}
+#contact .contact-animation .contact-circle.right {
+    right: -10vw; top: 10%;
 }

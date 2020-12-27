@@ -428,6 +428,34 @@
             "tag": "닫는 태그 사용(<ul> ~ </ul>)",
             "version" : "-",
             "view" : "-"
+        },
+        {
+            "type": "html",
+            "id": 30,
+            "link": "https://webzz.tistory.com/231",
+            "image": "https://i1.daumcdn.net/thumb/T650x650/?fname=https://t1.daumcdn.net/cfile/tistory/99BECF3C5BB02F501B",
+            "title": "semantic tag",
+            "desc": "시맨틱 요소는 자신의 의미를 브라우저와 개발자 모두에게 명확하게 설명합니다.",
+            "category": "-",
+            "property": "글로벌 속성 적용(Global Attributes), 이벤트 속성 적용(Event Attributes)",
+            "element": "-",
+            "tag": "-",
+            "version" : "-",
+            "view" : "-"
+        },
+        {
+            "type": "html",
+            "id": 31,
+            "link": "https://webzz.tistory.com/231",
+            "image": "https://i1.daumcdn.net/thumb/T650x650/?fname=https://t1.daumcdn.net/cfile/tistory/99BECF3C5BB02F501B",
+            "title": "aira",
+            "desc": "장애를 가진 사용자가 웹 콘텐츠에 더 쉽게 접근할 수 있는 방법을 정의하는 여러 특성을 말합니다.",
+            "category": "-",
+            "property": "-",
+            "element": "-",
+            "tag": "-",
+            "version" : "-",
+            "view" : "-"
         }
       ]
     }

@@ -1,5 +1,5 @@
 /* font */
-@font-face{font-family:"Neue Montreal";src:local("Neue Montreal Regular"),local("NeueMontreal-Regular")/* ,url(/_nuxt/fonts/NeueMontreal-Regular.781fe6d.woff2) format("woff2"),url(/_nuxt/fonts/NeueMontreal-Regular.4471cc3.woff) */ format("woff");font-weight:400;font-style:normal;font-display:swap}
+/* @font-face{font-family:"Neue Montreal";src:local("Neue Montreal Regular"),local("NeueMontreal-Regular"),url(/_nuxt/fonts/NeueMontreal-Regular.781fe6d.woff2) format("woff2"),url(/_nuxt/fonts/NeueMontreal-Regular.4471cc3.woff) format("woff");font-weight:400;font-style:normal;font-display:swap} */
 @font-face {
     font-family: 'S-CoreDream-3Light';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');

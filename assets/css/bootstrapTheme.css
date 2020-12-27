@@ -212,7 +212,7 @@ body {
   background-color: #ffffff;
 }
 a {
-  color: #3fbf79;
+  color: #6D6D6D;
   text-decoration: none;
 }
 a:hover,
@@ -535,6 +535,8 @@ a:focus {
 .container-fluid {
   padding-right: 20px;
   padding-left: 20px;
+  background: #FEFDF8;
+  border-bottom: 1px solid #6D6D6D;
   *zoom: 1;
 }
 .container-fluid:before,
@@ -3696,7 +3698,7 @@ input[type="submit"].btn.btn-mini {
   font-size: 20px;
   font-weight: 200;
     font-size: 33px;
-  color: #000;
+  color: #6D6D6D;
     font-family: Abel;;
 }
 .navbar .brand:hover,

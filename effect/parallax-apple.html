@@ -31,7 +31,7 @@
         #section1 {}
         #section2 {}
         #section3 {}
-        #section4 {}
+        #section4 {position: relative;}
         #section5 {}
         #section6 {}
 
@@ -216,7 +216,6 @@
             text-transform: capitalize;
             white-space: nowrap;
         }
-        .txtBox {}
         .txtBox1 {left: 150%;}
         .txtBox2 {left: 150%;}
         .txtBox3 {left: 150%;}
@@ -246,6 +245,53 @@
             border: 0;
         }
 
+
+        /* section4 */
+        .s4Txt00 {
+            width: 100vw; height: 100vh;
+            background: #fff;
+            overflow: hidden;
+        }
+        .s4Txt01 {
+            width: 30vw; height: 30vw;
+            background: #000;
+            border-radius: 50%;
+            z-index: 100;
+        }
+        .s4Txt02 {
+            width: 100vw; height: 0vh;
+            background: #000;
+        }
+        .s4Txt03 {
+            font-size: 5vw;
+            white-space: nowrap;
+        }
+        .s4Txt04 {
+            position: absolute;
+            left: 0;
+            top: 40%;
+            width: 0vw; height: 20vh;
+            background: #000;
+        }
+        .s4Txt05 {
+            font-size: 5vw;
+            white-space: nowrap;
+        }
+        .s4Txt06 {
+            background: #000;
+        }
+        .s4Txt07 {
+            color: #fff;
+            font-size: 8vw;
+            text-align: center;
+            line-height: 1.8;
+        }
+        .s4Txt08 {
+            width: 1.5vw; height: 1.5vw;
+            left: 34%; top: 52%;
+            background: #fff;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
@@ -418,8 +464,9 @@
             <div class="s3Txt01 fixed" data-title="검은색 배경"
                 data-29000="width: 230vw; height: 230vw"
                 data-31000="width: 30vw; height: 30vw"
-                data-51000="width: 30vw; height: 30vw"
-                data-52000="width: 100vw; height: 100vh">
+                data-51000="width: 30vw; height: 30vw; border-radius: 0;"
+                data-51500="width: 30vw; height: 30vw; border-radius: 25%;"
+                data-52000="width: 30vw; height: 30vw; border-radius: 50%;">
                 <div class="s3Txt02">
                     <h2 class="txtBox fixed"
                         data-31000="left: 50%;"
@@ -516,7 +563,59 @@
             </div>
         </div>
         <!-- //section3 -->
-        <div id="section4"></div>
+        <div id="section4"
+            data-51999="display: none;"
+            data-52000="display: block;"
+            data-70000="display: block;"
+            data-70001="display: none;">
+            <div class="s4Txt00 fixed" data-title="배경">
+                <div class="s4Txt01 fixed"
+                    data-52000="width:30vw; height:30vw; display:block"
+                    data-53000="width:0vw; height:0vw; display: none;"></div>
+                <div class="s4Txt02"
+                    data-53000="width:100vw; height:0vh"
+                    data-53500="width:100vw; height:50vh"
+                    data-54000="width:100vw; height:100vh"
+                    data-54500="width:100vw; height:100vh"
+                    data-55000="width:100vw; height:50vh"
+                    data-55500="width:100vw; height:0vh">
+                    <h3 class="s4Txt03 fixed"
+                        data-52000="display:none"
+                        data-54500="display:block"
+                        data-57500="display:none;">
+                        Don’t wait!
+                    </h3>
+                </div> 
+                <div class="s4Txt04"
+                    data-55500="width:0vw; heihgt:20vh"
+                    data-56000="width:0vw; heihgt:20vh"
+                    data-56500="width:50vw; height:20vh"
+                    data-57000="width:100vw; height:20vh"
+                    data-57500="width:100vw; height:20vh"
+                    data-58000="width:50vw; height:20vh"
+                    data-58500="width:0vw; height:20vh">
+                    <h3 class="s4Txt05 fixed"
+                        data-52000="display:none;"
+                        data-57500="display:block; transform: translate(-50%, -50%) rotateX(0deg);"
+                        data-59000="display:block; transform: translate(-50%, -50%) rotateX(0deg);"
+                        data-59500="transform: translate(-50%, -50%) rotateX(90deg);">
+                        The time will never be just right.
+                    </h3>
+                </div>
+                <div class="s4Txt06 fixed"
+                    data-60000="width:100vw; height:0vh"
+                    data-61000="width:100vw; height:50vh"
+                    data-62000="width:100vw; height:100vh">
+                    <h3 class="s4Txt07 fixed"
+                        data-52000="opacity:0"
+                        data-62000="opacity:0"
+                        data-62500="opacity:1">
+                        LET'S GET IN<br>TOUCH   
+                    </h3>
+                    <div class="s4Txt08 fixed"></div>
+                </div>
+            </div>
+        </div>
         <!-- //section4 -->
         <div id="section5"></div>
         <!-- //section5 -->
