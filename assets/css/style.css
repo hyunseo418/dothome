@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
 /* ==================================================
    Info Block
 ================================================== */
@@ -222,7 +224,7 @@
 }
 #contents_tit p {
 	padding:35px 0; 
-	font-family: 'Gaegu', cursive; font-size: 40px;
+	font-family: 'Parisienne', cursive; font-size: 40px;
 }
 #contents_tit p a {
 	color:#FEFDF8; 
@@ -338,6 +340,7 @@
 	height: 100%;
 	background: #FEFDF8;
 	border: 1px solid #6D6D6D;
+	
 }
 
 .image-wrap img {
@@ -352,6 +355,7 @@
 	display: block;
 	width: 100%;
 	height: 100%;
+	transition: all 0.3s ease-in;
 	
 	opacity: 0;
 	filter: alpha(opacity=0);

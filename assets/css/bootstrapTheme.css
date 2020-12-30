@@ -536,7 +536,7 @@ a:focus {
   padding-right: 20px;
   padding-left: 20px;
   background: #FEFDF8;
-  border-bottom: 1px solid #6D6D6D;
+  border-bottom: 1px solid #FEFDF8;
   *zoom: 1;
 }
 .container-fluid:before,
