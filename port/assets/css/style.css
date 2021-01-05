@@ -126,15 +126,52 @@ body {
     position: relative;
     overflow: hidden;
 }
-#first .circle {
-    position: absolute;
-    top: 14%;
-    width: 26vw; height: 26vw;
-    background: #fff;
-    border-radius: 50%;
+#first #container {
+    animation: fade-in 1s ease-out forwards;
+    opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    margin: 7vw auto;
 }
-#first .circle.left {left: -20%;}
-#first .circle.right {right: -20%}
+#first #container .wrapper {
+    position: relative;
+    margin-bottom: -10px;
+    margin-left: -10px;
+}
+
+#first #container .circle {
+    animation: rotate 2s infinite linear;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    height: 29px;
+    position: relative;
+    width: 29px;
+    transition: border 1s ease-out;
+}
+
+#first #container .circle:after {
+    content: "";
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    height: 6px;
+    top: -3px;
+    left: calc(50% - 3px);
+    width: 6px;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
+}
 #first .comment {
     position: absolute;
     left: 50%; bottom: 10vh;

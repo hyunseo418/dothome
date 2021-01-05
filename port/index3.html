@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style3.css">
+</head>
+<body>
+    <header id="header" class="fixed">
+        <div class="header-left">portfolio</div>
+        <div class="header-center"><a href="#">hyunseo</a></div>
+        <div class="header-right">
+            <a href="#summary" class="header-btn">
+                menu
+                <div class="whiteCircle"></div>
+                <div class="blackCircle"></div>
+            </a>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <section id="intro" class="fixed">
+        <div class="scrollDist"></div>
+        <svg class="container" width="100%" height="100%">
+            <defs>
+                <mask id="m"></mask>
+                <g id="txt2">
+                    <rect width="50vw" height="13vh" fill="none" />
+                    <text class="txt2" x="50%" y="50%" text-anchor="middle" stroke="#fff">but without rest.</text>
+                </g>
+                
+                <g id="txt1">
+                    <rect width="50vw" height="13vh" fill="none" />
+                    <text class="txt1" x="50%" y="50%" text-anchor="middle" stroke="#000">Without haste,</text>
+                </g>
+            </defs>
+            
+            <use xlink:href="#txt2" x="0" y="50" transform="translate(0 0)" />
+            
+            <g mask="url(#m)">
+                <rect fill="#fff" width="100%" height="100%" />
+                <use xlink:href="#txt1" x="0" y="50" transform="translate(0 0)" />
+            </g>
+        </svg>
+    </section>
+    <!-- //intro -->
+    
+    <main id="contents" class="fixed">
+        <section id="summary">
+            <div class="summary">
+                <ul>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#skill">skill</a></li>
+                    <li><a href="#website">website</a></li>
+                    <li><a href="#react">react</a></li>
+                    <li><a href="#script">script</a></li>
+                    <li><a href="#animation">animation</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+                <div class="summary-title">
+                    <h2>summary</h2>
+                </div>
+            </div>
+        </section>
+        <!-- //summary -->
+
+        <section id="about">
+            <div class="column-menu">
+                <div class="rotate">about</div>
+            </div>
+            <div class="aboutMe">
+                <div class="top">
+                    <figure>
+                        <img class="photo" src="assets/img/aboutMe.jpg" srcset="assets/img/aboutMe@2.jpg 2x, assets/img/aboutMe@3.jpg 3x" alt="about me">
+                    </figure>
+                    <div class="desc">
+                        안녕하세요.<br />
+                        프론트 엔드 개발자를 꿈꾸는 신현서입니다.<br />
+                        어떤 상황에서도 포기하지 않는 긍정적인 마인드와 맡은 바 임무를 해내는 끈기를 가지고 있습니다.
+                        앞으로 배움에 있어 겸손함을 유지하며 끊임없이 성장을 추구하는 프론트 엔드 개발자가 되도록 노력하겠습니다.
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="text-box">
+                        <div class="title">passionate</div>
+                        <div class="desc">저는 도전을 두려워하지 않고 끊임없이 성장하고 발전하기 위해 노력하고 있습니다. 최근에는 자바 스크립트 라이브러리와 프레임 워크의 중요성이 커짐에 따라 REACT와 Vue에 대응하는 방법을 배우고 있습니다.</div>
+                        <div class="num">1</div>
+                    </div>
+                    <div class="text-box">
+                        <div class="title">positive</div>
+                        <div class="desc">무엇이든 즐길 수 있으면 좋은 결과를 얻을 수 있다고 생각합니다. 모든 것에 대해 긍정적으로 생각하고 좌절하기보다는 어려움을 극복하려고 노력할 것입니다. 모든 일에 긍정적인 태도로 좋은 결과를 가져오도록 노력하겠습니다.</div>
+                        <div class="num">2</div>
+                    </div>
+                    <div class="text-box">
+                        <div class="title">communicative</div>
+                        <div class="desc">저는 항상 주변 사람들의 말에 귀 기울이고 그들과 지속적으로 소통하고 소통하며, 자신을 발전 시키려고 노력할 것이며, 나아가 주변 사람들에게 긍정적인 영향을 미치려고 노력할 것입니다.</div>
+                        <div class="num">3</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //about -->
+
+        <section id="skill">
+            <div class="column-menu">
+                <div class="rotate">skill</div>
+            </div>
+            <div class="skillCont">
+                <ul>
+                    <li>
+                        <span class="name">HTML</span>
+                        <strong class="score">0</strong>
+                    </li>
+                    <li>
+                        <span class="name">CSS</span>
+                        <strong class="score">0</strong>
+                    </li>
+                    <li>
+                        <span class="name">Javascript</span>
+                        <strong class="score">0</strong>
+                    </li>
+                    <li>
+                        <span class="name">jQuery</span>
+                        <strong class="score">0</strong>
+                    </li>
+                    <li>
+                        <span class="name">React</span>
+                        <strong class="score">0</strong>
+                    </li>
+                    <li>
+                        <span class="name">Vue</span>
+                        <strong class="score">0</strong>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- //skill -->
+
+        <section id="website">
+            <div class="column-menu">
+                <div class="rotate">website</div>
+            </div>
+            <div class="website">
+                <div class="site-list">
+                    <div class="site-contents website1">
+                        <div class="site-bar">web standard</div>
+                        <div class="site-detail">
+                            <div class="left">
+                                <div class="title">web standard</div>
+                                <div class="desc">
+                                    &nbsp;웹 표준이란 브라우저 종류 및 버전에 따른 기능 차이에 대하여 호환이 가능하도록 제시된 표준으로, 다른 기종 혹은 플랫폼에 따라 달리 구현되는 기술을 동일하게 구현하여 웹 페이지를 제작하는 기법을 의미합니다. 웹 표준은 웹 접근성 준수를 위한 핵심이기 때문에 중요합니다.<br /> 
+                                    &nbsp;웹 표준을 준수한 사이트를 직접 제작하면서 장애인, 노약자를 포함한 모든 사용자가 동일한 조건에서 웹 사이트를 이용하려면 어떻게 해야 하는지 고려하게 되었고 검색 엔진 최적화, 서버 공간 절약 등의 장점들에 대해서도 알게 되었습니다.
+                                </div>
+                                <div class="btn-wrap">
+                                    <a href="http://paneoy.dothome.co.kr/webstandard/index.html" target="_blank" class="btn">
+                                        사이트보기
+                                        <div class="whiteCircle" aria-hidden="true"></div>
+                                        <div class="blackCircle" aria-hidden="true"></div>
+                                    </a>
+                                    <a href="https://www.figma.com/proto/OtF1mhT2gOi7MSviAv9X7H/%EC%9B%B9%ED%91%9C%EC%A4%80-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B0%80%EC%9D%B4%EB%93%9C%EB%9D%BC%EC%9D%B8?node-id=22%3A794&viewport=417%2C338%2C0.05342353507876396&scaling=contain" target="_blank" class="btn">
+                                        피그마보기
+                                        <div class="whiteCircle" aria-hidden="true"></div>
+                                        <div class="blackCircle" aria-hidden="true"></div>
+                                    </a>
+                                    <a href="#" class="btn">
+                                        코드보기
+                                        <div class="whiteCircle" aria-hidden="true"></div>
+                                        <div class="blackCircle" aria-hidden="true"></div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <img src="assets/img/webStandard.jpg" srcset="assets/img/webStandard@2.jpg 2x, assets/img/webStandard@3.jpg 3x" alt="web standard">
+                                <!-- <div class="code-view">
+                                    <div class="tab-menu">
+                                        <ul>
+                                            <li><a href="#">menu</a></li>
+                                            <li><a href="#">menu</a></li>
+                                            <li><a href="#">menu</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-contents">
+                                        <div class="code">
+                                            code
+                                        </div>
+                                        <div class="code">
+                                            code
+                                        </div>
+                                        <div class="code">
+                                            code
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="site-contents website2">
+                        <div class="site-bar">responsive</div>
+                        <div class="site-detail">
+                            <div class="left">
+                                <div class="title">responsive</div>
+                                <div class="desc">
+                                    반응형 웹 디자인(responsive web design, RWD)이란 하나의 웹사이트에서 PC, 스마트폰, 태블릿 PC 등 접속하는 디스플레이의 종류에 따라 화면의 크기가 자동으로 변하도록 만든 웹페이지 접근 기법을 의미합니다.<br />
+                                    어떤 종류의 디스플레이로 접속해도 불편함이 없도록 미디어쿼리를 이용해서 반응형 웹 사이트를 제작했습니다. 시맨틱 태그를 사용하여 문서의 구조를 체계적으로 표현했습니다. 또한, 이미지 슬라이드와 라이트 박스를 구현하기 위해 자바스크립트 라이브러리를 활용했습니다.                               
+                                </div>
+                                <div class="btn-wrap">
+                                    <a href="http://paneoy.dothome.co.kr/responsive/index.html" target="_blank" class="btn">
+                                        사이트보기
+                                        <div class="whiteCircle" aria-hidden="true"></div>
+                                        <div class="blackCircle" aria-hidden="true"></div>
+                                    </a>
+                                    <a href="https://www.figma.com/proto/iMQKWjfQviIGboIIddLirc/%EB%B0%98%EC%9D%91%ED%98%95-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B0%80%EC%9D%B4%EB%93%9C%EB%9D%BC%EC%9D%B8?node-id=72%3A64&viewport=304%2C485%2C0.05604719743132591&scaling=contain" target="_blank" class="btn">
+                                        피그마보기
+                                        <div class="whiteCircle" aria-hidden="true"></div>
+                                        <div class="blackCircle" aria-hidden="true"></div>
+                                    </a>
+                                    <a href="#" class="btn">
+                                        코드보기
+                                        <div class="whiteCircle" aria-hidden="true"></div>
+                                        <div class="blackCircle" aria-hidden="true"></div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <img src="assets/img/responsive.jpg" srcset="assets/img/responsive@2.jpg 2x, assets/img/responsive@3.jpg 3x" alt="web standard">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="site-contents website3">
+                        <div class="site-bar">megabox</div>
+                        <div class="site-detail">
+                            <div class="left">
+                                <div class="title">megabox</div>
+                                <div class="desc">
+                                    메가박스 사이트입니다. swiper 자바스크립트 라이브러리를 사용하여 영화 목록이 자동으로 한 칸씩 옆으로 이동하도록 했고, 간단한 아이콘은 SVG를 활용하여 나타냈습니다. 새로운 영화 소식은 input 태그와 select 태그를 이용하여 구현했습니다. 시간 메뉴를 클릭하면 자신이 원하는 시간대를 선택할 수 있도록 시간 목록이 나타납니다.<br />
+                                    미디어쿼리를 활용해서 반응형 사이트로 제작했고, 시맨틱 태그를 사용하여 코딩했습니다. 구글의 웹 API를 사용하여 새로운 영화를 클릭했을 때 유튜브의 영상이 레이어 팝업으로 나타나도록 작업했습니다.
+                                </div>
+                                <div class="btn-wrap">
+                                    <a href="http://paneoy.dothome.co.kr/megabox/index.html" target="_blank" class="btn">
+                                        사이트보기
+                                        <div class="whiteCircle" aria-hidden="true"></div>
+                                        <div class="blackCircle" aria-hidden="true"></div>
+                                    </a>
+                                    <a href="#" class="btn">
+                                        코드보기
+                                        <div class="whiteCircle" aria-hidden="true"></div>
+                                        <div class="blackCircle" aria-hidden="true"></div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <img src="assets/img/megabox.jpg" srcset="assets/img/megabox@2.jpg 2x, assets/img/megabox@3.jpg 3x" alt="web standard">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="site-contents website4">
+                        <div class="site-bar">naver clova</div>
+                        <div class="site-detail">
+                            <div class="left">
+                                <div class="title">naver clova</div>
+                                <div class="desc">
+                                    네이버 클로바 사이트입니다. 네이버 로고와 푸터의 SNS 아이콘, 페이지 중간중간에 있는 아이콘들은 이미지 스프라이트 기법을 이용해서 나타냈습니다.<br />
+                                    메뉴를 클릭하면 클로바 사이트의 서브 페이지로 이동하도록 했습니다.
+                                </div>
+                                <div class="btn-wrap">
+                                    <a href="http://paneoy.dothome.co.kr/megabox/index.html" target="_blank" class="btn">
+                                        사이트보기
+                                        <div class="whiteCircle" aria-hidden="true"></div>
+                                        <div class="blackCircle" aria-hidden="true"></div>
+                                    </a>
+                                    <a href="#" class="btn">
+                                        코드보기
+                                        <div class="whiteCircle" aria-hidden="true"></div>
+                                        <div class="blackCircle" aria-hidden="true"></div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <img src="assets/img/clova.jpg" srcset="assets/img/clova@2.jpg 2x, assets/img/clova@3.jpg 3x" alt="web standard">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //website -->
+    </main>
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollToPlugin3.min.js"></script>
+    <script>
+        class SupahScroll {
+            constructor(options) {
+                this.opt = options || {}
+                this.el = this.opt.el ? this.opt.el : '.supah-scroll'
+                this.speed = this.opt.speed ? this.opt.speed : 0.1
+                this.init()
+            }
+
+            init() {
+                this.scrollY = 0
+                this.supahScroll = document.querySelectorAll(this.el)[0]
+                this.supahScroll.classList.add('supah-scroll')
+                this.menu = document.querySelectorAll('.summary > ul> li > a')
+                this.scroll = 0
+                this.events()
+                this.update()
+                this.animate()
+            }
+            
+            update() {
+                if (this.supahScroll === null) return
+                document.body.style.height = `${this.supahScroll.getBoundingClientRect().width + window.innerWidth*2}px`
+            }
+            
+            pause() {
+                document.body.style.overflow = 'hidden'
+                cancelAnimationFrame(this.raf)
+            }
+            
+            play() {
+                document.body.style.overflow = 'inherit'
+                this.raf = requestAnimationFrame(this.animate.bind(this))
+            }
+            
+            destroy() {
+                this.supahScroll.classList.remove('supah-scroll')
+                this.supahScroll.style.transform = 'none'
+                document.body.style.overflow = 'inherit'
+                window.removeEventListener('resize', this.update)
+                cancelAnimationFrame(this.raf)
+                delete this.supahScroll
+            }
+
+            animate() {
+                this.scrollY += (window.scrollY - this.scrollY) * this.speed
+                this.supahScroll.style.transform = `translate3d(${-this.scrollY}px,0,0)`
+                this.raf = requestAnimationFrame(this.animate.bind(this))
+            }
+            
+            scrollTo(y) {
+                window.scrollTo(0, y)
+            }
+            
+            staticScrollTo(y) {
+                cancelAnimationFrame(this.raf)
+                this.scrollY = y
+                window.scrollTo(0, y)
+                this.supahScroll.style.transform = `translate3d(${-y}px,0,0)`
+                this.play()
+            }
+            
+            events() {
+                window.addEventListener('load', this.update.bind(this))
+                window.addEventListener('resize', this.update.bind(this))
+            }
+            menuScroll(){
+                this.scroll = window.innerWidth/2 - ((this.scrollY - window.innerWidth) * this.speed *10)
+                this.menu.forEach(el => {
+                    el.style.transform = `translateX(${Math.max(0,this.scroll)}px)`
+                })
+                requestAnimationFrame(this.menuScroll.bind(this));
+                // console.log(this.scroll)
+            }
+            removeMenuScroll(){
+                cancelAnimationFrame(this.menuScroll);
+            }
+        }
+
+        /*------------------------------
+        Initialize
+        ------------------------------*/
+        const supahscroll = new SupahScroll({
+            el: '#contents',
+            speed: 0.05
+        })
+
+
+
+        // var cw = window.innerWidth,
+        //     ch = window.innerHeight,
+        //     nWaves = 5,
+        //     waves = [],
+        //     amp = 10,
+        //     speed = 0.4,
+        //     detail = 30,
+        //     waveY = 0;
+
+        // // https://greensock.com/docs/v3/Plugins/ScrollToPlugin
+        
+        // for (var w=0; w<nWaves; w++) {
+        //     var p = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+        //     waves.push(p);
+        //     $('#m').append(p);
+        //     gsap.set(p, {attr:()=>{ return (w==0) ? {fill:'#fff'} : {fill:'none', stroke:'#fff', 'stroke-dasharray':'2 4', 'stroke-width':3-w/nWaves*3}}});
+        // }
+        // gsap.timeline({defaults:{duration:1}, delay:0.9})
+        //     .from('.txt1', {opacity:0, ease:'power2.inOut'}, 0)
+        //     .to(window, {scrollTo:ch/2 - 50}, 0);
+        // gsap.ticker.add(drawWave);
+        
+        // function drawWave(t) {
+        //     if (waveY!=-$(window).scrollTop()) gsap.to(window, {duration:1, waveY:Math.round($(window).scrollTop())});
+        //     // console.log($(window));
+        //     // console.log(window)
+        //     for (var k=0; k<nWaves; k++) {
+        //         var p = waves[k],
+        //             offset = (1 - k/nWaves) * nWaves/6,
+        //             pts = '';
+        //         for(var i=-1; i<(cw+detail); i+=detail) {
+        //             var y = ch-waveY;
+        //             y += Math.sin(i * 0.003 - t/speed + offset) * amp;
+        //             y += Math.sin(i * 0.004 - t/speed + offset) * amp;
+        //             y += Math.sin(i * -0.011 - t/speed + 20+offset) * amp;
+        //             pts += i.toFixed(2)+','+y.toFixed(2)+' ';
+        //         }
+        //         gsap.set(p, {attr:{points:'-20,-20 -20,'+ch/2+' '+pts+' '+cw+',-20'}});
+        //     }
+        // }
+        // $(window).on('resize', ()=>{ cw=window.innerWidth; ch=window.innerHeight; });
+
+
+
+        // variables
+        const headerBtn = document.querySelector('.header-btn');
+        const menu = document.querySelectorAll('.summary > ul> li > a');
+        const menuTitle = document.querySelector('.summary-title > h2');
+        const contents = document.getElementById("contents");
+        const intro = document.getElementById('intro')
+        const svg = document.querySelector('.container')
+        const summary = document.getElementById('summary');
+        const about = document.getElementById('about');
+        const textBox = document.querySelectorAll('.text-box');
+        const skill = document.getElementById('skill');
+        const score = document.querySelectorAll('.score')
+        const columnMenu = document.querySelector('.column-menu')
+        const photo = document.querySelector('.photo');
+        const btn = document.querySelectorAll('.btn');
+        // console.log(btn[0].firstElementChild)
+
+       
+        
+        let summarySplit = menuTitle.innerText.split('').join('</span><span class="split">');
+        summarySplit = '<span class="split">' + summarySplit + '</span>';
+        menuTitle.innerHTML = summarySplit;
+        const split = document.querySelectorAll('.split');
+
+        // console.log(about.offsetLeft)
+
+        // scroll
+        // const totalWidth = contents.clientWidth - window.innerHeight/2;
+        // document.querySelector("body").style.height = totalWidth + "px";
+
+
+        window.addEventListener("scroll", ()=>{
+            let scrollTop = document.documentElement.scrollTop;
+            
+            // header button effect & summary effect
+            if(summary.getBoundingClientRect().left - window.innerWidth/2 <= 0 && summary.nextElementSibling.getBoundingClientRect().left - window.innerWidth/2 >= 0){
+                headerBtn.classList.add('active');
+                supahscroll.menuScroll();
+
+                menuTitle.classList.add('show');
+                if(menuTitle.classList.contains('show')){
+                    for(i=0; i<split.length; i++){
+                        gsap.to(split[i], {duration:.8, y:0, delay:"."+i, ease:"power3.out"})
+                    }
+                }
+            }else{
+                headerBtn.classList.remove('active')
+                supahscroll.removeMenuScroll();
+            }
+
+            
+            // about animation
+            if(about.getBoundingClientRect().left - window.innerWidth <= 0){
+                gsap.to(photo, {duration: 2, scale: 1});
+                gsap.to(textBox[0], {duration:.6, opacity:1, delay:.2, ease:'power2.in'});
+                gsap.to(textBox[1], {duration:.6, opacity:1, delay:.4, ease:'power2.in'});
+                gsap.to(textBox[2], {duration:.6, opacity:1, delay:.6, ease:'power2.in'});
+            }else{
+                gsap.to(photo, {duration: 2, scale: 1.5});
+                gsap.to(textBox[0], {duration:.6, opacity:0, delay:.6});
+                gsap.to(textBox[1], {duration:.6, opacity:0, delay:.4});
+                gsap.to(textBox[2], {duration:.6, opacity:0, delay:.2});
+            }
+
+            // columnMenu.classList.add('fixed');
+            // if(columnMenu.classList.contains('fixed')){
+            //     columnMenu.style.left = -about.getBoundingClientRect().left;
+            // }
+            // console.log(columnMenu.style.left)
+
+            // skill odometer
+            if(skill.getBoundingClientRect().left - window.innerWidth <= 0){
+
+                score.forEach(el => {
+                    el.classList.add('active');
+                });
+                
+                // function animateNumber(callback, from, to, duration) {
+                //     let start = null,
+                //         animate = timestamp => {
+                //         start = start || timestamp;
+                //         let progress = Math.min((timestamp - start) / duration, 1);
+                //         callback(progress * (to - from) + from);
+                //         if(progress < 1) {
+                //             window.requestAnimationFrame(animate);
+                //         }
+                //         };
+                //     window.requestAnimationFrame(animate);
+                // }
+
+                // animateNumber(value => {
+                // document.querySelector('strong').textContent = Math.floor(value);
+                // }, 0, 90, 2000);
+            }
+        });
+
+        // button effect
+        // btn.forEach((el,index)=>{
+
+        // })
+
+        // https://codepen.io/iam_aspencer/pen/LkgRQV?editors=0110
+        // https://codepen.io/aaroniker/pen/rNLqdzr?editors=0010
+
+    </script>
+</body>
+</html>

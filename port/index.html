@@ -25,8 +25,8 @@
 
     <section id="contents">
         <section id="first">
-            <div class="circle left"></div>
-            <div class="circle right"></div>
+            <section id="container">
+            </section>
             <div class="comment">
                 Don’t wait!<br />
                 The time will never be just right.
@@ -1021,6 +1021,25 @@
         const responsive = document.querySelector(".website2");
         const megabox = document.querySelector(".website3");
         const clova = document.querySelector(".website4");
+
+
+        const container = document.getElementById('container');
+
+        let delay = -2;
+
+        for (let i = 0; i < 798; i++) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'wrapper';
+        const circle = document.createElement('div');
+        circle.className = 'circle';
+        wrapper.appendChild(circle);
+        delay += 0.1;
+        if (delay > 0) {
+            delay = -2;
+        }
+        circle.style.animationDelay = `${delay}s`;
+        container.appendChild(wrapper);
+        }
 
         // scroll
         const totalWidth = contents.clientWidth;
