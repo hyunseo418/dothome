@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Effect01 - Javascript</title>
+    <style>
+        @font-face {
+            font-family: 'Godo';
+            font-style: normal;
+            font-weight: 400;
+            src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
+        }
+
+        *, *::before, *::after {box-sizing: border-box; margin: 0; padding: 0; color: #fff;}
+        a {text-decoration: none; color: #fff; transition: all 0.2s;}
+        a:hover {border-bottom: 1px dashed #fff;}
+        img {width: 100%; vertical-align: top;}
+        li {list-style: none;}
+
+        body {
+            background: #ef6c00 url(../img/images13@2.jpg) no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+            font-size: 16px;
+            line-height: 1.5;
+            font-family: 'Godo';
+            background-blend-mode: multiply;
+            cursor: none;
+        }
+
+
+        /* main */
+        .contents {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh; width: 100%;
+        }
+        .contents p {
+            font-size: 3vw;
+            color: #fff;
+        }
+        .contents p:first-child{
+            font-size: 2.3vw;
+            line-height: 2;
+        }
+        .contents p em{
+            color: #afb42b;
+            border-bottom: 2px dashed #afb42b;
+            font-style: normal;
+        }
+        .cursor {
+            position: absolute;
+            left: 0; top: 0;
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            z-index: 1000;
+            background: rgba(255,255,255,0.1);
+            user-select: none;
+            pointer-events: none;
+            transition: background-color .2s, border-color .2s, transform .4s, border-radius .4s;
+        }
+        .cursor.active {
+            background: rgb(129, 122, 107, 0.4);
+            border-color: #afb42b;
+            transform: scale(2) rotate(360deg);
+            border-radius: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="cursor"></div>
+        <div class="contents">
+            <p>To climb steep hills requires <em>slow</em> pace at first</p>
+            <p>험준한 산을 오르기 위해서 먼저 <em>천천히</em> 걸어야 한다.</p>
+        </div>
+    </main>
+
+    <!-- script -->
+    <script>
+
+        //마우스 움직이기
+        window.addEventListener("mousemove", function(e){
+            let cursor = document.querySelector(".cursor");
+            let x = e.clientX -25 + "px";
+            let y = e.clientY -25 + "px";
+
+            cursor.style.cssText = "left:" + x + "; top:" + y;
+
+            //마무리
+            document.querySelectorAll(".contents em").forEach((elem) => {
+                elem.addEventListener("mouseenter", () => {
+                    document.querySelector(".cursor").classList.add("active");
+                });
+                elem.addEventListener("mouseleave", () => {
+                    document.querySelector(".cursor").classList.remove("active");
+                })
+            });
+        });
+
+    </script>
+</body>
+</html>

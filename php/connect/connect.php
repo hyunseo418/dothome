@@ -1,7 +1,7 @@
 <?php
     $host = "localhost";
     $user = "paneoy";
-    $pw = "sekyu198237!";
+    $pw = "sekyu198237#";
     $dbName = "paneoy";
     $dbConnect = new mysqli($host, $user, $pw, $dbName);
     $dbConnect -> set_charset("utf8");

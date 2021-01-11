@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax04-Javascript</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* reset */
+        @font-face {
+            font-family: 'RIDIBatang';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0; padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        img {
+            width: 100%; 
+            vertical-align: top;
+        }
+
+        /* main */
+        body {
+            --color-h1 : #dc6e25;
+            --color-title : #fff;
+            --color-sub : #999;
+            --color-link : #000;
+            --color-bg : #111;
+            --font-cafe : 'RIDIBatang';
+            --font-lato : 'Lato', sans-serif;
+            --aspect-ratio : 33/17;
+
+            background-color: var(--color-bg);
+            color: var(--color-title);
+            font-family: var(--font-cafe);
+            overflow-y: scroll;
+        }
+        body::-webkit-scrollbar-track{
+            background-color: #111;
+        }
+        body::-webkit-scrollbar{
+            width: 10px;
+        }
+        body::-webkit-scrollbar-thumb{
+            background-color: #555;
+            border-radius: 5px;
+        }
+        #parallax-wrap h1 {
+            color: var(--color-h1);
+            font-family: var(--font-lato);
+            font-size: 8vw;
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 10vw 8vw 0 8vw;
+        }
+        #parallax-wrap h1 em {
+            display: block;
+            font-weight: 100;
+            padding-left: 18vw;
+        }
+        .contents {
+            margin: 0 auto 35vh;
+            width: 100%;
+            overflow: hidden;
+        }
+        .content-item {
+            position: relative;
+            width: 1200px;
+            max-width: 90vw;
+            margin: 60vh 0 60vh;
+        }
+        .content-item:nth-child(even){
+            margin-left: auto;
+        }
+        .content-item-num {
+            font-size: 25vw;
+            font-weight: 100;
+            font-family: var(--font-lato);
+            position: absolute;
+            right: -5vw; top: -20vw;
+            opacity: 0.08;
+        }
+        .content-item:nth-child(even) .content-item-num {
+            right: auto;
+            left: -5vw;
+        }
+        .content-item-title {
+            text-align: right;
+            padding-bottom: 5px;
+        }
+        .content-item:nth-child(even) .content-item-title {
+            text-align-last: left;
+            padding-bottom: 5px;
+        }
+
+        .content-item-imgWrap {
+            position: relative;
+            --width: 100%;
+            width: var(--width);
+            padding-bottom: calc(var(--width) / (var(--aspect-ratio)));
+            overflow: hidden;
+        }
+        .content-item-img {
+            width: var(--width);
+            --overflow: 60px;
+            position: absolute; 
+            top: calc(-1 * var(--overflow));
+            height: calc(100% + (3 * var(--overflow)));
+            background-size: cover;
+            background-position: 50% 0;
+        }
+        .content-item-desc {
+            font-size: 3.5vw;
+            line-height: 1.4;
+            text-align: right;
+            word-break: keep-all;
+            margin-right: -4vw;
+            margin-top: -6vw;
+            padding-left: 10vw;
+            z-index: 100;
+            position: relative;
+        }
+        .content-item:nth-child(even) .content-item-desc {
+            text-align: left;
+            margin-right: auto;
+            padding-left: 0;
+            margin-left: -4vw;
+            padding-right: 10vw;
+        }
+
+
+        .content-item:nth-child(1) .content-item-img{
+            background: url(../img/images01.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(2) .content-item-img{
+            background: url(../img/images02.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(3) .content-item-img{
+            background: url(../img/images03.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(4) .content-item-img{
+            background: url(../img/images04.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(5) .content-item-img{
+            background: url(../img/images05.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(6) .content-item-img{
+            background: url(../img/images06.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(7) .content-item-img{
+            background: url(../img/images07.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(8) .content-item-img{
+            background: url(../img/images08.jpg);
+            background-size: cover;
+        }
+        .content-item:nth-child(9) .content-item-img{
+            background: url(../img/images09.jpg);
+            background-size: cover;
+        }
+
+        .content-item-desc {
+            padding-left: 10vw;
+        }
+        .content-item:nth-child(even) .content-item-desc {
+            padding-left: 0vw; padding-right: 10vw;
+        }
+        .content-item-desc span {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.77s cubic-bezier(0, 0.48, 0, 1.04);
+            display: inline-block;
+            min-width: 20px;
+        }
+        .content-item-desc span.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="parallax-wrap">
+            <h1>Parallax <em>Scrolling</em></h1>
+            <div class="contents">
+                <section id="section1" class="content-item">
+                    <span class="content-item-num">01</span>
+                    <h2 class="content-item-title">Section1</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                </section>
+                <section id="section2" class="content-item">
+                    <span class="content-item-num">02</span>
+                    <h2 class="content-item-title">Section2</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">인생은 오늘의 나 안에 있고 내일은 스스로 만드는 것이다.</p>
+                </section>
+                <section id="section3" class="content-item">
+                    <span class="content-item-num">03</span>
+                    <h2 class="content-item-title">Section3</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">오랫동안 꿈을 그리는 사람은 마침내 그 꿈을 닮아 간다.</p>
+                </section>
+                <section id="section4" class="content-item">
+                    <span class="content-item-num">04</span>
+                    <h2 class="content-item-title">Section4</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">자기 신뢰는 성공의 첫 번째 비결이다.</p>
+                </section>
+                <section id="section5" class="content-item">
+                    <span class="content-item-num">05</span>
+                    <h2 class="content-item-title">Section5</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">우리가 실패에서 배우면, 실패는 성공이 된다.</p>
+                </section>
+                <section id="section6" class="content-item">
+                    <span class="content-item-num">06</span>
+                    <h2 class="content-item-title">Section6</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">당신이 할수 있다고 믿든 할수 없다고 믿든 믿는 대로 될것이다.</p>
+                </section>
+                <section id="section7" class="content-item">
+                    <span class="content-item-num">07</span>
+                    <h2 class="content-item-title">Section7</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">한번의 실패와 영원한 실패를 혼동하지 마라.</p>
+                </section>
+                <section id="section8" class="content-item">
+                    <span class="content-item-num">08</span>
+                    <h2 class="content-item-title">Section8</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">꿈을 계속 간직하고 있으면 반드시 실현할 때가 온다.</p>
+                </section>
+                <section id="section9" class="content-item">
+                    <span class="content-item-num">09</span>
+                    <h2 class="content-item-title">Section9</h2>
+                    <figure class="content-item-imgWrap">
+                        <div class="content-item-img"></div>
+                    </figure>
+                    <p class="content-item-desc">긍정적인 생각과 결합된 긍정적인 행동은 성공을 불러온다.</p>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script>
+
+        //글씨 쪼개기 (한번에)
+        let text = document.querySelectorAll(".content-item-desc");
+
+        text.forEach(el => {
+            let splitText = el.innerText;
+            let splitWrap = splitText.split("").join("</span><span aria-hidden='true'>");
+                splitWrap = "<span aria-hidden='true'>"+splitWrap+"</span>";
+
+            el.innerHTML = splitWrap;
+            el.setAttribute("aria-label", splitText);
+        });
+
+        window.addEventListener("scroll", ()=>{
+            let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop);
+
+            document.querySelectorAll(".content-item").forEach(()=>{
+
+            })
+            if(pageYOffset > document.getElementById("section1").offsetTop){
+                document.querySelectorAll("#section1 .content-item-desc span").forEach((elem,index) => {
+                    setTimeout(() => {
+                        elem.classList.add("show");
+                    }, 50 * (index+1)); 
+                })
+            }
+            if(pageYOffset > document.getElementById("section2").offsetTop){
+                document.querySelectorAll("#section2 .content-item-desc span").forEach((elem,index) => {
+                    setTimeout(() => {
+                        elem.classList.add("show");
+                    }, 50 * (index+1)); 
+                })
+            }
+            if(pageYOffset > document.getElementById("section3").offsetTop){
+                document.querySelectorAll("#section3 .content-item-desc span").forEach((elem,index) => {
+                    setTimeout(() => {
+                        elem.classList.add("show");
+                    }, 50 * (index+1)); 
+                })
+            }
+            if(pageYOffset > document.getElementById("section4").offsetTop){
+                document.querySelectorAll("#section4 .content-item-desc span").forEach((elem,index) => {
+                    setTimeout(() => {
+                        elem.classList.add("show");
+                    }, 50 * (index+1)); 
+                })
+            }
+            if(pageYOffset > document.getElementById("section5").offsetTop){
+                document.querySelectorAll("#section5 .content-item-desc span").forEach((elem,index) => {
+                    setTimeout(() => {
+                        elem.classList.add("show");
+                    }, 50 * (index+1)); 
+                })
+            }
+            if(pageYOffset > document.getElementById("section6").offsetTop){
+                document.querySelectorAll("#section6 .content-item-desc span").forEach((elem,index) => {
+                    setTimeout(() => {
+                        elem.classList.add("show");
+                    }, 50 * (index+1)); 
+                })
+            }
+            if(pageYOffset > document.getElementById("section7").offsetTop){
+                document.querySelectorAll("#section7 .content-item-desc span").forEach((elem,index) => {
+                    setTimeout(() => {
+                        elem.classList.add("show");
+                    }, 50 * (index+1)); 
+                })
+            }
+            if(pageYOffset > document.getElementById("section8").offsetTop){
+                document.querySelectorAll("#section8 .content-item-desc span").forEach((elem,index) => {
+                    setTimeout(() => {
+                        elem.classList.add("show");
+                    }, 50 * (index+1)); 
+                })
+            }
+            if(pageYOffset > document.getElementById("section9").offsetTop){
+                document.querySelectorAll("#section9 .content-item-desc span").forEach((elem,index) => {
+                    setTimeout(() => {
+                        elem.classList.add("show");
+                    }, 50 * (index+1)); 
+                })
+            }
+        })
+    </script>
+</body>
+</html>
