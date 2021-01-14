@@ -1554,8 +1554,18 @@ questionBtn.addEventListener("click",showResult);
             'https://codepen.io/hyunseo418/pen/OJRVjPy'
         ]
         const backLine = document.querySelectorAll('.back-line-group');
-        const a = document.querySelectorAll('a');
-        a.forEach(el=>{
+        // const a = document.querySelectorAll('a');
+        scriptBtn.forEach(el=>{
+            el.addEventListener('click', function(e){
+                e.preventDefault();
+            })
+        })
+        siteCodeView.forEach(el=>{
+            el.addEventListener('click', function(e){
+                e.preventDefault();
+            })
+        })
+        scriptCodeView.forEach(el=>{
             el.addEventListener('click', function(e){
                 e.preventDefault();
             })
