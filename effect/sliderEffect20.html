@@ -149,6 +149,7 @@
             text-transform: uppercase;
             letter-spacing: 0.2em;
             font-weight: 700;
+            overflow: hidden;
         }
         .slider .slider_img {
             position: absolute;
@@ -161,6 +162,33 @@
             width: 100%;
             display: block;
             margin: 0 auto;
+        }
+        .slider .slider_count {
+            position: absolute;
+            left: 130px; top: 100px;
+            font-size: 90px;
+            font-style: italic;
+            font-family: 'Playfair Display';
+        }
+        .slider .slider_count::before {
+            content: '';
+            width: 110%; height: 80%;
+            position: absolute;
+            left: 0; top: 30px;
+        }
+        .slider .slider_count span {
+            position: relative;
+        }
+        .slider .slider_count span:first-child {
+            margin-right: 70px;
+        }
+        .slider .slider_count span:first-child::before {
+            content: '';
+            position: absolute;
+            right: -80px; bottom: 45px;
+            width: 60px;
+            height: 1px;
+            background: #000;
         }
 
         /* slider nav */
@@ -195,7 +223,7 @@
         }
 
         /* slider pagination */
-        .slider-page {
+        .slider-dot {
             position: fixed;
             left: 50%;
             transform: translateX(-50%);
@@ -207,7 +235,7 @@
             z-index: 1000;
             text-align: center;
         }
-        .slider-page a {
+        .slider-dot a {
             display: inline-block;
             width: 10px; height: 10px;
             line-height: 9px;
@@ -221,11 +249,67 @@
             text-indent: -9999px;
             margin: 50px 15px;
         }
-        .slider-page a.active {
+        .slider-dot a.active {
             border: 0;
             color: #333;
             text-indent: 0px;
         }
+
+        /* slider animation */
+        .slider .slider_text span {
+            display: inline-block;
+            transform: translate(0, 200px);
+            transition: all 1s cubic-bezier(0.08, 1.05, 0.6, 0.99);
+        }
+
+        .slider .slider_img img {
+            transform: scale(0.3);   
+            transition: all 1s cubic-bezier(0.08, 1.05, 0.6, 0.99); 
+            transition-delay: 0.2s;
+        }
+        .slider .slider_count {
+            opacity: 0;
+        }
+        .slider .slider_count::before {
+            transform-origin: left;
+            background: #fff;
+            z-index: 100;
+        }
+        
+        .slider.active .slider_count {
+            animation: revealText 0.1s 1.3s forwards;
+        }
+        .slider.active .slider_count::before {
+            animation: reveal 0.7s 1s ease forwards;
+        }
+        @keyframes revealText {
+            0%   {opacity: 0;}
+            100% {opacity: 1;}
+        }
+        @keyframes reveal {
+            0%   {transform: scaleX(0); transform-origin: left;}
+            40%  {transform: scaleX(1); transform-origin: left;}
+            61%  {transform: scaleX(1); transform-origin: right;}
+            100% {transform: scaleX(0); transform-origin: right;}
+        }
+
+        .slider.active .slider_img img {
+            transform: scale(1);    
+        }
+        .slider.active .slider_text span {
+            transform: translate(0, 0);
+        }
+        .slider.active .slider_text span:nth-child(1){transition-delay: 0.05s;}
+        .slider.active .slider_text span:nth-child(2){transition-delay: 0.10s;}
+        .slider.active .slider_text span:nth-child(3){transition-delay: 0.15s;}
+        .slider.active .slider_text span:nth-child(4){transition-delay: 0.20s;}
+        .slider.active .slider_text span:nth-child(5){transition-delay: 0.25s;}
+        .slider.active .slider_text span:nth-child(6){transition-delay: 0.30s;}
+        .slider.active .slider_text span:nth-child(7){transition-delay: 0.35s;}
+        .slider.active .slider_text span:nth-child(8){transition-delay: 0.40s;}
+        .slider.active .slider_text span:nth-child(9){transition-delay: 0.45s;}
+        .slider.active .slider_text span:nth-child(10){transition-delay: 0.50s;}
+        .slider.active .slider_text span:nth-child(11){transition-delay: 0.55s;}
     </style>
 </head>
 <body>
@@ -251,48 +335,78 @@
         <div class="slider-wrap">
             <div class="slider-img">
                 <div class="slider">
-                    <div class="slider_text">portfolio</div>
+                    <div class="slider_text split">portfolio</div>
                     <figure class="slider_img">
                         <img src="img/slider-img1.png" alt="이미지1">
                     </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">01</span>
+                        <span class="sliderTotalNumber">07</span>
+                    </div>
                 </div>
                 <div class="slider">
-                    <div class="slider_text">webstandard</div>
+                    <div class="slider_text split">webstandard</div>
                     <figure class="slider_img">
                         <img src="img/slider-img2.png" alt="이미지2">
                     </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">01</span>
+                        <span class="sliderTotalNumber">07</span>
+                    </div>
                 </div>
                 <div class="slider">
-                    <div class="slider_text">responsive</div>
+                    <div class="slider_text split">responsive</div>
                     <figure class="slider_img">
                         <img src="img/slider-img3.png" alt="이미지3">
                     </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">01</span>
+                        <span class="sliderTotalNumber">07</span>
+                    </div>
                 </div>
                 <div class="slider">
-                    <div class="slider_text">responsive</div>
+                    <div class="slider_text split">responsive</div>
                     <figure class="slider_img">
                         <img src="img/slider-img4.png" alt="이미지4">
                     </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">01</span>
+                        <span class="sliderTotalNumber">07</span>
+                    </div>
                 </div>
                 <div class="slider">
-                    <div class="slider_text">responsive</div>
+                    <div class="slider_text split">responsive</div>
                     <figure class="slider_img">
                         <img src="img/slider-img1.png" alt="이미지1">
                     </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">01</span>
+                        <span class="sliderTotalNumber">07</span>
+                    </div>
                 </div>
                 <div class="slider">
-                    <div class="slider_text">responsive</div>
+                    <div class="slider_text split">responsive</div>
                     <figure class="slider_img">
                         <img src="img/slider-img2.png" alt="이미지2">
                     </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">06</span>
+                        <span class="sliderTotalNumber">07</span>
+                    </div>
                 </div>
                 <div class="slider">
-                    <div class="slider_text">responsive</div>
+                    <div class="slider_text split">responsive</div>
                     <figure class="slider_img">
                         <img src="img/slider-img3.png" alt="이미지3">
                     </figure>
+                    <div class="slider_count">
+                        <span class="sliderNumber">07</span>
+                        <span class="sliderTotalNumber">07</span>
+                    </div>
                 </div>
             </div>
+            <!-- // slider-img -->
+
             <div class="slider-nav">
                 <a href="#" class="prev">
                     <svg viewBox="-1 -2 18 18">
@@ -311,17 +425,115 @@
                     </svg>
                 </a>
             </div>
-            <div class="slider-page">
-                <a href="#" class="active">01</a>
+            <!-- //slider-nav -->
+            
+            <div class="slider-dot">
+                <!-- <a href="#" class="active">01</a>
                 <a href="#">02</a>
                 <a href="#">03</a>
                 <a href="#">04</a>
                 <a href="#">05</a>
                 <a href="#">06</a>
-                <a href="#">07</a>
+                <a href="#">07</a> -->
             </div>
+            <!-- //slider-dot -->
         </div>
     </main>
     <!-- //main -->
+
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        var sliderWrap = $('.slider-wrap'),
+            sliderImg = $('.slider-img'),
+            slider = $('.slider'),
+            sliderNav = $('.slider-nav'),
+            sliderDot = $('.slider-dot'),
+            sliderCount = $('.slider_count'),
+            sliderNumber = sliderCount.find('.sliderNumber'),
+            sliderTotalNumber = sliderCount.find('.sliderTotalNumber');
+
+        var dotHTML = "",
+            currentIndex = 0,
+            duration = 1000,
+            easing = "easeOutExpo",
+            sliderLength = slider.length,
+            sliderTimer = "",
+            interval = 3000;
+
+        // 이미지 위치 설정
+        slider.each(function(index){
+            $(this).css({"left": 100*index+"%"});
+
+            dotHTML += "<a href='#'>0"+(index+1)+"</a>";
+        });
+        sliderDot.html(dotHTML);
+
+        // 이미지 움직이기
+        function gotoSlider(num){
+            sliderImg.stop().animate({"left": -100*num+"%"}, duration, easing)
+            currentIndex = num;
+
+            gotoActive();
+        }
+
+        // 활성화 표시하기
+        function gotoActive(){
+            slider.removeClass('active').eq(currentIndex).addClass('active');
+            sliderDot.find('a').removeClass('active').eq(currentIndex).addClass('active');
+            sliderNumber.text("0"+(currentIndex+1));
+            sliderTotalNumber.text("0"+sliderLength);
+        }
+
+        // 버튼 클릭하기
+        sliderNav.on("click", "a", function(e){
+            e.preventDefault();
+
+            var nextIndex = (currentIndex + 1) % sliderLength;
+            var prevIndex = (currentIndex - 1) % sliderLength;
+            if(currentIndex == 0) prevIndex = sliderLength -1;
+
+            if($(this).hasClass('prev')){
+                gotoSlider(prevIndex);
+            }else{
+                gotoSlider(nextIndex);
+            }
+        })
+
+        // 닷 버튼 클릭하기
+        sliderDot.on("click", "a", function(e){
+            e.preventDefault();
+
+            if(!$(this).hasClass('active')){
+                gotoSlider($(this).index());
+            }
+        })
+
+        // 자동 플레이
+        function startTimer(){
+            sliderTimer = setInterval(() => {
+                var intervalNum = (currentIndex+1) % sliderLength;
+                gotoSlider(intervalNum)
+            }, interval);
+        }
+        function stopTimer(){
+            clearInterval(sliderTimer)
+        }
+        sliderWrap.on({mouseenter: stopTimer, mouseleave: startTimer});
+
+        // 글씨 쪼개기
+        $(".split").each(function(){
+            var text = $(this).text();
+            let split = text.split("").join("</span><span aria-hidden='true'>");
+            split = "<span aria-hidden='true'>"+split+"</span>";
+
+            $(this).html(split).attr("aria-label", text);
+        })
+
+        // 바로 시작하기
+        gotoSlider(currentIndex);
+        startTimer();
+    </script>
 </body>
 </html>

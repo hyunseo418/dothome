@@ -320,6 +320,8 @@
                 this.supahScroll.classList.add('supah-scroll')
                 this.menu = document.querySelectorAll('.summary > ul> li > a')
                 this.scroll = 0
+                this.website = document.getElementById('website')
+                this.offsetLeft = this.website.offsetLeft + window.innerWidth*2
                 this.events()
                 this.update()
                 this.animate()
@@ -357,12 +359,10 @@
                 this.raf = requestAnimationFrame(this.animate.bind(this))
                 
                 // console.log('website : '+ (website.offsetLeft + window.innerHeight*3));
-                // console.log(scrollY)
-                console.log(contents.style.transform)
                 // (website.offsetLeft + window.innerHeight*3) - scrollY <= 0
-                if(website.getBoundingClientRect().left <= 0){
-                    this.pause();
-                }
+                // if(website.getBoundingClientRect().left <= 0){
+                //     this.pause();
+                // }
             }
             
             scrollTo(y) {

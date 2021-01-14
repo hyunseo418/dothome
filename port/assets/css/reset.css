@@ -65,3 +65,5 @@ a {color: #fff; text-decoration: none;}
 figure {border: 0;}
 img {vertical-align: top; border: 0;}
 li {list-style: none;}
+pre {overflow: hidden !important;}
+code {white-space: pre-wrap !important;}

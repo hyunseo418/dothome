@@ -50,18 +50,25 @@
         </svg>
     </section>
     <!-- //intro -->
+    <section class="background fixed">
+        <div class="quote">
+            <div>Knowing is not enough;</div>
+            <div>we must <em>APPLY</em>.</div>
+            <div>Willing is not enough;</div>
+            <div>we must <em>DO</em>.</div>
+        </div>
+    </section>
     
     <main id="contents" class="fixed">
         <section id="summary">
             <div class="summary">
                 <ul>
-                    <li><a href="#about">about</a></li>
-                    <li><a href="#skill">skill</a></li>
-                    <li><a href="#website">website</a></li>
-                    <li><a href="#react">react</a></li>
-                    <li><a href="#script">script</a></li>
-                    <li><a href="#animation">animation</a></li>
-                    <li><a href="#contact">contact</a></li>
+                    <li><a href="#about" data-name="about">about</a></li>
+                    <li><a href="#skill" data-name="skill">skill</a></li>
+                    <li><a href="#website" data-name="website">website</a></li>
+                    <li><a href="#script" data-name="script">script</a></li>
+                    <li><a href="#animation" data-name="animation">animation</a></li>
+                    <li><a href="#contact" data-name="contact">contact</a></li>
                 </ul>
                 <div class="summary-title">
                     <h2 aria-label="summary">summary</h2>
@@ -149,7 +156,6 @@
             <div class="website">
                 <div class="site-list">
                     <div class="site-contents website1">
-                        <!-- <div class="site-bar">web standard</div> -->
                         <div class="site-detail">
                             <div class="left">
                                 <div class="title-box">
@@ -157,8 +163,8 @@
                                 </div>
                                 <div class="desc-box">
                                     <div class="desc">
-                                        &nbsp;웹 표준이란 브라우저 종류 및 버전에 따른 기능 차이에 대하여 호환이 가능하도록 제시된 표준으로, 다른 기종 혹은 플랫폼에 따라 달리 구현되는 기술을 동일하게 구현하여 웹 페이지를 제작하는 기법을 의미합니다. 웹 표준은 웹 접근성 준수를 위한 핵심이기 때문에 중요합니다.<br /> 
-                                        &nbsp;웹 표준을 준수한 사이트를 직접 제작하면서 장애인, 노약자를 포함한 모든 사용자가 동일한 조건에서 웹 사이트를 이용하려면 어떻게 해야 하는지 고려하게 되었고 검색 엔진 최적화, 서버 공간 절약 등의 장점들에 대해서도 알게 되었습니다.
+                                        <p>웹 표준이란 브라우저 종류 및 버전에 따른 기능 차이에 대하여 호환이 가능하도록 제시된 표준으로, 다른 기종 혹은 플랫폼에 따라 달리 구현되는 기술을 동일하게 구현하여 웹 페이지를 제작하는 기법을 의미합니다. 웹 표준은 웹 접근성 준수를 위한 핵심이기 때문에 중요합니다.</p>
+                                        <p>웹 표준을 준수한 사이트를 직접 제작하면서 장애인, 노약자를 포함한 모든 사용자가 동일한 조건에서 웹 사이트를 이용하려면 어떻게 해야 하는지 고려하게 되었고 검색 엔진 최적화, 서버 공간 절약 등의 장점들에 대해서도 알게 되었습니다.</p>
                                     </div>
                                 </div>
                                 <div class="btn-wrap">
@@ -181,13 +187,13 @@
                                 <div class="code-view">
                                     <div class="tab-menu">
                                         <ul>
-                                            <li class="active"><a href="#">skip navigation</a></li>
-                                            <li><a href="#">tab menu</a></li>
-                                            <li><a href="#">login</a></li>
+                                            <li class="active" data-index-number="1"><a href="#">skip navigation</a></li>
+                                            <li data-index-number="2"><a href="#">tab menu</a></li>
+                                            <li data-index-number="3"><a href="#">login</a></li>
                                         </ul>
                                     </div>
                                     <div class="tab-contents">
-                                        <div class="code">
+                                        <div class="code active">
 <pre><code class="language-html">&lt;div id="skip"&gt;
     &lt;a href="#cont_nav"&gt;전체 메뉴 바로가기&lt;/a&gt;
     &lt;a href="#cont_ban"&gt;배너 메뉴 바로가기&lt;/a&gt;
@@ -281,7 +287,6 @@
                         </div>
                     </div>
                     <div class="site-contents website2">
-                        <!-- <div class="site-bar">responsive</div> -->
                         <div class="site-detail">
                             <div class="left">
                                 <div class="title-box">
@@ -289,8 +294,8 @@
                                 </div>
                                 <div class="desc-box">
                                     <div class="desc">
-                                        &nbsp;반응형 웹 디자인(responsive web design, RWD)이란 하나의 웹사이트에서 PC, 스마트폰, 태블릿 PC 등 접속하는 디스플레이의 종류에 따라 화면의 크기가 자동으로 변하도록 만든 웹페이지 접근 기법을 의미합니다.<br />
-                                        &nbsp;어떤 종류의 디스플레이로 접속해도 불편함이 없도록 미디어쿼리를 이용해서 반응형 웹 사이트를 제작했습니다. 시맨틱 태그를 사용하여 문서의 구조를 체계적으로 표현했습니다. 또한, 이미지 슬라이드와 라이트 박스를 구현하기 위해 자바스크립트 라이브러리를 활용했습니다.                               
+                                        <p>반응형 웹 디자인(responsive web design, RWD)이란 하나의 웹사이트에서 PC, 스마트폰, 태블릿 PC 등 접속하는 디스플레이의 종류에 따라 화면의 크기가 자동으로 변하도록 만든 웹페이지 접근 기법을 의미합니다.</p>
+                                        <p>어떤 종류의 디스플레이로 접속해도 불편함이 없도록 미디어쿼리를 이용해서 반응형 웹 사이트를 제작했습니다. 시맨틱 태그를 사용하여 문서의 구조를 체계적으로 표현했습니다. 또한, 이미지 슬라이드와 라이트 박스를 구현하기 위해 자바스크립트 라이브러리를 활용했습니다.</p>
                                     </div>
                                 </div>
                                 <div class="btn-wrap">
@@ -313,18 +318,68 @@
                                 <div class="code-view">
                                     <div class="tab-menu">
                                         <ul>
-                                            <li class="active"><a href="#">skip navigation</a></li>
-                                            <li><a href="#">tab menu</a></li>
-                                            <li><a href="#">login</a></li>
+                                            <li class="active" data-index-number="1"><a href="#">media query</a></li>
+                                            <li data-index-number="2"><a href="#">semantic tag</a></li>
+                                            <li data-index-number="3"><a href="#"></a></li>
                                         </ul>
                                     </div>
                                     <div class="tab-contents">
                                         <div class="code">
-<pre><code class="language-html">
+<pre><code class="language-css">/* 미디어쿼리*/
+@media (max-width: 1220px){
+    .container {width: 100%;}
+    .row {padding: 0 15px;}
+
+    #contents .container {border: 0;}
+    .title .btn {right: 5px;}
+
+    .square a {width: 24%;}    
+    .square a:nth-child(5n) {display: none;}    
+}
+
+@media (max-width: 1024px){
+    .square a {width: 32.33333%;}    
+    .square a:nth-child(5) {display: block;}
+}
+
+@media (max-width: 960px){
+    #cont_center {margin-right: 0; border-right: 0;}
+    #cont_right {position: static; width: 100%;}
+    
+    .nav > div {float: none; width: 100%;}
+    .nav > div:last-child {width: 100%;}
+    .nav > div ol {margin-bottom: 10px;}
+    .nav > div li {width: 33.3333%;}
+    .nav > div:last-child li {width: 33.3333%;}
+
+    #cont_right {overflow: hidden; border-top: 1px solid #dbdbdb;}
+    #cont_right .column {float: left; width: 33.3333%; box-sizing: border-box;}
+    .col7 {border-bottom: 0; border-right: 1px solid #dbdbdb;}
+    .col8 {border-bottom: 0; border-right: 1px solid #dbdbdb;}
+}
 </code></pre>
                                         </div>
                                         <div class="code">
-<pre><code class="language-html">
+<pre><code class="language-html">&lt;header id="header"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="header"&gt;
+                ...중략...
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/header&gt;
+
+&lt;nav id="nav"&gt;
+    &lt;h2 class="ir_so"&gt;반응형 사이트 전체 메뉴&lt;/h2&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="nav"&gt;
+                ...중략...
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
 </code></pre>
                                         </div>
                                         <div class="code">
@@ -337,7 +392,6 @@
                         </div>
                     </div>
                     <div class="site-contents website3">
-                        <!-- <div class="site-bar">megabox</div> -->
                         <div class="site-detail">
                             <div class="left">
                                 <div class="title-box">
@@ -345,8 +399,8 @@
                                 </div>
                                 <div class="desc-box">
                                     <div class="desc">
-                                        &nbsp;메가박스 사이트입니다. swiper 자바스크립트 라이브러리를 사용하여 영화 목록이 자동으로 한 칸씩 옆으로 이동하도록 했고, 간단한 아이콘은 SVG를 활용하여 나타냈습니다. 새로운 영화 소식은 input 태그와 select 태그를 이용하여 구현했습니다. 시간 메뉴를 클릭하면 자신이 원하는 시간대를 선택할 수 있도록 시간 목록이 나타납니다.<br />
-                                        &nbsp;미디어쿼리를 활용해서 반응형 사이트로 제작했고, 시맨틱 태그를 사용하여 코딩했습니다. 구글의 웹 API를 사용하여 새로운 영화를 클릭했을 때 유튜브의 영상이 레이어 팝업으로 나타나도록 작업했습니다.
+                                        <p>메가박스 사이트입니다. swiper 자바스크립트 라이브러리를 사용하여 영화 목록이 자동으로 한 칸씩 옆으로 이동하도록 했고, 간단한 아이콘은 SVG를 활용하여 나타냈습니다. 새로운 영화 소식은 input 태그와 select 태그를 이용하여 구현했습니다. 시간 메뉴를 클릭하면 자신이 원하는 시간대를 선택할 수 있도록 시간 목록이 나타납니다.</p>
+                                        <p>미디어쿼리를 활용해서 반응형 사이트로 제작했고, 시맨틱 태그를 사용하여 코딩했습니다. 구글의 웹 API를 사용하여 새로운 영화를 클릭했을 때 유튜브의 영상이 레이어 팝업으로 나타나도록 작업했습니다.</p>
                                     </div>
                                 </div>
                                 <div class="btn-wrap">
@@ -369,18 +423,94 @@
                                 <div class="code-view">
                                     <div class="tab-menu">
                                         <ul>
-                                            <li class="active"><a href="#">skip navigation</a></li>
-                                            <li><a href="#">tab menu</a></li>
-                                            <li><a href="#">login</a></li>
+                                            <li class="active" data-index-number="1"><a href="#">select tag</a></li>
+                                            <li data-index-number="2"><a href="#">google api</a></li>
+                                            <li data-index-number="3"><a href="#"></a></li>
                                         </ul>
                                     </div>
                                     <div class="tab-contents">
                                         <div class="code">
-<pre><code class="language-html">
+<pre><code class="language-html">&lt;div class="select"&gt;
+    &lt;div class="s1"&gt;
+      &lt;label for="udate" class="ir_so"&gt;날짜&lt;/label&gt;
+      &lt;input type="text" id="udate" name="udate" value="2019년 1월 25일" class="ui_select2"&gt;
+    &lt;/div&gt;
+    &lt;div class="s2"&gt;
+       &lt;label for="utime" class="ir_so"&gt;시간&lt;/label&gt;
+       &lt;select id="utime" name="utime" class="ui_select2"&gt;
+          &lt;option value="오전 0:00"&gt;오전 0:00&lt;/option&gt;
+          &lt;option value="오전 1:00"&gt;오전 1:00&lt;/option&gt;
+          &lt;option value="오전 2:00"&gt;오전 2:00&lt;/option&gt;
+          &lt;option value="오전 3:00"&gt;오전 3:00&lt;/option&gt;
+          &lt;option value="오전 4:00"&gt;오전 4:00&lt;/option&gt;
+          &lt;option value="오전 5:00"&gt;오전 5:00&lt;/option&gt;
+          &lt;option value="오전 6:00"&gt;오전 6:00&lt;/option&gt;
+          &lt;option value="오전 7:00"&gt;오전 7:00&lt;/option&gt;
+          &lt;option value="오전 8:00"&gt;오전 8:00&lt;/option&gt;
+          &lt;option value="오전 9:00"&gt;오전 9:00&lt;/option&gt;
+          &lt;option value="오전 10:00"&gt;오전 10:00&lt;/option&gt;
+          &lt;option value="오전 11:00"&gt;오전 11:00&lt;/option&gt;
+          &lt;option value="오전 12:00"&gt;오전 12:00&lt;/option&gt;
+          &lt;option value="오후 1:00"&gt;오후 1:00&lt;/option&gt;
+          &lt;option value="오후 2:00"&gt;오후 2:00&lt;/option&gt;
+          &lt;option value="오후 3:00"&gt;오후 3:00&lt;/option&gt;
+          &lt;option value="오후 4:00"&gt;오후 4:00&lt;/option&gt;
+          &lt;option value="오후 5:00"&gt;오후 5:00&lt;/option&gt;
+          &lt;option value="오후 6:00"&gt;오후 6:00&lt;/option&gt;
+          &lt;option value="오후 7:00"&gt;오후 7:00&lt;/option&gt;
+          &lt;option value="오후 8:00"&gt;오후 8:00&lt;/option&gt;
+          &lt;option value="오후 9:00"&gt;오후 9:00&lt;/option&gt;
+          &lt;option value="오후 10:00"&gt;오후 10:00&lt;/option&gt;
+          &lt;option value="오후 11:00"&gt;오후 11:00&lt;/option&gt;
+          &lt;option value="오후 12:00"&gt;오후 12:00&lt;/option&gt;
+       &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class="s3"&gt;
+          &lt;label for="utext" class="ir_so"&gt;주소 또는 도로명을 입력해주세요.&lt;/label&gt;
+          &lt;input type="text" id="utext" name="utext" class="ui_input3" placeholder="주소 또는 도로명을 입력해주세요."&gt;
+    &lt;/div&gt;
+ &lt;/div&gt;
 </code></pre>
                                         </div>
                                         <div class="code">
-<pre><code class="language-html">
+<pre><code class="language-js">// 플레이어
+var player = {
+        obj: null, // 플레이어 오브젝트
+        query : {
+            theme: "dark",
+            color: "white",
+            controls: 1, 
+            autoplay: 1,
+            enablejsapi: 1,
+            modestbranding: 0, // YouTube 로고 감춤
+            rel: 0,  // 관련 동영상 표시
+            showinfo: 0, // 제목, 업로더 감춤
+            iv_load_policy: 3 // 특수효과 감춤
+        },
+        visible: false
+    };
+
+    // 보이기, 숨기기 버튼 활성화
+    $selector.showButton.on("click", showPlayer);
+    $selector.hideButton.on("click", hidePlayer);
+
+// YouTube API를 이용해 iframe을 생성
+function setPlayer( id ) {
+        player.obj = new YT.Player( "trailer", {
+            width: 480,
+            height: 282,
+            videoId: id,    
+            playerVars: player.query
+        });
+
+        // 처음 플레이어 크기 설정
+        resizePlayer();
+
+        // 리사이즈나 화면 회전시 플레이어 크기 다시 설정
+        $( window ).on( "resize orientationchange", function() {
+            resizePlayer();
+        });
+    }
 </code></pre>
                                         </div>
                                         <div class="code">
@@ -393,7 +523,6 @@
                         </div>
                     </div>
                     <div class="site-contents website4">
-                        <!-- <div class="site-bar">naver clova</div> -->
                         <div class="site-detail">
                             <div class="left">
                                 <div class="title-box">
@@ -401,8 +530,8 @@
                                 </div>
                                 <div class="desc-box">
                                     <div class="desc">
-                                        &nbsp;네이버 클로바 사이트입니다. 네이버 로고와 푸터의 SNS 아이콘, 페이지 중간중간에 있는 아이콘들은 이미지 스프라이트 기법을 이용해서 나타냈습니다.<br />
-                                        &nbsp;메뉴를 클릭하면 클로바 사이트의 서브 페이지로 이동하도록 했습니다.
+                                        <p>네이버 클로바 사이트입니다. 네이버 로고와 푸터의 SNS 아이콘, 페이지 중간중간에 있는 아이콘들은 이미지 스프라이트 기법을 이용해서 나타냈습니다.</p>
+                                        <p>메뉴를 클릭하면 클로바 사이트의 서브 페이지로 이동하도록 했습니다.</p>
                                     </div>
                                 </div>
                                 <div class="btn-wrap">
@@ -425,9 +554,9 @@
                                 <div class="code-view">
                                     <div class="tab-menu">
                                         <ul>
-                                            <li class="active"><a href="#">skip navigation</a></li>
-                                            <li><a href="#">tab menu</a></li>
-                                            <li><a href="#">login</a></li>
+                                            <li class="active" data-index-number="1"><a href="#">111</a></li>
+                                            <li data-index-number="2"><a href="#">222</a></li>
+                                            <li data-index-number="3"><a href="#">333</a></li>
                                         </ul>
                                     </div>
                                     <div class="tab-contents">
@@ -453,44 +582,6 @@
         </section>
         <!-- //website -->
 
-        <!-- <section id="react">
-            <div class="column-menu">
-                <div class="rotate">react</div>
-            </div>
-            <div class="reactCont">
-                <div class="left">
-                    <img src="assets/img/react.jpg" srcset="assets/img/react@2.jpg 2x, assets/img/react@3.jpg 3x" alt="리액트">
-                </div>
-                <div class="right">
-                    <div class="react">
-                        <div class="title">REACT</div>
-                        <div class="desc">
-                            React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
-                        </div>
-                    </div>
-                    <div class="portfolio">
-                        <div class="title">PORTFOLIO</div>
-                        <div class="desc">
-                            리액트로 만든 포트폴리오 사이트입니다. 컴포넌트를 활용하여 사이트를 완성하였고, SCSS를 사용하여 스타일을 지정했습니다.
-                        </div>
-                    </div>
-                    <div class="btn-wrap">
-                        <a href="#" class="btn">
-                            사이트보기
-                            <div class="whiteCircle"></div>
-                            <div class="blackCircle"></div>
-                        </a>
-                        <a href="#" class="btn">
-                            코드보기
-                            <div class="whiteCircle"></div>
-                            <div class="blackCircle"></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        <!-- //react -->
-
         <section id="script">
             <div class="column-menu">
                 <div class="rotate">script</div>
@@ -501,9 +592,10 @@
                         <div class="circle" aria-hidden="true"></div>
                         <div class="text scriptTxt">script</div>
                         <div class="text effect">mouse effect</div>
-                        <div class="box">
+                        <div class="view">
                             <iframe class="scriptView" src="../effect/portfolio/mouseEffect1.html" frameborder="0"></iframe>
-                            <div class="code-view">
+                            <div class="box">
+                                <div class="code-view active">
 <pre><code class="language-js">window.addEventListener("mousemove", function(e){
     let cursor = document.querySelector(".cursor");
     let x = e.clientX -25 + "px";
@@ -522,6 +614,93 @@
     });
 });
 </code></pre>
+                                </div>
+                                <div class="code-view">
+<pre><code class="language-js">let x = 0,
+    y = 0,
+    mouseX = 0,
+    mouseY = 0,
+    angleX = 0,
+    angleY = 0,
+    fmouseX = 0,
+    fmouseY = 0;
+
+document.addEventListener("mousemove", function(e){
+    x = e.pageX;
+    y = e.pageY;
+
+    mouseX = window.innerWidth/2 -x;
+    mouseY = window.innerHeight/2 -y;
+
+    mouseX = Math.max(-100, Math.min(100, window.innerWidth/2 -x));
+    mouseY = Math.max(-100, Math.min(100, window.innerHeight/2 -y));
+
+    angleX = (12 * mouseX) / 100;
+    angleY = (12 * mouseY) / 100;
+
+    fmouseX += (angleX - fmouseX) * 0.1;
+    fmouseY += (angleY - fmouseY) * 0.1;
+
+    // 움직임
+    const move = document.querySelector(".move-image");
+    move.style.transform = `translate(-50%, -50%) perspective(600px) rotateX(${fmouseY}deg) rotateY(${-fmouseX}deg)`;
+
+    // 커서
+    gsap.to(".cursor", {duration:0.3, left:x, top:y});
+});
+</code></pre>
+                                </div>
+                                <div class="code-view">
+<pre><code class="language-js">const word = document.querySelector(".word");
+        
+// 다중
+window.addEventListener("mousemove", e => {
+    document.querySelectorAll(".word").forEach(elem => {
+        const { x, y } = e;
+
+        const rect = elem.getBoundingClientRect();
+        const mouseX = (x - rect.left - rect.width/2) / rect.width * 5;
+        const mouseY = (y - rect.top - rect.height/2) / rect.height * 5;
+        
+        elem.style.textShadow = `${mouseX}px ${-mouseY}px 0px rgba(255,165,0,0.4),
+                                ${-mouseX}px ${mouseY}px 0px rgba(255,35,251,0.4),
+                                ${mouseY}px ${-mouseX}px 0px rgba(255,255,73,0.4),
+                                ${-mouseY}px ${mouseX}px 0px rgba(102,249,255,0.4)`
+    });
+});
+</code></pre>
+                                </div>
+                                <div class="code-view">
+<pre><code class="language-js">class MouseEvent{
+    constructor(obj){
+        this.init();
+    }
+    init(){
+        this.bind();
+        this.event();
+    }
+    bind(){
+        this.mouseMove = this.mouseMove.bind(this);
+    }
+    event(){
+        window.addEventListener('mousemove', this.mouseMove);
+    }
+    mouseMove(e){
+        let positionSlow = (e.pageX - window.innerWidth/2) * 0.1;
+        let positionFast = (e.pageX - window.innerWidth/2) * 0.2; 
+        gsap.to(".span-slow", {
+        duration: .4,
+        x: positionSlow,
+        })
+        gsap.to(".span-fast", {
+            duration: .4,
+            x: -positionFast,
+        })
+    }
+}
+new MouseEvent();
+</code></pre>
+                                </div>
                             </div>
                         </div>
                         <div class="effect-number">
@@ -544,10 +723,137 @@
                         <div class="circle" aria-hidden="true"></div>
                         <div class="text scriptTxt">script</div>
                         <div class="text effect">parallax effect</div>
-                        <div class="box">
+                        <div class="view">
                             <iframe class="scriptView" src="../effect/portfolio/parallax1.html" frameborder="0"></iframe>
-                            <div class="code-view">
+                            <div class="box">
+                                <div class="code-view active">
+<pre><code class="language-js">window.addEventListener("scroll", function(){
+    let pageYOffset = window.pageYOffset + screen.height/2;
 
+    //나타나기 한번에
+    document.querySelectorAll(".content-item").forEach(elem => {
+        if(pageYOffset > elem.offsetTop){
+            elem.classList.add("show");
+        }else {
+            elem.classList.remove("show");
+        }
+    });
+}); 
+</code></pre>
+                                </div>
+                                <div class="code-view">
+<pre><code class="language-js">window.addEventListener("scroll", () => {
+    let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop);
+
+    //forEach
+    document.querySelectorAll(".content-item").forEach((elem)=>{
+        let target = elem.childNodes[7];
+        let offset = (pageYOffset - elem.offsetTop) * 0.2;
+        target.style.transform = "translateY("+ -offset+"px)";
+    });
+});
+</code></pre>   
+                                </div>
+                                <div class="code-view">
+<pre><code class="language-js">let text = document.querySelectorAll(".content-item-desc");
+
+text.forEach(el =&gt; {
+    let splitText = el.innerText;
+    let splitWrap = splitText.split("").join("&lt;/span&gt;&lt;span aria-hidden='true'&gt;");
+        splitWrap = "&lt;span aria-hidden='true'&gt;"+splitWrap+"&lt;/span&gt;";
+
+    el.innerHTML = splitWrap;
+    el.setAttribute("aria-label", splitText);
+});
+
+window.addEventListener("scroll", ()=&gt;{
+    let pageYOffset = (window.pageYOffset || document.documentElement.scrollTop);
+
+    document.querySelectorAll(".content-item").forEach(()=&gt;{
+
+    })
+    if(pageYOffset &gt; document.getElementById("section1").offsetTop){
+        document.querySelectorAll("#section1 .content-item-desc span").forEach((elem,index) =&gt; {
+            setTimeout(() =&gt; {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset &gt; document.getElementById("section2").offsetTop){
+        document.querySelectorAll("#section2 .content-item-desc span").forEach((elem,index) =&gt; {
+            setTimeout(() =&gt; {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset &gt; document.getElementById("section3").offsetTop){
+        document.querySelectorAll("#section3 .content-item-desc span").forEach((elem,index) =&gt; {
+            setTimeout(() =&gt; {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset &gt; document.getElementById("section4").offsetTop){
+        document.querySelectorAll("#section4 .content-item-desc span").forEach((elem,index) =&gt; {
+            setTimeout(() =&gt; {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset &gt; document.getElementById("section5").offsetTop){
+        document.querySelectorAll("#section5 .content-item-desc span").forEach((elem,index) =&gt; {
+            setTimeout(() =&gt; {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset &gt; document.getElementById("section6").offsetTop){
+        document.querySelectorAll("#section6 .content-item-desc span").forEach((elem,index) =&gt; {
+            setTimeout(() =&gt; {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset &gt; document.getElementById("section7").offsetTop){
+        document.querySelectorAll("#section7 .content-item-desc span").forEach((elem,index) =&gt; {
+            setTimeout(() =&gt; {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset &gt; document.getElementById("section8").offsetTop){
+        document.querySelectorAll("#section8 .content-item-desc span").forEach((elem,index) =&gt; {
+            setTimeout(() =&gt; {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+    if(pageYOffset &gt; document.getElementById("section9").offsetTop){
+        document.querySelectorAll("#section9 .content-item-desc span").forEach((elem,index) =&gt; {
+            setTimeout(() =&gt; {
+                elem.classList.add("show");
+            }, 50 * (index+1)); 
+        })
+    }
+})
+</code></pre>
+                                </div>
+                                <div class="code-view">
+<pre><code class="language-js">function scrollReveal(){
+    const reveal = document.querySelectorAll(".reveal")
+    reveal.forEach(el => {
+        let scrollTop = document.documentElement.scrollTop + window.innerHeight/2;
+        let offsetTop = el.offsetTop + el.parentElement.offsetTop;
+
+        if(scrollTop > offsetTop){
+            el.classList.add("show")
+        }
+    })
+}
+
+window.addEventListener("scroll", scrollReveal);
+</code></pre>
+                                </div>
                             </div>
                         </div>
                         <div class="effect-number">
@@ -570,7 +876,234 @@
                         <div class="circle" aria-hidden="true"></div>
                         <div class="text scriptTxt">script</div>
                         <div class="text effect">quiz effect</div>
-                        <iframe class="scriptView" src="../effect/portfolio/quiz1.html" frameborder="0"></iframe>
+                        <div class="view">
+                            <iframe class="scriptView" src="../effect/portfolio/quiz1.html" frameborder="0"></iframe>
+                            <div class="box">
+                                <div class="code-view active">
+<pre><code class="language-js">//문제 정보
+const quizNum = 1;
+const quizAsk = "태그 중에서 유일하게 블록구조를 감쌀 수 있는 태그는?";
+const quizAnswer = "&lt;a&gt;";
+const quizEx = "HTML5에서 &lt;a&gt; 태그는 유일하게 블록 구조를 감쌀 수 있습니다."
+
+//문제 출력
+questionNum.innerHTML = quizNum;
+questionAsk.innerHTML = quizAsk;
+questionAnswer.innerHTML = quizAnswer;
+questionEx.innerHTML = quizEx;
+
+//정답 숨기기
+questionAnswer.style.display = "none";
+questionEx.style.display = "none";
+
+//정답 확인
+questionBtn.addEventListener("click", function(){
+    questionBtn.style.display = "none";
+    questionAnswer.style.display = "block";
+    questionEx.style.display = "block";
+});
+</code></pre>
+                                </div>
+                                <div class="code-view">
+<pre><code class="language-js">//문제 정보
+const quizInfo = [
+    {
+        quizNum : 1,
+        quizAsk : "글씨의 색을 변경하는 CSS 속성은 무엇인가요?",
+        quizAnswer : "color 속성",
+        quizEx : "글씨 속성은 color 값을 이용합니다."
+    },
+    {
+        quizNum : 2,
+        quizAsk : "position: relative는 언제 사용하나요?",
+        quizAnswer : "color 속성",
+        quizEx : "글씨 속성은 color 값을 이용합니다."
+    },
+    {
+        quizNum : 3,
+        quizAsk : "콘텐츠 요소를 가운데로 오게 하는 방법 3가지 이상을 설명하시오.",
+        quizAnswer : "color 속성",
+        quizEx : "글씨 속성은 color 값을 이용합니다."
+    }
+];
+//forEach
+questionQuiz.forEach((e, index)=>{
+    questionNum[index].innerHTML = quizInfo[index].quizNum;
+    questionAsk[index].innerHTML = quizInfo[index].quizAsk;
+    questionAnswer[index].innerHTML = quizInfo[index].quizAnswer;
+    questionEx[index].innerHTML = quizInfo[index].quizEx;
+});
+
+//정답 숨기기
+for(let i=0; i&lt;quizInfo.length; i++){
+    confirmBottom[i].style.display = "none";
+}
+
+//정답 확인
+questionBtn.forEach( elem => {
+    elem.addEventListener("click", function(){
+        this.style.display = "none";
+        this.nextElementSibling.style.display = "block";
+    });
+});
+</code></pre>
+                                </div>
+                                <div class="code-view">
+<pre><code class="language-js">//문제정보
+const quizInfo = [
+    {
+        quizNum : 1,
+        quizAsk : "다음 중 시멘틱 태그는 무엇인가요?",
+        quizChoice : ["div 태그", "h1 태그", "span 태그", "main 태그"],
+        quizAnswer : "4",
+        quizEx : "시멘틱 태그는 의미가 부여된 태그로서 main 태그는 사이트에서 중요한 콘텐츠에 한 번만 사용할 수 있습니다."
+    }
+];
+
+//문제출력
+function updateQuiz(){
+    questionNum.innerHTML = quizInfo[0].quizNum;
+    questionAsk.innerHTML = quizInfo[0].quizAsk
+    questionAnswer.innerHTML = quizInfo[0].quizAnswer
+    questionEx.innerHTML = quizInfo[0].quizEx;
+
+    questionChoice.forEach((e, i)=>{
+        e.innerHTML = quizInfo[0].quizChoice[i];
+    });
+
+    questionAnswer.style.display = "none";
+    questionEx.style.display = "none"
+}
+updateQuiz();
+
+//정답확인
+function answerQuiz(){
+    questionSelect.forEach((e,i)=>{
+        if(questionSelect[i].checked == true){
+            if(questionSelect[i].value == quizInfo[0].quizAnswer){
+                questionAnswer.innerHTML = "정답입니다.";
+                questionBtn.style.display = "none";
+                questionAnswer.style.display = "block";
+                questionEx.style.display = "block";
+            }else{
+                questionAnswer.innerHTML = "오답입니다.";
+                questionBtn.style.display = "none";
+                questionAnswer.style.display = "block";
+                questionEx.style.display = "block";
+            }
+        }
+    })
+}
+questionBtn.addEventListener("click", answerQuiz);
+</code></pre>
+                                </div>
+                            <div class="code-view">
+<pre><code class="language-js">//문제정보
+const quizInfo = [
+    {
+        quizNum : 1,
+        quizAsk : "다음 중 시멘틱 태그는 무엇인가요?",
+        quizChoice : {
+            1: "&lt;a&gt; 태그",
+            2: "&lt;br&gt; 태그",
+            3: "&lt;em&gt; 태그",
+            4: "&lt;main&gt; 태그",
+        },
+        quizAnswer : 4,
+        quizEx : "&lt;main&gt; 태그는 시멘틱 태그 입니다."
+    },
+    {
+        quizNum : 2,
+        quizAsk : "다음 중 CSS의 단위로 맞지 않는 것은 무엇인가요?",
+        quizChoice : {
+            1: "em",
+            2: "rem",
+            3: "vm",
+            4: "ch",
+        },
+        quizAnswer : 4,
+        quizEx : "vm 단위는 없습니다."
+    },
+    {
+        quizNum : 3,
+        quizAsk : "다음 중 자바스크립트 언어와 관련이 없는 것은 무엇인가요?",
+        quizChoice : {
+            1: "react.js",
+            2: "jquery.js",
+            3: "vue.js",
+            4: "c++",
+        },
+        quizAnswer : 4,
+        quizEx : "c++은 서버 언어입니다."
+    },
+];
+
+//문제 만들기
+function updateQuiz(){
+    const output = [];
+
+    quizInfo.forEach((currentQuestion, questionNumber)=>{
+        output.push(`
+            &lt;div class="quizBox"&gt;
+                &lt;h2&gt;&lt; 문제&lt;span class="num"&gt;${currentQuestion.quizNum}&lt;/span&gt; &gt;&lt;/h2&gt;
+                &lt;p class="question"&gt;${currentQuestion.quizAsk}&lt;/p&gt;
+                &lt;div class="selects"&gt;
+                    &lt;label&gt;
+                        &lt;input class="select" type="radio" name="select${questionNumber}" value="1"&gt;
+                        &lt;span class="choice"&gt;${currentQuestion.quizChoice[1]}&lt;/span&gt;
+                    &lt;/label&gt;
+                    &lt;label&gt;
+                        &lt;input class="select" type="radio" name="select${questionNumber}" value="2"&gt;
+                        &lt;span class="choice"&gt;${currentQuestion.quizChoice[2]}&lt;/span&gt;
+                    &lt;/label&gt;
+                    &lt;label&gt;
+                        &lt;input class="select" type="radio" name="select${questionNumber}" value="3"&gt;
+                        &lt;span class="choice"&gt;${currentQuestion.quizChoice[3]}&lt;/span&gt;
+                    &lt;/label&gt;
+                    &lt;label&gt;
+                        &lt;input class="select" type="radio" name="select${questionNumber}" value="4"&gt;
+                        &lt;span class="choice"&gt;${currentQuestion.quizChoice[4]}&lt;/span&gt;
+                    &lt;/label&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        `);
+    })
+    questionQuiz.innerHTML = output.join(' ');
+}
+updateQuiz();
+
+//결과 확인하기
+function showResult(){
+    const selectContainers = questionQuiz.querySelectorAll(".selects");
+    const quizBox = document.querySelectorAll(".quizBox")
+    let numCorrect = 0;
+    //사용자가 정답을 체크 == 문제의 정답
+
+    quizInfo.forEach((currentQuestion, questionNumber)=>{
+        const selectContainer = selectContainers[questionNumber];
+        const resultSelector = `input[name=select${questionNumber}]:checked`
+        const resultAnswer = (selectContainer.querySelector(resultSelector) || {}).value;
+
+        if(resultAnswer == currentQuestion.quizAnswer){
+            numCorrect++;
+            selectContainers[questionNumber].style.color = "blue";
+        }else{
+            selectContainers[questionNumber].style.color = "red";
+            
+            let correctAnswer = document.createElement("p");
+            correctAnswer.classList.add("ex")
+            correctAnswer.innerHTML = currentQuestion.quizEx;
+            quizBox[questionNumber].appendChild(correctAnswer);
+        }
+    });
+    questionResult.innerHTML = `${quizInfo.length}문제 중에 ${numCorrect}문제를 맞추었습니다.`
+}
+
+questionBtn.addEventListener("click",showResult);
+</code></pre>
+                            </div>
+                            </div>
+                        </div>
                         <div class="effect-number">
                             <a class="scriptBtn2 active" href="#">1</a>
                             <a class="scriptBtn2" href="#">2</a>
@@ -591,7 +1124,119 @@
                         <div class="circle" aria-hidden="true"></div>
                         <div class="text scriptTxt">script</div>
                         <div class="text effect">slider effect</div>
-                        <iframe class="scriptView" src="../effect/portfolio/slider1.html" frameborder="0"></iframe>
+                        <div class="view">
+                            <iframe class="scriptView" src="../effect/portfolio/slider1.html" frameborder="0"></iframe>
+                            <div class="box">
+                                <div class="code-view active">
+    <pre><code class="language-js">const sliderWrap = document.querySelector(".slider-wrap");
+    const sliderImg = document.querySelector(".slider-img");
+    const slider = document.querySelectorAll(".slider");
+    
+    let currentIndex = 0;       //현재 이미지
+    let sliderCount = slider.length; 
+    
+    setInterval(() => {
+        let nextIndex = (currentIndex + 1) % sliderCount;
+    
+        slider[currentIndex].style.opacity = "0";
+        slider[nextIndex].style.opacity = "1";
+    
+        currentIndex = nextIndex;
+    },3000);
+    </code></pre>
+                                </div>
+                                <div class="code-view">
+    <pre><code class="language-js">let currentIndex = 0;
+    let clone = sliderImg.firstElementChild.cloneNode(true);
+    sliderImg.appendChild(clone);
+    
+    function sliderEffect(){
+        currentIndex++;
+        sliderImg.style.transition = "0.3s";
+        sliderImg.style.transform = `translateX(${-sliderWidth * currentIndex}px)`
+    
+    
+        if(currentIndex == 5){
+            setTimeout(() => {
+                sliderImg.style.transition = "0s";
+                sliderImg.style.transform = "translateX(0)"
+            }, 301);
+            currentIndex = 0;
+        }
+    }
+    setInterval(sliderEffect, 2100);
+    </code></pre>
+                                </div>
+                                <div class="code-view">
+    <pre><code class="language-js">let sliderCopy = $(".slider:lt("+sliderShowNumber+")").clone();
+    sliderImg.append(sliderCopy);
+    
+    function moveLeft(){
+        if(currentIndex == 0){
+            currentIndex = sliderCount;
+            sliderImg.stop().css("margin-left",-sliderWidth * currentIndex)
+        }
+        currentIndex--;
+        sliderImg.animate({"marginLeft":-sliderWidth * currentIndex},400)
+    }
+    function moveRight(){
+        if(currentIndex == sliderCount){
+            currentIndex = 0;
+            sliderImg.stop().css("margin-left",currentIndex)
+        }
+        currentIndex++;
+        sliderImg.animate({"marginLeft":-sliderWidth * currentIndex},400)
+        console.log(currentIndex)
+    }
+    
+    //버튼 클릭하기
+    sliderBtn.on("click","a",function(){
+        if($(this).hasClass("prev")){
+            moveLeft();
+        }else{
+            moveRight();
+        }
+    })
+    </code></pre>
+                                </div>
+                                <div class="code-view">
+    <pre><code class="language-js">sliderImg.css({ width: sliderTotalWidth, height: sliderHeight });
+    //이미지 움직이기
+    function gotoSlider(index){
+        sliderImg.animate({ left: -sliderWidth * index }, 400);
+        currentIndex = index;
+        sliderDot.find("a").removeClass("active").eq(currentIndex).addClass("active");
+    }
+    //이미지 갯수만큼 닷 버튼 만들기
+    slider.each(function(index){
+        let sliderName = $(this).find("img").attr("alt");
+        let sliderSrc = $(this).find("img").attr("src");
+        dotIndex += "&lt;a href='#' style='background-image:url("+sliderSrc+")'&gt;"+sliderName+"&lt;/a&gt;";
+    });
+    sliderDot.html(dotIndex);
+    sliderDot.find("a").eq(0).addClass("active");
+    //닷 버튼 클릭하기
+    sliderDot.on("click","a",function(e){
+        e.preventDefault();
+        gotoSlider($(this).index());
+    });
+    //버큰 클릭하기
+    sliderBtn.on("click","a",function(e){
+        e.preventDefault();
+        let nextIndex = (currentIndex + 1) % sliderCount;
+        let prevIndex = (currentIndex - 1) % sliderCount;
+        if(currentIndex == 0) prevIndex = sliderCount - 1;
+        console.log("prevIndex :" + prevIndex)
+        if( $(this).hasClass("prev") ){
+            gotoSlider(prevIndex);
+        } else {
+            gotoSlider(nextIndex);
+        }
+    });
+    </code></pre>
+                                </div>
+                            </div>
+                        </div>
                         <div class="effect-number">
                             <a class="scriptBtn active" href="#">1</a>
                             <a class="scriptBtn" href="#">2</a>
@@ -759,6 +1404,48 @@
             </div>
         </section>
         <!-- //animation -->
+
+        <section id="contact">
+            <div class="column-menu">
+                <div class="rotate">contact</div>
+            </div>
+            <div class="contact-wrap">
+                <div class="contact-info">
+                    <p class="contact-title">contact</p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="contact">phone</span>
+                                <span class="address">010-2940-9512</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="contact">e-mail</span>
+                                <span class="address">paneoy@gmail.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="contact">Github</span>
+                                <span class="address">github.com/hyunseo418/dothome</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="btn-wrap">
+                        <a href="#" class="btn">
+                            리액트 사이트 보기
+                            <div class="whiteCircle"></div>
+                            <div class="blackCircle"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    
+                </div>
+            </div>
+        </section>
+        <!-- //contact -->
     </main>
 
     <!-- script -->
@@ -768,157 +1455,12 @@
     <script src="../assets/js/prism.js"></script>
     <script>
 
-        const contents = document.getElementById("contents");
-        const website = document.getElementById('website');
-        const a = document.querySelectorAll('a');
-        a.forEach(el=>{
-            el.addEventListener('click', function(e){
-                e.preventDefault();
-            })
-        })
-        
-        class SupahScroll {
-            constructor(options) {
-                this.opt = options || {}
-                this.el = this.opt.el ? this.opt.el : '.supah-scroll'
-                this.speed = this.opt.speed ? this.opt.speed : 0.1
-                this.init()
-            }
-
-            init() {
-                this.scrollY = 0
-                this.supahScroll = document.querySelectorAll(this.el)[0]
-                this.supahScroll.classList.add('supah-scroll')
-                this.menu = document.querySelectorAll('.summary > ul> li > a')
-                this.scroll = 0
-                this.events()
-                this.update()
-                this.animate()
-                this.menuScroll();
-            }
-            
-            update() {
-                if (this.supahScroll === null) return
-                document.body.style.height = `${this.supahScroll.getBoundingClientRect().width + window.innerWidth*2}px`
-            }
-            
-            pause() {
-                document.body.style.overflow = 'visible'
-                // document.body.style.overflow = 'hidden'
-                cancelAnimationFrame(this.raf)
-            }
-            
-            play() {
-                document.body.style.overflow = 'inherit'
-                this.raf = requestAnimationFrame(this.animate.bind(this))
-            }
-            
-            destroy() {
-                this.supahScroll.classList.remove('supah-scroll')
-                // this.supahScroll.style.transform = 'none'
-                document.body.style.overflow = 'inherit'
-                window.removeEventListener('resize', this.update)
-                cancelAnimationFrame(this.raf)
-                // delete this.supahScroll
-            }
-
-            animate() {
-                this.scrollY += (window.scrollY - this.scrollY) * this.speed
-                this.supahScroll.style.transform = `translate3d(${-this.scrollY}px,0,0)`
-                this.raf = requestAnimationFrame(this.animate.bind(this))
-                
-                
-            }
-            
-            scrollTo(y) {
-                window.scrollTo(0, y)
-            }
-            
-            staticScrollTo(y) {
-                cancelAnimationFrame(this.raf)
-                this.scrollY = y
-                window.scrollTo(0, y)
-                this.supahScroll.style.transform = `translate3d(${-y}px,0,0)`
-                this.play()
-            }
-            
-            events() {
-                window.addEventListener('load', this.update.bind(this))
-                window.addEventListener('resize', this.update.bind(this))
-            }
-
-            menuScroll(){
-                this.scroll = window.innerWidth/2 - ((this.scrollY - window.innerWidth) * this.speed *10)
-                this.menu.forEach(el => {
-                    el.style.transform = `translateX(${Math.max(0,this.scroll)}px)`
-                })
-                requestAnimationFrame(this.menuScroll.bind(this));
-            }
-            removeMenuScroll(){
-                cancelAnimationFrame(this.menuScroll);
-            }
-        }
-
-        /*------------------------------
-        Initialize
-        ------------------------------*/
-        const supahscroll = new SupahScroll({
-            el: '#contents',
-            speed: 0.05
-        })
-
-
-
-
-        // var cw = window.innerWidth,
-        //     ch = window.innerHeight,
-        //     nWaves = 5,
-        //     waves = [],
-        //     amp = 10,
-        //     speed = 0.4,
-        //     detail = 30,
-        //     waveY = 0;
-
-        // // https://greensock.com/docs/v3/Plugins/ScrollToPlugin
-        
-        // for (var w=0; w<nWaves; w++) {
-        //     var p = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-        //     waves.push(p);
-        //     $('#m').append(p);
-        //     gsap.set(p, {attr:()=>{ return (w==0) ? {fill:'#fff'} : {fill:'none', stroke:'#fff', 'stroke-dasharray':'2 4', 'stroke-width':3-w/nWaves*3}}});
-        // }
-        // gsap.timeline({defaults:{duration:1}, delay:0.9})
-        //     .from('.txt1', {opacity:0, ease:'power2.inOut'}, 0)
-        //     .to(window, {scrollTo:ch/2 - 50}, 0);
-        // gsap.ticker.add(drawWave);
-        
-        // function drawWave(t) {
-        //     if (waveY!=-$(window).scrollTop()) gsap.to(window, {duration:1, waveY:Math.round($(window).scrollTop())});
-        //     // console.log($(window));
-        //     // console.log(window)
-        //     for (var k=0; k<nWaves; k++) {
-        //         var p = waves[k],
-        //             offset = (1 - k/nWaves) * nWaves/6,
-        //             pts = '';
-        //         for(var i=-1; i<(cw+detail); i+=detail) {
-        //             var y = ch-waveY;
-        //             y += Math.sin(i * 0.003 - t/speed + offset) * amp;
-        //             y += Math.sin(i * 0.004 - t/speed + offset) * amp;
-        //             y += Math.sin(i * -0.011 - t/speed + 20+offset) * amp;
-        //             pts += i.toFixed(2)+','+y.toFixed(2)+' ';
-        //         }
-        //         gsap.set(p, {attr:{points:'-20,-20 -20,'+ch/2+' '+pts+' '+cw+',-20'}});
-        //     }
-        // }
-        // $(window).on('resize', ()=>{ cw=window.innerWidth; ch=window.innerHeight; });
-
-
-
         // variables
+        const contents = document.getElementById("contents");
         const headerBtn = document.querySelector('.header-btn');
         const menu = document.querySelectorAll('.summary > ul> li > a');
         const menuTitle = document.querySelector('.summary-title > h2');
-        const intro = document.getElementById('intro')
+        const intro = document.getElementById('intro');
         const svg = document.querySelector('.container')
         const summary = document.getElementById('summary');
         const about = document.getElementById('about');
@@ -929,6 +1471,8 @@
         const score = document.querySelectorAll('.score')
         const btn = document.querySelectorAll('.btn');
 
+        const website = document.getElementById('website');
+        const siteCont = document.querySelectorAll('.site-contents');
         const standard = document.querySelector('.website1');
         const responsive = document.querySelector('.website2');
         const megabox = document.querySelector('.website3');
@@ -943,9 +1487,13 @@
         const code = document.querySelectorAll('.tab-contents > .code');
         const siteCodeView = document.querySelectorAll('.siteCodeView');
 
+        const script = document.getElementById('script');
+        const scriptCont = document.querySelectorAll('.script');
+        const circle = document.querySelectorAll('.circle');
         const scriptTxt = document.querySelectorAll('.scriptTxt');
         const effect = document.querySelectorAll('.effect');
         const effectNumber = document.querySelectorAll('.effect-number');
+        const scriptBtn = document.querySelectorAll('.scriptBtn');
         const scriptView = document.querySelectorAll('.scriptView');
         const scriptCodeView = document.querySelectorAll('.scriptCodeView');
         const scriptInfo = [
@@ -989,7 +1537,13 @@
                 ]
             },
         ];
-            
+        const codeBox = document.querySelectorAll('.box');
+
+        const animationCont = document.querySelectorAll('.animation');
+        const animationView = document.querySelectorAll('.animation-area > iframe')
+        const animationNumber = document.querySelectorAll('.current-number');
+        const animationTitle = document.querySelectorAll('.animation-title');
+        const animationDesc = document.querySelectorAll('.animation-desc')
         const animationCodeView = document.querySelectorAll('.animationCodeView');
         const animationLink = [
             'https://codepen.io/hyunseo418/pen/YzWvJPM',
@@ -1000,13 +1554,165 @@
             'https://codepen.io/hyunseo418/pen/OJRVjPy'
         ]
         const backLine = document.querySelectorAll('.back-line-group');
+        const a = document.querySelectorAll('a');
+        a.forEach(el=>{
+            el.addEventListener('click', function(e){
+                e.preventDefault();
+            })
+        })
+        
+        class SupahScroll {
+            constructor(options) {
+                this.opt = options || {}
+                this.el = this.opt.el ? this.opt.el : '.supah-scroll'
+                this.speed = this.opt.speed ? this.opt.speed : 0.1
+                this.init()
+            }
+
+            init() {
+                this.scrollY = 0
+                this.supahScroll = document.querySelectorAll(this.el)[0]
+                this.supahScroll.classList.add('supah-scroll')
+                this.headerBtn = document.querySelector('.header-btn')
+                this.summaryOffset = document.getElementById('summary').offsetLeft + window.innerWidth*2
+                this.menu = document.querySelectorAll('.summary > ul> li > a')
+                this.scroll = 0
+                this.siteOffest = website.offsetLeft + window.innerWidth*2
+                this.summaryOffset = summary.offsetLeft + window.innerWidth*2
+                this.events()
+                this.update()
+                this.animate()
+                this.menuScroll()
+                this.headerBtnClick();
+            }
+            
+            update() {
+                if (this.supahScroll === null) return
+                document.body.style.height = `${this.supahScroll.getBoundingClientRect().width + window.innerWidth*2}px`
+            }
+            
+            pause() {
+                document.body.style.overflow = 'visible'
+                // document.body.style.overflow = 'hidden'
+                cancelAnimationFrame(this.raf)
+            }
+            
+            play() {
+                document.body.style.overflow = 'inherit'
+                this.raf = requestAnimationFrame(this.animate.bind(this))
+            }
+            
+            destroy() {
+                this.supahScroll.classList.remove('supah-scroll')
+                // this.supahScroll.style.transform = 'none'
+                document.body.style.overflow = 'inherit'
+                window.removeEventListener('resize', this.update)
+                cancelAnimationFrame(this.raf)
+                // delete this.supahScroll
+            }
+
+            animate() {
+                this.scrollY += (window.scrollY - this.scrollY) * this.speed
+                this.supahScroll.style.transform = `translate3d(${-this.scrollY}px,0,0)`
+                this.raf = requestAnimationFrame(this.animate.bind(this))
+            }
+            
+            scrollTo(y) {
+                window.scrollTo(0, y)
+            }
+            
+            staticScrollTo(y) {
+                cancelAnimationFrame(this.raf)
+                this.scrollY = y
+                window.scrollTo(0, y)
+                this.supahScroll.style.transform = `translate3d(${-y}px,0,0)`
+                this.play()
+            }
+            
+            events() {
+                window.addEventListener('load', this.update.bind(this))
+                window.addEventListener('resize', this.update.bind(this))
+            }
+
+            headerBtnClick(){
+                this.headerBtn.addEventListener('click', ()=>{
+                    this.scrollTo(this.summaryOffset)
+                })
+            }
+            menuScroll(){
+                this.scroll = window.innerWidth/2 - ((this.scrollY - window.innerWidth) * this.speed *10)
+                this.menu.forEach((el, index) => {
+                    el.style.transform = `translateX(${Math.max(0,this.scroll * (index*0.1))}px)`
+                })
+                requestAnimationFrame(this.menuScroll.bind(this));
+            }
+            removeMenuScroll(){
+                cancelAnimationFrame(this.menuScroll);
+            }
+        }
 
 
+        /*------------------------------
+        Initialize
+        ------------------------------*/
+        const supahscroll = new SupahScroll({
+            el: '#contents',
+            speed: 0.05
+        })
+
+
+        var cw = window.innerWidth,
+            ch = window.innerHeight,
+            nWaves = 5,
+            waves = [],
+            amp = 10,
+            speed = 0.4,
+            detail = 30,
+            waveY = 0;
+        // https://greensock.com/docs/v3/Plugins/ScrollToPlugin
+
+        for (var w=0; w<nWaves; w++) { 
+            var p = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+            waves.push(p);
+            $('#m').append(p);
+            gsap.set(p, {attr:()=>{ return (w==0) ? {fill:'#fff'} : {fill:'none', stroke:'#fff', 'stroke-dasharray':'2 4', 'stroke-width':3-w/nWaves*3}}});
+        }
+        gsap.timeline({defaults:{duration:1}, delay:0.9})
+            .from('.txt1', {opacity:0, ease:'power2.inOut'}, 0)
+            .to(window, {scrollTo:ch/2 - 50}, 0);
+        gsap.ticker.add(drawWave)
+        
+        function drawWave(t) {
+            if (waveY!=-$(window).scrollTop()) gsap.to(window, {duration:1, waveY:Math.round($(window).scrollTop())});
+            for (var k=0; k<nWaves; k++) {
+                var p = waves[k],
+                    offset = (1 - k/nWaves) * nWaves/6,
+                    pts = '';
+                for(var i=-1; i<(cw+detail); i+=detail) {
+                    var y = ch-waveY;
+                    y += Math.sin(i * 0.003 - t/speed + offset) * amp;
+                    y += Math.sin(i * 0.004 - t/speed + offset) * amp;
+                    y += Math.sin(i * -0.011 - t/speed + 20+offset) * amp;
+                    pts += i.toFixed(2)+','+y.toFixed(2)+' ';
+                }
+                gsap.set(p, {attr:{points:'-20,-20 -20,'+ch/2+' '+pts+' '+cw+',-20'}});
+            }
+        }
+        $(window).on('resize', ()=>{ cw=window.innerWidth; ch=window.innerHeight; });
+
+
+
+       
         // summary effect
         let summarySplit = menuTitle.innerText.split('').join('</span><span class="split" aria-hidden="true">');
         summarySplit = '<span class="split" aria-hidden="true">' + summarySplit + '</span>';
         menuTitle.innerHTML = summarySplit;
         const split = document.querySelectorAll('.split');
+        function summaryEffect(){
+            for(i=0; i<split.length; i++){
+                gsap.to(split[i], {duration:.8, y:0, delay:"."+i, ease:"power3.out"})
+            }
+        }
 
         // website code view
         siteCodeView.forEach((el,index)=>{
@@ -1026,20 +1732,32 @@
         });
 
         // website code-view tab menu
-        code.forEach(el => {
-            el.style.display = "none";
+        codeContents.forEach(el => {
+            el.children[0].style.display = "block";
         })
-        code[0].style.display = "block";
-
         tabMenu.forEach((el, index)=>{
             el.addEventListener('click',(e)=>{
-                console.log(el.children)
+                let btnTarget = e.target.parentNode;
+                let idx = btnTarget.dataset.indexNumber;
                 for(let i=0; i<el.children.length; i++){
                     el.children[i].classList.remove("active");
-                    code[i].style.display = "none";
+                    codeContents[index].children[i].style.display = "none";
                 }
-                e.target.parentNode.classList.add("active");
-                code[index].style.display = "block";
+                btnTarget.classList.add("active");
+                codeContents[index].children[idx-1].style.display = "block";
+            })
+        })
+        
+        // script
+        effectNumber.forEach((el, index) => {
+            el.addEventListener('click', function(e){
+                for(let i=0; i<el.children.length; i++){
+                    el.children[i].classList.remove('active');
+                    codeBox[index].children[i].classList.remove('active');
+                }
+                e.target.classList.add('active');
+                scriptView[index].setAttribute('src', scriptInfo[index].link[e.target.innerHTML - 1]);
+                codeBox[index].children[e.target.innerHTML - 1].classList.add('active')
             })
         })
 
@@ -1049,30 +1767,19 @@
                 el.classList.toggle('active');
 
                 if(el.classList.contains('active')){
-                    scriptTxt[index].style.left = "-8vw";
-                    scriptTxt[index].style.top = "-11vh";
-                    effect[index].style.right = "-11vw";
-                    effect[index].style.bottom = "-10vh";
+                    scriptCodeView[index].innerHTML = "코드닫기 <div class='whiteCircle'></div><div class='blackCircle'></div>";
+                    scriptTxt[index].classList.add('show');
+                    effect[index].classList.add('show');
+                    gsap.to(codeBox[index], {duration:.4, top:0})
                 }else{
-                    scriptTxt[index].style.left = "-5vw";
-                    scriptTxt[index].style.top = "-7vh";
-                    effect[index].style.right = "-8vw";
-                    effect[index].style.bottom = "-6vh";
+                    scriptCodeView[index].innerHTML = "코드보기 <div class='whiteCircle'></div><div class='blackCircle'></div>";
+                    scriptTxt[index].classList.remove('show');
+                    effect[index].classList.remove('show');
+                    gsap.to(codeBox[index], {duration:.4, top:"-50vh"})
                 }
             });
 
         });
-
-        // script
-        effectNumber.forEach((el, index) => {
-            el.addEventListener('click', function(e){
-                for(let i=0; i<el.children.length; i++){
-                    el.children[i].classList.remove('active');
-                }
-                e.target.classList.add('active');
-                scriptView[index].setAttribute('src', scriptInfo[index].link[e.target.innerHTML - 1]);
-            })
-        })
 
         // animation link
         animationCodeView.forEach((el, index)=>{
@@ -1080,90 +1787,86 @@
                 window.open(animationLink[index]);
             })
         })
-        // animation decoration
+        // animation background
         backLine.forEach(el=>{
             for(let i=0; i<70; i++){
                 el.innerHTML += '<div class="back-line" aria-hidden="true"></div>'
             }
         })
 
+
+
         window.addEventListener("scroll", ()=>{
             let scrollTop = document.documentElement.scrollTop;
-            
-            // header button effect & summary effect
-            if(summary.getBoundingClientRect().left - window.innerWidth/2 <= 0 && summary.nextElementSibling.getBoundingClientRect().left - window.innerWidth/2 >= 0){
-                headerBtn.classList.add('active');
-                // supahscroll.menuScroll();
 
-                menuTitle.classList.add('show');
-                if(menuTitle.classList.contains('show')){
-                    for(i=0; i<split.length; i++){
-                        gsap.to(split[i], {duration:.8, y:0, delay:"."+i, ease:"power3.out"})
-                    }
-                }
-            }else{
-                headerBtn.classList.remove('active')
-                // supahscroll.removeMenuScroll();
+            if(summary.getBoundingClientRect().left <= 0){
+                gsap.ticker.remove(drawWave)
+                document.querySelector('svg.container').style.display = "none";
+                document.querySelector('.background .quote').style.display = "block";
             }
 
 
-            // about animation
-            if(about.getBoundingClientRect().left - window.innerWidth <= 0){
-                gsap.to(photo, {duration: 2, scale: 1});
-                gsap.to(textBox[0], {duration:.6, opacity:1, delay:.1, ease:'power2.in'});
-                gsap.to(textBox[1], {duration:.6, opacity:1, delay:.3, ease:'power2.in'});
-                gsap.to(textBox[2], {duration:.6, opacity:1, delay:.5, ease:'power2.in'});
+            // header button effect & summary effect
+            if(summary.getBoundingClientRect().left - window.innerWidth/2 <= 0 && summary.nextElementSibling.getBoundingClientRect().left - window.innerWidth/2 >= 0){
+                headerBtn.classList.add('active');
+                summaryEffect();
             }else{
-                gsap.to(photo, {duration: 2, scale: 1.5});
-                gsap.to(textBox[0], {duration:.6, opacity:0, delay:.5});
-                gsap.to(textBox[1], {duration:.6, opacity:0, delay:.3});
-                gsap.to(textBox[2], {duration:.6, opacity:0, delay:.1});
+                headerBtn.classList.remove('active');
+            } 
+
+            // about animation
+            if(about.getBoundingClientRect().left - window.innerWidth*3/4 <= 0){
+                let about_tl = gsap.timeline();
+                gsap.to(photo, {duration: 2, scale: 1});
+                about_tl.to(textBox[0], {duration:.8, y:0, opacity: 1, ease: "power1.out"})
+                        .to(textBox[1], {duration:.8, y:0, opacity: 1, ease: "power1.out"}, "-=0.3")
+                        .to(textBox[2], {duration:.8, y:0, opacity: 1, ease: "power1.out"}, "-=0.3");
             }
 
             // skill odometer
             if(skill.getBoundingClientRect().left - window.innerWidth <= 0){
-
                 score.forEach(el => {
                     el.classList.add('active');
                 });
             }
+            
+            // website animation
+            for(let i=0; i<siteCont.length; i++){
+                if(siteCont[i].getBoundingClientRect().left - window.innerWidth/2 <= 0){
+                    let site_tl = gsap.timeline();
+                    site_tl.to([websiteTitle[i], websiteDesc[i]], {duration:.4, y:0})
+                           .to(siteBtn[i], {duration:.4, y:0})
+                           .to(siteImg[i], {duration:.4, x:0});
+                }
+            }
+            // if(standard.getBoundingClientRect().left - window.innerWidth >= 0){
+            //     websiteTitle.forEach(el => {gsap.to(el, {duration:.4, y:"-20vh"} );})
+            //     websiteDesc.forEach(el=>{gsap.to(el, {duration:.4, y:"-50vh"} );})
+            //     siteBtn.forEach(el=>{gsap.to(el, {duration:.4, y:"6vh"} );})
+            //     siteImg.forEach(el=>{gsap.to(el, {duration:.4, x:"50vw"} );})
+            // }
+            
+            // script animation
+            for(let i=0; i<scriptCont.length; i++){
+                if(scriptCont[i].getBoundingClientRect().left - (window.innerWidth*3/4) <= 0){
+                    let script_tl = gsap.timeline();
+                    script_tl.to(scriptView[i], {duration:.6, y:0})
+                             .to(scriptTxt[i], {duration:.2, opacity:1, y:0})
+                             .to(effect[i], {duration:.2, opacity:1, y:0})
+                             .to(circle[i], {duration:.5, scale:1, ease:"power1.out"})
+                             .to(scriptCodeView[i], {duration:.4, y:0})
+                             .to(effectNumber[i], {duration:.2, opacity:1});
+                }
+            }
 
-            
-            
-            // website
-            if(standard.getBoundingClientRect().left - window.innerWidth/2 <= 0){
-                gsap.to([websiteTitle[0], websiteDesc[0]], {duration:.4, y:0});
-                gsap.to(siteBtn[0], {duration:.4, y:0, delay: .3});
-                gsap.to(siteImg[0], {duration:.4, x:0, delay: .6});
-            }
-            if(responsive.getBoundingClientRect().left - window.innerWidth/2 <= 0){
-                gsap.to([websiteTitle[1], websiteDesc[1]], {duration:.4, y:0});
-                gsap.to(siteBtn[1], {duration:.4, y:0, delay: .3});
-                gsap.to(siteImg[1], {duration:.4, x:0, delay: .6});
-            }
-            if(megabox.getBoundingClientRect().left - window.innerWidth/2 <= 0){
-                gsap.to([websiteTitle[2], websiteDesc[2]], {duration:.4, y:0});
-                gsap.to(siteBtn[2], {duration:.4, y:0, delay: .3});
-                gsap.to(siteImg[2], {duration:.4, x:0, delay: .6});
-            }
-            if(clova.getBoundingClientRect().left - window.innerWidth/2 <= 0){
-                gsap.to([websiteTitle[3], websiteDesc[3]], {duration:.4, y:0});
-                gsap.to(siteBtn[3], {duration:.4, y:0, delay: .3});
-                gsap.to(siteImg[3], {duration:.4, x:0, delay: .6});
-            }
-            if(standard.getBoundingClientRect().left - window.innerWidth >= 0){
-                websiteTitle.forEach(el => {
-                    gsap.to(el, {duration:.4, y:"-20vh"});
-                })
-                websiteDesc.forEach(el=>{
-                    gsap.to(el, {duration:.4, y:"-50vh"});
-                })
-                siteBtn.forEach(el=>{
-                    gsap.to(el, {duration:.4, y:"6vh"});
-                })
-                siteImg.forEach(el=>{
-                    gsap.to(el, {duration:.4, x:"50vw"});
-                })
+            // animation animation
+            if(animationCont[0].getBoundingClientRect().left - window.innerWidth/2 <= 0){
+                let animation_tl = gsap.timeline();
+                animation_tl.to(animationView[0], {duration:.3, x:0})
+                            .to(animationNumber[0], {duration:.3, y:0})
+                            .to(animationTitle[0], {duration:.3, y:0})
+                            .to(animationDesc[0], {duration:.3, y:0})
+                            .to(animationCodeView[0], {duration:.3, y:0});
             }
         });
 

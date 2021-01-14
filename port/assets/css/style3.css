@@ -1,35 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Buda:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
-@font-face {
-    font-family: 'NewYork';
-    src: local('NewYork.otf') format('otf');
-    font-weight: normal;
-    font-style: normal;
-    /* https://www.pixelsurplus.com/freebies/new-york-free-font */
-}
-@font-face {
-    font-family: 'Audrey';
-    src: local('Audrey.otf') format('otf');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'cyrene';
-    src: local('cyrene.otf') format('otf');
-    font-weight: normal;
-    font-style: normal;
-}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap');
-@font-face {
-    font-family: 'NEXON Lv1 Gothic OTF';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Buda:wght@300&display=swap');
 
 /* https://codepen.io/hyunseo418/pen/RwGQxzy?editors=1010 */
 /*---------------
@@ -140,34 +111,15 @@ body {
     position: fixed;
 }
 
-/* contents */
-#contents { 
-    left: 0; top: 0;
-    width: 2100vw;
-    height: var(--height);
-    padding-top: 50px;
-    display: flex;
-    overflow: hidden;
-    margin-left: 200vw;
-}
-#contents > section {
-    position: relative;
-    height: 100%;
-    display: flex;
-    border-right: 1px solid #fff;
-    background: #000;
-}
-.fixed {
-    position: fixed;
-}
-
 /* column menu style */
 .column-menu {
     width: 70px;
     height: var(--height);
-    background: #000;
+    background-color: #000;
     border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
     box-sizing: border-box;
+    margin-left: -1px;
 }
 .column-menu .rotate {
     transform: translateY(85vh) rotate(-90deg);
@@ -178,6 +130,7 @@ body {
 /* button design */
 .btn-wrap {
     position: absolute;
+    overflow: hidden;
     
 }
 .btn-wrap .btn {
@@ -217,6 +170,26 @@ body {
     left: -3.5vmin;
 }
 
+/* contents */
+#contents { 
+    left: 0; top: 0;
+    width: 1900vw;
+    height: var(--height);
+    padding-top: 50px;
+    display: flex;
+    overflow: hidden;
+    margin-left: 200vw;
+}
+#contents > section {
+    position: relative;
+    height: 100%;
+    display: flex;
+    border-right: 1px solid #fff;
+    background: #000;
+}
+.fixed {
+    position: fixed;
+}
 
 #summary {
     position: relative;
@@ -237,14 +210,15 @@ body {
     width: calc(400vw - 210px);
     margin-left: 100vw;
 }
-/* #react {
-    width: 100vw;
-} */
 #script {
     width: calc(400vw - 210px);
 }
 #animation {
     width: 600vw;
+}
+#contact {
+    width: 100vw;
+    position: relative;
 }
 
 
@@ -265,9 +239,10 @@ body {
 }
 .summary .summary-title {
     position: absolute;
-    bottom: 0; left: 50%;
+    bottom: 7%; left: 50%;
     transform: translateX(-50%);
     overflow: hidden;
+    line-height: 0.7;
     width: 100%;
     text-align: center;
 }
@@ -300,7 +275,7 @@ body {
 }
 .aboutMe .top figure img {
     object-fit: cover;
-    transform: scale(1.5);
+    transform: scale(1.7);
 }
 .aboutMe .top .desc {
     flex: 1 1 57%;
@@ -316,6 +291,7 @@ body {
     margin-top: 12vh;
     margin-left: 5%;
     opacity: 0;
+    transform: translateY(100px);
 }
 .aboutMe .bottom .text-box:first-child {
     margin-left: 0;
@@ -598,7 +574,6 @@ body {
     transform: translateY(-50vh);
 }
 .website .site-list .site-contents .site-detail .left .btn-wrap {
-    overflow: hidden;
     right: 10%; bottom: 10%;
 }
 .website .site-list .site-contents .site-detail .left .btn-wrap .siteBtn {
@@ -622,13 +597,15 @@ body {
 }
 .code-view {
     position: absolute;
-    left: 0; top: 0;
     background: #2d2d2d;
     width: 100%;
     height: 100%;
-    
     box-sizing: border-box;
+    overflow-y: auto;
+}
+.right .code-view {
     opacity: 0;
+    left: 0; top: 0;
 }
 .right .code-view .tab-menu ul {
     width: 100%;
@@ -653,32 +630,11 @@ body {
 }
 .right .code-view .tab-contents .code {
     padding: 0 1vw;
+    display: none;
 }
-
-/* react */
-.reactCont {
-    display: flex;
-    padding: 5vw 13vw;
+.right .code-view .tab-contents .code.active {
+    display: block;
 }
-.reactCont .left {
-    flex: 1 1 65%;
-}
-.reactCont .left img {
-    object-fit: cover;
-    /* height: 100%; */
-    width: 100%;
-}
-.reactCont .right {
-    position: relative;
-    flex: 1 1 29%;
-    margin: 0 3%;
-}
-.reactCont .right .react {}
-.reactCont .right .portfolio {}
-.reactCont .right > div .title {
-    font-size: 2vw;
-}
-.reactCont .right > div .desc {}
 
 /* script */
 .script-wrap {
@@ -689,6 +645,7 @@ body {
 }
 .script-wrap .script .script-contents {
     position: relative;
+    width: 50vw; height: 50vh;
     z-index: 100;
 }
 .script-contents .circle {
@@ -698,31 +655,52 @@ body {
     border-radius: 50%;
     border: 1px solid #fff;
     z-index: -1;
+    transform: scale(0);
 }
 .script-contents .text {
     font-size: 6vw;
     font-weight: 100;
     text-transform: uppercase;
     transition: all 0.4s ease;
+    z-index: 10000;
 }
 .script-contents .text.scriptTxt {
     position: absolute;
-    left: -5vw; top: -7vh;
+    left: -5vw; top: -8vh;
+    font-weight: 700;
+    transform: translateY(-7vh);
+    opacity: 0;
+}
+.script-contents .text.scriptTxt.show{
+    left: -8vw; top: -13vh;
 }
 .script-contents .text.effect {
     position: absolute;
-    right: -8vw; bottom: -6vh;
+    right: -8vw; bottom: -9vh;
+    transform: translateY(7vh);
+    opacity: 0;
 }
-.script-contents iframe {
+.script-contents .text.effect.show {
+    right: -10vw; bottom: -13vh;
+}
+.script-contents .view {
+    position: absolute;
+    top: 0; left: 0;
+    overflow: hidden;
     width: 50vw; height: 50vh;
+}
+.script-contents .view iframe {
+    width: 50vw; height: 50vh;
+    transform: translateY(51vh);
 }
 .script-contents .effect-number {
     position: absolute;
     right: -2vw; top: 0;
     display: flex;
     flex-direction: column;
+    opacity: 0;
 }
-#script .script-wrap .script .effect-number a.active {
+.script-wrap .script .effect-number a.active {
     width: 1.1vw; height: 1.1vw;
     border: 1px solid #fff;
     border-radius: 50%;
@@ -738,6 +716,21 @@ body {
 }
 .script-contents .btn-wrap {
     right: 0; top: -4vh;
+}
+.script-contents .btn-wrap .scriptCodeView {
+    transform: translateY(6vh);
+}
+.view .box {
+    position: absolute;
+    left: 0; top: -50vh;
+    width: 50vw; height: 50vh;
+}
+.view .box > .code-view {
+    left: 0; top: 0;
+    z-index: 100;
+}
+.view .box > .code-view.active {
+    z-index: 1000;
 }
 
 /* animation */
@@ -761,14 +754,15 @@ body {
     display: flex;
     justify-content: space-between;
 }
-.animation .animation-contents .text-area {
+.animation-contents .text-area {
     position: relative;
     flex: 0 0 25%;
     text-align: right;
     margin-right: 2vw;
+    overflow: hidden;
 }
-.animation .animation-contents .text-area .animation-number {}
-.animation .animation-contents .text-area .animation-number .max-number {
+.animation-contents .text-area .animation-number {}
+.animation-contents .text-area .animation-number .max-number {
     position: relative;
     display: inline-block;
     padding-left: 4vw;
@@ -781,39 +775,40 @@ body {
     width: 2.7vw; height: 0.1vh;
     background: #999;
 }
-.animation .animation-contents .text-area .animation-title {
+.animation-contents .text-area .animation-title {
     font-size: 3vw;
     text-transform: capitalize;
     margin-top: 1vh;
     line-height: 1.1;
+    /* transform: translateX(10vw); */
 }
-.animation .animation-contents .text-area .animation-desc {
+.animation-contents .text-area .animation-desc {
     font-family: var(--font-ko-light);
     color: #999;
     font-size: 1.2vw;
     margin-top: 1.7vh;
 }
-.animation .animation-contents .text-area .btn-wrap {
+.animation-contents .text-area .btn-wrap {
     bottom: 0;
     right: 0;
 }
-.animation .animation-contents .animation-area {
+.animation-contents .animation-area {
     position: relative;
     flex: 0 0 75%;
     display: flex;
     align-items: center;
 }
-.animation .animation-contents .animation-area iframe {
+.animation-contents .animation-area iframe {
     width: 50vw; height: 50vh;
 }
-.animation .animation-contents .animation-area .back-line-group {
+.animation-contents .animation-area .back-line-group {
     position: absolute;
     left: 11vw; top: 5vh;
     width: 42vw; height: 52vh;
     z-index: -1;
     overflow: hidden;
 }
-.animation .animation-contents .animation-area .back-line-group .back-line {
+.animation-contents .animation-area .back-line-group .back-line {
     height: 100%; width: 0.1vw;
     background: #fff;
     display: inline-block;
@@ -832,4 +827,66 @@ body {
     font-weight: 100;
     font-size: 7vw;
     letter-spacing: -1px;
+}
+
+/* contanct */
+.contact-wrap {
+    position: relative;
+    width: var(--width);
+    display: flex;
+}
+.contact-info {
+    position: relative;
+    flex: 1 1 40%;
+    height: var(--height);
+    background: #000;
+}
+.contact-info .contact-title {
+    font-size: 5vw;
+    position: absolute;
+    left: 40%; top: 10%;
+    transform: translateX(-50%);
+}
+.contact-info ul {
+    position: absolute;
+    left: 50%; bottom: 15%;
+    transform: translateX(-50%);
+}
+.contact-info li {}
+.contact-info li a {
+    font-weight: 100;
+    white-space: nowrap;
+    display: inline-block;
+    width: 23vw;
+    display: flex;
+}
+.contact-info li a .contact {
+    flex: 1 1 20%;
+}
+.contact-info li a .address {
+    flex: 1 1 80%;
+}
+.contact-info .btn-wrap {
+    left: 17%; bottom: 5%;
+}
+.contact-info .btn-wrap .btn {}
+.contact-right {
+    position: relative;
+    flex: 1 1 60%;
+    overflow: hidden;
+    background: #fff;
+}
+
+
+.background {
+    left: 0; top: 50px;
+    width: 100vw; height: var(--height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7vw;
+}
+.background .quote {
+    display: none;
+    line-height: 1.2;
 }
