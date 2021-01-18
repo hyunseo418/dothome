@@ -333,21 +333,21 @@
                                 <h4 class="ir_so">탭 메뉴</h4>
                                 <ul>
                                     <li class="active"><a href="#">공지사항1</a>
-                                        <ul>
+                                        <ul class="active">
                                             <li><a href="#">공지사항1 첫 번째 공지사항 목록입니다.</a></li>
                                             <li><a href="#">공지사항1 첫 번째 공지사항 목록입니다.</a></li>
                                             <li><a href="#">공지사항1 첫 번째 공지사항 목록입니다.</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">공지사항2</a>
-                                        <ul style="display: none;">
+                                        <ul>
                                             <li><a href="#">공지사항2 두 번째 공지사항 목록입니다.</a></li>
                                             <li><a href="#">공지사항2 두 번째 공지사항 목록입니다.</a></li>
                                             <li><a href="#">공지사항2 두 번째 공지사항 목록입니다.</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">공지사항3</a>
-                                        <ul style="display: none;">
+                                        <ul>
                                             <li><a href="#">공지사항3 세 번째 공지사항 목록입니다.</a></li>
                                             <li><a href="#">공지사항3 세 번째 공지사항 목록입니다.</a></li>
                                             <li><a href="#">공지사항3 세 번째 공지사항 목록입니다.</a></li>
@@ -455,6 +455,14 @@
         });
 
         $(".lightgallery").lightGallery(); 
+
+        $('.tab_menu > ul > li').on('click', function(e){
+            e.preventDefault();
+            $('.tab_menu > ul > li').removeClass('active')
+            $(this).addClass('active');
+            $('.tab_menu > ul > li > ul').removeClass('active')
+            $(this).find('ul').addClass('active');
+        })
     </script>
 </body>
 </html>

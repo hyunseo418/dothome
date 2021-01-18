@@ -110,6 +110,18 @@ body {
 .intro svg {
     position: fixed;
 }
+.background {
+    left: 0; top: 50px;
+    width: 100vw; height: var(--height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7vw;
+}
+.background .quote {
+    display: none;
+    line-height: 1.2;
+}
 
 /* column menu style */
 .column-menu {
@@ -513,7 +525,6 @@ body {
 }
 
 /* website */
-.website {}
 .website .site-list {
     display: flex;
 }
@@ -521,9 +532,6 @@ body {
     height: var(--height);
     width: var(--width);
 }
-.website .site-list .site-contents.website1 {}
-.website .site-list .site-contents.website2 {}
-.website .site-list .site-contents.website3 {}
 .website .site-list .site-contents .site-bar {
     display: block; 
     height: 7vmin; 
@@ -761,8 +769,14 @@ body {
     margin-right: 2vw;
     overflow: hidden;
 }
-.animation-contents .text-area .animation-number {}
-.animation-contents .text-area .animation-number .max-number {
+.animation-contents .text-area .animation-number {
+    overflow: hidden;
+}
+.animation-number .current-number {
+    display: inline-block;
+    transform: translateY(-3vh);
+}
+.animation-number .max-number {
     position: relative;
     display: inline-block;
     padding-left: 4vw;
@@ -780,35 +794,41 @@ body {
     text-transform: capitalize;
     margin-top: 1vh;
     line-height: 1.1;
-    /* transform: translateX(10vw); */
+    transform: translateX(15vw);
 }
 .animation-contents .text-area .animation-desc {
     font-family: var(--font-ko-light);
     color: #999;
     font-size: 1.2vw;
     margin-top: 1.7vh;
+    transform: translateX(17vw);
 }
 .animation-contents .text-area .btn-wrap {
     bottom: 0;
     right: 0;
+}
+.animation-contents .text-area .animationCodeView {
+    transform: translateX(10vw);
 }
 .animation-contents .animation-area {
     position: relative;
     flex: 0 0 75%;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 .animation-contents .animation-area iframe {
     width: 50vw; height: 50vh;
+    transform: translateX(-50vw);
 }
-.animation-contents .animation-area .back-line-group {
+.animation-contents .back-line-group {
     position: absolute;
-    left: 11vw; top: 5vh;
+    left: 31vw; top: 5vh;
     width: 42vw; height: 52vh;
     z-index: -1;
     overflow: hidden;
 }
-.animation-contents .animation-area .back-line-group .back-line {
+.animation-contents .back-line-group .back-line {
     height: 100%; width: 0.1vw;
     background: #fff;
     display: inline-block;
@@ -846,6 +866,7 @@ body {
     position: absolute;
     left: 40%; top: 10%;
     transform: translateX(-50%);
+    text-transform: capitalize;
 }
 .contact-info ul {
     position: absolute;
@@ -875,18 +896,5 @@ body {
     flex: 1 1 60%;
     overflow: hidden;
     background: #fff;
-}
-
-
-.background {
-    left: 0; top: 50px;
-    width: 100vw; height: var(--height);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 7vw;
-}
-.background .quote {
-    display: none;
-    line-height: 1.2;
+    backdrop-filter: blur(10px);
 }

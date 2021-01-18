@@ -350,6 +350,12 @@
     <script src="assets/js/slick.min.js"></script>
     <script src="assets/js/lightgallery.min.js"></script>
     <script>
+        $(".title .btn").click(function(event){
+            event.preventDefault(); 
+            $("#nav").slideToggle();
+            $(this).toggleClass("on");
+        });
+
         //라이트 박스
         $(".lightbox").lightGallery(); 
 
