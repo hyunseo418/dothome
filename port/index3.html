@@ -1105,10 +1105,10 @@ questionBtn.addEventListener("click",showResult);
                             </div>
                         </div>
                         <div class="effect-number">
-                            <a class="scriptBtn2 active" href="#">1</a>
-                            <a class="scriptBtn2" href="#">2</a>
-                            <a class="scriptBtn2" href="#">3</a>
-                            <a class="scriptBtn2" href="#">4</a>
+                            <a class="scriptBtn active" href="#">1</a>
+                            <a class="scriptBtn" href="#">2</a>
+                            <a class="scriptBtn" href="#">3</a>
+                            <a class="scriptBtn" href="#">4</a>
                         </div>
                         <div class="btn-wrap">
                             <a href="#" class="btn scriptCodeView">
@@ -1266,7 +1266,7 @@ questionBtn.addEventListener("click",showResult);
                         <div class="animation-contents">
                             <div class="text-area">
                                 <div class="animation-number">No. <span class="current-number">1</span><span class="max-number">6</span></div>
-                                <div class="animation-title"><span class="animation-name">wave circle</span><br>animation</div>
+                                <div class="animation-title">wave circle<br>animation</div>
                                 <div class="animation-desc">
                                     transform의 scale과 rotate, transform-origin으로 원이 가운데 위를 기준으로 크기가 변하면서 돌아가게 하고, 애니메이션에 딜레이를 주어 물결이 치는 것 같은 효과를 구현했습니다.
                                 </div>
@@ -1288,7 +1288,7 @@ questionBtn.addEventListener("click",showResult);
                         <div class="animation-contents">
                             <div class="text-area">
                                 <div class="animation-number">No. <span class="current-number">2</span><span class="max-number">6</span></div>
-                                <div class="animation-title"><span class="animation-name">cube</span><br>animation</div>
+                                <div class="animation-title">cube<br>animation</div>
                                 <div class="animation-desc">
                                     perspective속성과 transform 속성, transform-style: preserve-3d;를 사용하여 정육면체가 크기를 늘렸다 줄이면서 여러 방향으로 움직이는 것 같은 효과를 나타냈습니다.
                                 </div>
@@ -1310,7 +1310,7 @@ questionBtn.addEventListener("click",showResult);
                         <div class="animation-contents">
                             <div class="text-area">
                                 <div class="animation-number">No. <span class="current-number">3</span><span class="max-number">6</span></div>
-                                <div class="animation-title"><span class="animation-name">loading</span><br>animation</div>
+                                <div class="animation-title">loading<br>animation</div>
                                 <div class="animation-desc">
                                     transform 속성을 이용해서 사각형이 돌아가도록 하고, 모서리가 바닥에 닿았을 때 아래 부분만 border radius가 변하도록 하여 사각형이 바닥에 닿아 뭉개지는 것 같은 느낌을 구현했습니다.
                                 </div>
@@ -1332,7 +1332,7 @@ questionBtn.addEventListener("click",showResult);
                         <div class="animation-contents">
                             <div class="text-area">
                                 <div class="animation-number">No. <span class="current-number">4</span><span class="max-number">6</span></div>
-                                <div class="animation-title"><span class="animation-name">tail</span><br>animation</div>
+                                <div class="animation-title">tail<br>animation</div>
                                 <div class="animation-desc">
                                     transform 속성의 translate를 사용하여 원들이 ∞모양으로 이동하도록 하고, animation delay를 이용해서 작은 원들이 큰 원을 따라다니는 것 같은 애니메이션을 구현했습니다.
                                 </div>
@@ -1354,7 +1354,7 @@ questionBtn.addEventListener("click",showResult);
                         <div class="animation-contents">
                             <div class="text-area">
                                 <div class="animation-number">No. <span class="current-number">5</span><span class="max-number">6</span></div>
-                                <div class="animation-title"><span class="animation-name">rocket</span><br>animation</div>
+                                <div class="animation-title">rocket<br>animation</div>
                                 <div class="animation-desc">
                                     GSAP를 이용하여 로켓이 전진하는 애니메이션을 구현했습니다. timeline을 사용하여 애니메이션이 순차적으로 작동하게 하였고, repeat을 -1로 하여 무한히 반복되도록 했습니다.
                                 </div>
@@ -1376,7 +1376,7 @@ questionBtn.addEventListener("click",showResult);
                         <div class="animation-contents">
                             <div class="text-area">
                                 <div class="animation-number">No. <span class="current-number">6</span><span class="max-number">6</span></div>
-                                <div class="animation-title"><span class="animation-name">SVG Text</span><br>animation</div>
+                                <div class="animation-title">SVG Text<br>animation</div>
                                 <div class="animation-desc">
                                     SVG의 stroke-dasharray와 stroke-dashoffset 속성을 이용하면 선에도 애니메이션을 부여할 수 있습니다. 이러한 특징을 이용해서 텍스트 애니메이션을 구현했습니다.
                                 </div>
@@ -1717,7 +1717,7 @@ questionBtn.addEventListener("click",showResult);
 
         // website code view
         siteCodeView.forEach((el,index)=>{
-            el.addEventListener('click', function(){
+            el.addEventListener('click', function(){    
                 el.classList.toggle('active');
 
                 if(el.classList.contains('active')){

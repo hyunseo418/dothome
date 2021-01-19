@@ -324,7 +324,7 @@
                                         <ul>
                                             <li class="active" data-index-number="1"><a href="#">media query</a></li>
                                             <li data-index-number="2"><a href="#">semantic tag</a></li>
-                                            <li data-index-number="3"><a href="#"></a></li>
+                                            <li data-index-number="3"><a href="#">web icon font</a></li>
                                         </ul>
                                     </div>
                                     <div class="tab-contents">
@@ -361,6 +361,49 @@
     .col7 {border-bottom: 0; border-right: 1px solid #dbdbdb;}
     .col8 {border-bottom: 0; border-right: 1px solid #dbdbdb;}
 }
+
+@media (max-width: 768px){
+    #cont_left   {float: none; width: 100%;}
+    #cont_center {border-left: 0;}
+}
+
+@media (max-width: 600px){
+    #header {height: auto;}
+    .header_tit {display: none;}
+    .header_icon {display: none;}
+    .title .btn {display: none;}
+    .nav {display: none;}
+
+    .col1 .col_tit {display: none;}
+    .col1 .col_desc {display: none;}
+    .col1 {padding: 0; border-bottom: 0;}
+    .col1 .menu ul {overflow: hidden;}
+    .col1 .menu li {
+        float: left;
+        width: 33.3333%;
+        text-align: center;
+        border-right: 1px solid #dbdbdb;
+        box-sizing: border-box;
+    }
+    .col1 .menu li:nth-child(3n) {border-right: 0;}
+    .col1 .menu li a {color: #fff; text-shadow: 0 0 5px rgba(0,0,0,0.5);}
+    .col1 .menu li a:hover {box-shadow: none; background: rgba(36,130,174,0.3);}
+    .col1 .menu li a i {display: none;}
+    .col2 {background: #fff;}
+
+    .square a {width: 49%;}    
+    .square a:nth-child(5) {display: none;}
+
+    #cont_right .column {width: 50%;}
+    .col8 {display: none;}
+}
+
+@media(max-width: 300px){
+    .square a {width: 100%; margin: 1% 0;}
+
+    #cont_right .column {width: 100%;}
+    .col7 {border-right: 0; border-bottom: 1px solid #dbdbdb;}
+}
 </code></pre>
                                         </div>
                                         <div class="code">
@@ -387,7 +430,16 @@
 </code></pre>
                                         </div>
                                         <div class="code">
-<pre><code class="language-html">
+<pre><code class="language-html">&lt;div class="menu"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Cafe &lt;i class="fa fa-angle-double-right" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Github &lt;i class="fa fa-angle-double-right" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Gitbook &lt;i class="fa fa-angle-double-right" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Tistory &lt;i class="fa fa-angle-double-right" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;CSS3 &lt;i class="fa fa-angle-double-right" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;HTML5 &lt;i class="fa fa-angle-double-right" aria-hidden="true"&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
 </code></pre>
                                         </div>
                                     </div>
@@ -429,7 +481,7 @@
                                         <ul>
                                             <li class="active" data-index-number="1"><a href="#">select tag</a></li>
                                             <li data-index-number="2"><a href="#">google api</a></li>
-                                            <li data-index-number="3"><a href="#"></a></li>
+                                            <li data-index-number="3"><a href="#">hamburger menu</a></li>
                                         </ul>
                                     </div>
                                     <div class="tab-contents">
@@ -477,48 +529,111 @@
 </code></pre>
                                         </div>
                                         <div class="code">
-<pre><code class="language-js">// 플레이어
-var player = {
-        obj: null, // 플레이어 오브젝트
-        query : {
-            theme: "dark",
-            color: "white",
-            controls: 1, 
-            autoplay: 1,
-            enablejsapi: 1,
-            modestbranding: 0, // YouTube 로고 감춤
-            rel: 0,  // 관련 동영상 표시
-            showinfo: 0, // 제목, 업로더 감춤
-            iv_load_policy: 3 // 특수효과 감춤
-        },
-        visible: false
-    };
+<pre><code class="language-js">(function($){
 
-    // 보이기, 숨기기 버튼 활성화
-    $selector.showButton.on("click", showPlayer);
-    $selector.hideButton.on("click", hidePlayer);
+    /* 트레일러 영상 플레이어를 활성화 */
+    /* YouTube iframe API: https://developers.google.com/youtube/player_parameters */
+    
+   (function handleTrailer(){
+        // 셀렉터 캐시
+        var $selector = {
+            body: $("body"),
+            overlay: $("#blackout"),
+            modal: $("#trailerModal"),
+            showButton: $("#showTrailer"),
+            hideButton: $("#hideTrailer")
+        };
+       // 플레이어
+       var player = {
+            obj: null, // 플레이어 오브젝트
+            query : {
+                theme: "dark",
+                color: "white",
+                controls: 1, 
+                autoplay: 1,
+                enablejsapi: 1,
+                modestbranding: 0, // YouTube 로고 감춤
+                rel: 0,  // 관련 동영상 표시
+                showinfo: 0, // 제목, 업로더 감춤
+                iv_load_policy: 3 // 특수효과 감춤
+            },
+            visible: false
+        };
 
-// YouTube API를 이용해 iframe을 생성
-function setPlayer( id ) {
-        player.obj = new YT.Player( "trailer", {
-            width: 480,
-            height: 282,
-            videoId: id,    
-            playerVars: player.query
-        });
+        // 보이기, 숨기기 버튼 활성화
+        $selector.showButton.on("click", showPlayer);
+        $selector.hideButton.on("click", hidePlayer);
 
-        // 처음 플레이어 크기 설정
-        resizePlayer();
+       // YouTube API를 이용해 iframe을 생성
+       function setPlayer( id ) {
+            player.obj = new YT.Player( "trailer", {
+                width: 480,
+                height: 282,
+                videoId: id,    
+                playerVars: player.query
+            });
 
-        // 리사이즈나 화면 회전시 플레이어 크기 다시 설정
-        $( window ).on( "resize orientationchange", function() {
+            // 처음 플레이어 크기 설정
             resizePlayer();
-        });
-    }
+
+            // 리사이즈나 화면 회전시 플레이어 크기 다시 설정
+            $( window ).on( "resize orientationchange", function() {
+                resizePlayer();
+            });
+        }
+
+        function resizePlayer(){
+            var viewport = {}, frame = {}, modal = {};
+
+            viewport.width = $(window).width();
+            viewport.height = $(window).height();
+
+            frame.width = viewport.width;
+            frame.height = frame.width / 1.6;   /* 16 : 10 비율 */
+
+            modal.top = ((viewport.height - frame.height) / 2) + "px";
+            modal.left = "0px";
+
+            $selector.modal.css(modal);
+
+            player.obj.setSize(frame.width, frame.height);
+        }
+
+        // iframe 보이기
+        function showPlayer(){
+            if(!player.obj){
+                setPlayer($selector.showButton.data("youtube"));
+            }
+            $selector.body.addClass("modal_on");
+            $selector.overlay.show();
+            player.visible = true;
+        }
+
+        // iframe 감추기
+        function hidePlayer(){
+            player.obj.stopVideo();
+            $selector.overlay.hide();
+            $selector.body.removeClass("modal_on");
+            player.visible = false;
+        }
+   })();
+})(jQuery);     
 </code></pre>
                                         </div>
                                         <div class="code">
-<pre><code class="language-html">
+<pre><code class="language-css">/* 모바일 메뉴 */
+.ham {display: block; width: 25px; height: 10px; padding: 15px 10px 10px 10px;}
+.ham span {position: relative; display: block; width: 25px; height: 4px; background: #39106a;}
+.ham span:before {
+    content: '';
+    width: 25px; height: 4px; background: #39106a;
+    position: absolute; left: 0; bottom: -7px;
+}
+.ham span:after {
+    content: '';
+    width: 25px; height: 4px; background: #39106a;
+    position: absolute; left: 0; top: -7px;
+}
 </code></pre>
                                         </div>
                                     </div>
@@ -558,22 +673,46 @@ function setPlayer( id ) {
                                 <div class="code-view">
                                     <div class="tab-menu">
                                         <ul>
-                                            <li class="active" data-index-number="1"><a href="#">111</a></li>
-                                            <li data-index-number="2"><a href="#">222</a></li>
-                                            <li data-index-number="3"><a href="#">333</a></li>
+                                            <li class="active" data-index-number="1"><a href="#">display:flex</a></li>
+                                            <li data-index-number="2"><a href="#">image sprite</a></li>
+                                            <li data-index-number="3"><a href="#">toggle menu</a></li>
                                         </ul>
                                     </div>
                                     <div class="tab-contents">
                                         <div class="code">
-<pre><code class="language-html">
+<pre><code class="language-css">/* cont1 */
+.cont1 {text-align: center;}
+.cont1 h3 {font-size: 36px; margin-top: 130px; font-weight: 800;}
+.cont1 > p {font-size: 20px; margin-top: 27px; line-height: 1.8;}
+.cont1 .ai {display: flex;}
+.cont1 .sec {flex: 0 0 280px; margin-right: 20px; margin-top: 90px;}
+.cont1 .sec:last-child {margin-right: 0;}
+.cont1 .sec .icon {display: inline-block; text-align: center; width: 95px; height: 95px; background: url(img/14_icon.png);}
+.cont1 .sec .icon.icon1 {background-position: 0 -120px;}
+.cont1 .sec .icon.icon2 {background-position: -103px -120px;}
+.cont1 .sec .icon.icon3 {background-position: -240px 0;}
+.cont1 .sec .icon.icon4 {background-position: -240px -95px;}
+.cont1 .sec strong {display: block; font-size: 25px; margin-top: 40px;}
+.cont1 .sec > p {font-size: 16px; margin-top: 24px; line-height: 1.5;}
 </code></pre>
                                         </div>
                                         <div class="code">
-<pre><code class="language-html">
+<pre><code class="language-css">.footer .icon {width: 21px; height: 21px; background: url(img/14_icon.png); margin-left: 20px;}
+.footer .icon.icon1 {background-position: -200px -120px; float: left;}
+.footer .icon.icon2 {background-position: -215px -217px; float: left;}
+.footer .icon.icon3 {background-position: -190px -217px; float: left;}
+.footer .icon.icon4 {background-position: -200px -145px; float: left;}
 </code></pre>
                                         </div>
                                         <div class="code">
-<pre><code class="language-html">
+<pre><code class="language-js">let button = document.querySelectorAll(".button");
+
+button.forEach( el => {
+    el.addEventListener("click", function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("active")
+    })
+})
 </code></pre>
                                         </div>
                                     </div>
@@ -1109,10 +1248,10 @@ questionBtn.addEventListener("click",showResult);
                             </div>
                         </div>
                         <div class="effect-number">
-                            <a class="scriptBtn2 active" href="#">1</a>
-                            <a class="scriptBtn2" href="#">2</a>
-                            <a class="scriptBtn2" href="#">3</a>
-                            <a class="scriptBtn2" href="#">4</a>
+                            <a class="scriptBtn active" href="#">1</a>
+                            <a class="scriptBtn" href="#">2</a>
+                            <a class="scriptBtn" href="#">3</a>
+                            <a class="scriptBtn" href="#">4</a>
                         </div>
                         <div class="btn-wrap">
                             <a href="#" class="btn scriptCodeView">
@@ -1431,7 +1570,7 @@ questionBtn.addEventListener("click",showResult);
                         </li>
                     </ul>
                     <div class="btn-wrap">
-                        <a href="#" class="btn">
+                        <a href="https://react999-class.web.app/#/" class="btn">
                             리액트 사이트 보기
                             <div class="whiteCircle"></div>
                             <div class="blackCircle"></div>
@@ -1581,10 +1720,9 @@ questionBtn.addEventListener("click",showResult);
                 this.supahScroll = document.querySelectorAll(this.el)[0]
                 this.supahScroll.classList.add('supah-scroll')
                 this.headerBtn = document.querySelector('.header-btn')
-                this.summaryOffset = document.getElementById('summary').offsetLeft + window.innerWidth*2
                 this.menu = document.querySelectorAll('.summary > ul> li > a')
                 this.scroll = 0
-                this.siteOffest = website.offsetLeft + window.innerWidth*2
+                this.siteOffset = website.offsetLeft + window.innerWidth*2
                 this.summaryOffset = summary.offsetLeft + window.innerWidth*2
                 this.events()
                 this.update()
@@ -1623,7 +1761,6 @@ questionBtn.addEventListener("click",showResult);
                 this.scrollY += (window.scrollY - this.scrollY) * this.speed
                 this.supahScroll.style.transform = `translate3d(${-this.scrollY}px,0,0)`
                 this.raf = requestAnimationFrame(this.animate.bind(this))
-                
             }
             
             scrollTo(y) {
@@ -1900,9 +2037,9 @@ questionBtn.addEventListener("click",showResult);
                 if(animationCont[i].getBoundingClientRect().left - window.innerWidth/2 <= 0){
                     let animation_tl = gsap.timeline();
                     animation_tl.to(animationView[i], {duration:.6, x:0, ease:"power1.inOut"})
-                                .to(animationNumber[i], {duration:.5, y:0})
-                                .to(animationTitle[i], {duration:.3, x:0}, "-=0.2")
-                                .to(animationDesc[i], {duration:.3, x:0})
+                                .to(animationNumber[i], {duration:.5, y:0}, "-=0.4")
+                                .to(animationTitle[i], {duration:.3, x:0}, "-=0.4")
+                                .to(animationDesc[i], {duration:.3, x:0}, "-=0.2")
                                 .to(animationCodeView[i], {duration:.3, x:0});
                 }
             }
