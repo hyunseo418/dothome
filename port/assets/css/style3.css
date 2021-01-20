@@ -899,3 +899,39 @@ body {
     backdrop-filter: blur(10px);
 }
 
+.sendMail {
+    height: var(--height);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sendMail fieldset {
+    width: 70%;
+}
+.sendMail .yourEmail {
+    display: block;
+    width: 100%;
+    background: transparent;
+    height: 40px;
+    margin-bottom: 25px;
+    border: 1px solid #fff;
+    padding: 0 10px;
+    color: #fff;
+}
+.sendMail .yourMessage {
+    display: block;
+    width: 100%;
+    background: transparent;
+    min-height: 200px;
+    margin-bottom: 25px;
+    border: 1px solid #fff;
+    padding: 10px;
+}
+.sendMail .submitBtn {
+    display: block;
+    width: 30%;
+    background: #fff;
+    padding: 10px;
+    text-transform: uppercase;
+}

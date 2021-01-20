@@ -479,51 +479,23 @@
                                 <div class="code-view">
                                     <div class="tab-menu">
                                         <ul>
-                                            <li class="active" data-index-number="1"><a href="#">select tag</a></li>
+                                            <li class="active" data-index-number="1"><a href="#">image sprite</a></li>
                                             <li data-index-number="2"><a href="#">google api</a></li>
                                             <li data-index-number="3"><a href="#">hamburger menu</a></li>
                                         </ul>
                                     </div>
                                     <div class="tab-contents">
                                         <div class="code">
-<pre><code class="language-html">&lt;div class="select"&gt;
-    &lt;div class="s1"&gt;
-      &lt;label for="udate" class="ir_so"&gt;날짜&lt;/label&gt;
-      &lt;input type="text" id="udate" name="udate" value="2019년 1월 25일" class="ui_select2"&gt;
-    &lt;/div&gt;
-    &lt;div class="s2"&gt;
-       &lt;label for="utime" class="ir_so"&gt;시간&lt;/label&gt;
-       &lt;select id="utime" name="utime" class="ui_select2"&gt;
-          &lt;option value="오전 0:00"&gt;오전 0:00&lt;/option&gt;
-          &lt;option value="오전 1:00"&gt;오전 1:00&lt;/option&gt;
-          &lt;option value="오전 2:00"&gt;오전 2:00&lt;/option&gt;
-          &lt;option value="오전 3:00"&gt;오전 3:00&lt;/option&gt;
-          &lt;option value="오전 4:00"&gt;오전 4:00&lt;/option&gt;
-          &lt;option value="오전 5:00"&gt;오전 5:00&lt;/option&gt;
-          &lt;option value="오전 6:00"&gt;오전 6:00&lt;/option&gt;
-          &lt;option value="오전 7:00"&gt;오전 7:00&lt;/option&gt;
-          &lt;option value="오전 8:00"&gt;오전 8:00&lt;/option&gt;
-          &lt;option value="오전 9:00"&gt;오전 9:00&lt;/option&gt;
-          &lt;option value="오전 10:00"&gt;오전 10:00&lt;/option&gt;
-          &lt;option value="오전 11:00"&gt;오전 11:00&lt;/option&gt;
-          &lt;option value="오전 12:00"&gt;오전 12:00&lt;/option&gt;
-          &lt;option value="오후 1:00"&gt;오후 1:00&lt;/option&gt;
-          &lt;option value="오후 2:00"&gt;오후 2:00&lt;/option&gt;
-          &lt;option value="오후 3:00"&gt;오후 3:00&lt;/option&gt;
-          &lt;option value="오후 4:00"&gt;오후 4:00&lt;/option&gt;
-          &lt;option value="오후 5:00"&gt;오후 5:00&lt;/option&gt;
-          &lt;option value="오후 6:00"&gt;오후 6:00&lt;/option&gt;
-          &lt;option value="오후 7:00"&gt;오후 7:00&lt;/option&gt;
-          &lt;option value="오후 8:00"&gt;오후 8:00&lt;/option&gt;
-          &lt;option value="오후 9:00"&gt;오후 9:00&lt;/option&gt;
-          &lt;option value="오후 10:00"&gt;오후 10:00&lt;/option&gt;
-          &lt;option value="오후 11:00"&gt;오후 11:00&lt;/option&gt;
-          &lt;option value="오후 12:00"&gt;오후 12:00&lt;/option&gt;
-       &lt;/select&gt;
-    &lt;/div&gt;
-    &lt;div class="s3"&gt;
-          &lt;label for="utext" class="ir_so"&gt;주소 또는 도로명을 입력해주세요.&lt;/label&gt;
-          &lt;input type="text" id="utext" name="utext" class="ui_input3" placeholder="주소 또는 도로명을 입력해주세요."&gt;
+<pre><code class="language-html">&lt;div class="footer_sns"&gt;
+    &lt;ul&gt;
+       &lt;li class="icon s1"&gt;&lt;a href="#"&gt;&lt;span class="ir_pm"&gt;트위터&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+       &lt;li class="icon s2"&gt;&lt;a href="#"&gt;&lt;span class="ir_pm"&gt;페이스북&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+       &lt;li class="icon s3"&gt;&lt;a href="#"&gt;&lt;span class="ir_pm"&gt;인스타그램&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+       &lt;li class="icon s4"&gt;&lt;a href="#"&gt;&lt;span class="ir_pm"&gt;구글플레이&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+       &lt;li class="icon s5"&gt;&lt;a href="#"&gt;&lt;span class="ir_pm"&gt;아이폰 앱스토어&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class="tel"&gt;
+       &lt;a href="#"&gt;ARS &lt;em&gt;1544-0070&lt;/em&gt;&lt;/a&gt;
     &lt;/div&gt;
  &lt;/div&gt;
 </code></pre>
@@ -1570,7 +1542,7 @@ questionBtn.addEventListener("click",showResult);
                         </li>
                     </ul>
                     <div class="btn-wrap">
-                        <a href="https://react999-class.web.app/#/" class="btn">
+                        <a href="#" class="btn">
                             리액트 사이트 보기
                             <div class="whiteCircle"></div>
                             <div class="blackCircle"></div>
@@ -1596,6 +1568,7 @@ questionBtn.addEventListener("click",showResult);
 
         // variables
         const contents = document.getElementById("contents");
+        const section = document.querySelectorAll('main > section');
         const headerBtn = document.querySelector('.header-btn');
         const columnMenu = document.querySelectorAll('.column-menu');
         const btn = document.querySelectorAll('.btn');
@@ -1722,7 +1695,6 @@ questionBtn.addEventListener("click",showResult);
                 this.headerBtn = document.querySelector('.header-btn')
                 this.menu = document.querySelectorAll('.summary > ul> li > a')
                 this.scroll = 0
-                this.siteOffset = website.offsetLeft + window.innerWidth*2
                 this.summaryOffset = summary.offsetLeft + window.innerWidth*2
                 this.events()
                 this.update()
@@ -1730,6 +1702,7 @@ questionBtn.addEventListener("click",showResult);
                 this.menuScroll()
                 this.headerBtnClick();
                 this.columnMenu();
+                this.clickMenu();
             }
             
             update() {
@@ -1795,6 +1768,14 @@ questionBtn.addEventListener("click",showResult);
             removeMenuScroll(){
                 cancelAnimationFrame(this.menuScroll);
             }
+
+            clickMenu(){
+                for(let i=0; i<this.menu.length; i++){
+                    let sectionOffset = section[i+1].offsetLeft + window.innerWidth*2;
+                    this.menu[i].addEventListener('click', ()=>{this.scrollTo(sectionOffset)})
+                }
+            }
+
             columnMenu(){
                 if(about.getBoundingClientRect().left <= 0){
                     fixedMenu.firstElementChild.innerHTML = "about"
