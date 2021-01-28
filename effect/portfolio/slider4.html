@@ -58,7 +58,7 @@
         }
         /* slider */
         .slider-wrap {
-            width: 50vw; height: 60vh; 
+            width: 50vw; height: 30vw;
             overflow: hidden;
             position: absolute;
             left: 50%; top: 50%;
@@ -68,10 +68,11 @@
         .slider-img {
             overflow: hidden;
             position: relative;
+            height: 30vw;
         }
         .slider-img .slider {
             float: left;
-            width: 50vw; height: 60vh;
+            width: 50vw;
             position: relative;
         }
         .slider-btn a {
@@ -100,16 +101,13 @@
             text-align: center;
         }
         .slider-dot a {
-            width: 5vw; 
-            height: 5vw;
             display: inline-block;
             background: rgba(0,0,0,0.3);
-            text-indent: -9999px;
             border-radius: 50%;
             margin: 5px;
             transition: background 0.3s, transform 0.2s;
             /* 닷이미지 */
-            width: 150px; height: 70px; line-height: 70px;
+            width: 10vw; height: 5vw; line-height: 70px;
             text-align: center;
             background-size: cover;
             border-radius: 3px;
@@ -162,11 +160,10 @@
         const sliderDot = $(".slider-dot");
         let sliderCount = slider.length;
         let sliderWidth = slider.outerWidth();
-        let sliderHeight = slider.outerHeight();
         let sliderTotalWidth = sliderWidth * sliderCount;
         let currentIndex = 0;
         let dotIndex = "";
-        sliderImg.css({ width: sliderTotalWidth, height: sliderHeight });
+        sliderImg.css({ width: sliderTotalWidth, height: '30vw' });
         //이미지 움직이기
         function gotoSlider(index){
             sliderImg.animate({ left: -sliderWidth * index }, 400);

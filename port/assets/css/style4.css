@@ -531,20 +531,7 @@ body {
 .website .site-list .site-contents {
     height: var(--height);
     width: var(--width);
-}
-.website .site-list .site-contents .site-bar {
-    display: block; 
-    height: 7vmin; 
-    border-bottom: 1px solid #fff; 
-    border-top: 1px solid #fff; 
-    padding-left: 2vmax;
-    box-sizing: border-box;
-    font-size: 2vmax;
-    line-height: 7vmin;
-    font-weight: 100;
-    text-transform: capitalize;
-    background: #000;
-    width: 100%;
+    border-right: 1px solid #fff;
 }
 .website .site-list .site-contents .site-bar:first-child {
     border-top: 0;
@@ -920,4 +907,103 @@ body {
     transform: translateY(85vh) rotate(-90deg);
     font-size: 50px;
     text-transform: uppercase;
+}
+
+@media(max-width:1024px){
+    .aboutMe .top figure img {
+        height: auto;
+        width: 100%;
+    }
+    .aboutMe .bottom {
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .aboutMe .bottom .text-box {
+        position: relative;
+        margin-top: 3vh;
+        margin-left: 0;
+    }
+    .aboutMe .bottom .text-box:nth-child(1){
+        margin-top: 12vh;
+    }
+    .aboutMe .bottom .text-box .desc{
+        margin-top: 2vh;
+        height: 10vh;
+        font-size: 16px;
+    }
+    .aboutMe .bottom .text-box .num{
+        position: absolute;
+        left: -5vw; top: -5vh;
+    }
+
+    .website .site-list .site-contents .site-detail{
+        flex-direction: column-reverse;
+    }
+    .site-detail .right{
+        height: 50vh;
+    }
+    .site-detail .right img{
+        transform: translateX(100vw);
+    }
+    .site-detail .left .desc-box{
+        font-size: 1.5vmax;
+    }
+    .site-detail .left .btn-wrap {
+        bottom: -15%;
+        right: 15%;
+    }
+
+    .animation-contents .text-area .animation-desc{
+        font-size: 2vh;
+    }
+
+    .contact-info .contact-title{
+        font-size: 7vw;
+        left: 55%;
+    }
+    .btn-wrap .btn{
+        font-size: 1.8vw;
+    }
+}
+@media(max-width:680px){
+    .test, .column-menu{
+        width: 50px;
+    }
+    .test .rotate, .column-menu .rotate{
+        font-size: 25px;
+    }
+
+    .aboutMe .top{
+        flex-direction: column;
+    }
+    .aboutMe .top .desc{
+        font-size: 2.7vw;
+        margin-top: 1vh;
+    }
+    .aboutMe .bottom .text-box{
+        margin-top: 1.1vh;
+    }
+    .aboutMe .bottom .text-box:nth-child(1){
+        margin-top: 3vh;
+    }
+    .aboutMe .bottom .text-box .num{
+        top: -2vh;
+    }
+    .aboutMe .bottom .text-box .desc{
+        font-size: 14px;
+        margin-top: 0.5vh;
+    }
+
+    #website{
+        width: calc(400vw - 150px);
+    }
+    .website .site-list .site-contents{
+        width: calc(100vw - 50px);
+    }
+    #animation{
+        width: calc(600vw - 250px);
+    }
+    .animation-contents .text-area .animation-desc{
+        font-size: 1.6vh;
+    }
 }
