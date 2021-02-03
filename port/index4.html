@@ -1588,30 +1588,6 @@ questionBtn.addEventListener("click",showResult);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://flairgale.cafe24.com/para/js/imagesloaded.pkgd.min.js"></script>
     <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-    <!-- <script type="text/javascript">
-        (function() {
-            emailjs.init("user_pU2GMrAIJcio78X0oqSV7");
-
-            $('input[name=submit]').click(function(){       	 
-          
-            var templateParams = {	
-                name: $('input[name=name]').val(),
-                email : $('input[name=email]').val(),
-                message : $('textarea[name=message]').val()
-            };
-
-            emailjs.send('service_ajp2wgb', 'template_bp4u60u', templateParams)
-         	    .then(function(response) {
-         	        console.log('SUCCESS!', response.status, response.text);
-                    alert('메일이 전송되었습니다.')
-         	    }, function(error) {
-         	        console.log('FAILED...', error); 
-                    alert('메일 전송에 실패했습니다.')
-         	    });
-            });
-        
-        })();
-    </script> -->
     <script>
         function loading(){
             let $loading = $('#loading');
